@@ -1,0 +1,186 @@
+@import "@/styles/common";
+
+.navbar {
+  height: 80px;
+  padding: 5px 3rem;
+  transition: height 0.3s;
+  user-select: none;
+  //   fallback for old browsers
+  background: #059862;
+  //   Chrome 10-25, Safari 5.1-6
+  background: -webkit-linear-gradient(
+    -45deg,
+    rgba(30, 143, 255, 0.849),
+    rgba(5, 152, 98, 0.8)
+  );
+  //   W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+
+  background: linear-gradient(
+    -45deg,
+    rgba(30, 143, 255, 0.849),
+    rgba(5, 152, 98, 0.8)
+  );
+
+  .main {
+    height: 70px;
+    @extend .justifyBtw;
+    align-items: center;
+
+    .left {
+      margin-left: 1rem;
+      cursor: pointer;
+    }
+
+    .right {
+      box-sizing: border-box;
+      display: flex;
+      gap: 1.5rem;
+      font-size: 1.5rem;
+
+      li {
+        position: relative;
+        box-sizing: border-box;
+        height: 60px;
+        color: #fff;
+        border: 1px solid transparent;
+        padding: 4px;
+        transition: all 0.3s;
+        @extend .flexCenter;
+        gap: 8px;
+        cursor: pointer;
+
+        &:after,
+        &:before {
+          content: "";
+          position: absolute;
+          display: block;
+          border: 0px solid transparent;
+        }
+
+        &:after {
+          width: 0%;
+          height: 80%;
+          border-top: 2px solid #fff;
+          border-bottom: 2px solid #fff;
+          transition: all 0.3s ease;
+        }
+
+        &:before {
+          width: 120%;
+          height: 0%;
+          border-left: 2px solid #fff;
+          border-right: 2px solid #fff;
+          transition: all 0.5s ease;
+        }
+
+        &:hover::before {
+          height: 80%;
+        }
+
+        &:hover::after {
+          width: 120%;
+        }
+
+        &:hover {
+          svg {
+            transform: rotate(90deg);
+            transition: all 0.3s;
+          }
+        }
+      }
+
+      .rotateSer {
+        svg {
+          transform: rotate(90deg);
+          transition: all 0.3s;
+        }
+      }
+      .rotateHow {
+        svg {
+          transform: rotate(90deg);
+          transition: all 0.3s;
+        }
+      }
+      .rotateCar {
+        svg {
+          transform: rotate(90deg);
+          transition: all 0.3s;
+        }
+      }
+    }
+  }
+
+  .divider {
+    margin: 1rem 0;
+    border-top: 1px solid #fff;
+  }
+
+  .dropDown {
+    list-style: none;
+    margin-top: 1.4rem;
+    height: max-content;
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: end;
+    gap: 2rem;
+    padding-right: 3rem;
+
+    .dropDownItem {
+      position: relative;
+      @extend .alignCen;
+      gap: 5px;
+      font-size: 1.6rem;
+      color: #fff;
+      width: 260px;
+      transition: gap 0.3s;
+      cursor: pointer;
+      user-select: none;
+
+      &:hover {
+        gap: 10px;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -10%;
+        width: 0;
+        border-top: 2px solid transparent;
+        transition: width 0.5s;
+      }
+
+      &:hover::after {
+        width: 100%;
+        border-top-color: #fff;
+      }
+    }
+  }
+  .careers {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-right: 16rem;
+
+    .dropDownItem {
+      width: 350px;
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .navbar {
+    padding: 5px 1rem;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .navbar {
+    .main {
+      .right {
+        transition: all 0.3s;
+        gap: 5px;
+      }
+    }
+  }
+}
