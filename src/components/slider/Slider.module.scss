@@ -1,0 +1,117 @@
+@import "styles/common";
+
+.slider {
+  width: 100vw;
+  min-width: 500px;
+  height: 100%;
+  @extend .flexColCen;
+  gap: 5rem;
+
+  .container {
+    @extend .flexColCen;
+    flex-wrap: wrap;
+    width: 80%;
+    height: 100vh;
+    gap: 3rem 5rem;
+    padding: 4.5rem 3rem 3.5rem 8rem;
+    border-radius: 250px 0 250px 0;
+    background: linear-gradient(-45deg, #7f7fd5, #86a8e7, #91eae4);
+    scroll-behavior: smooth;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .btnContainer {
+    @extend .alignCen;
+    gap: 5px;
+    width: 100%;
+    padding-left: 5rem;
+
+    .next,
+    .prev {
+      all: unset;
+      padding: 3px;
+      cursor: pointer;
+      transition: all 0.3s;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+
+      @media (hover: hover) {
+        &:hover {
+          transform: scale(1.1);
+
+          circle {
+            fill: #d9d9d9;
+          }
+        }
+      }
+
+      &:active {
+        background: dodgerblue;
+
+        rect {
+          fill: dodgerblue;
+        }
+      }
+    }
+
+    .progress {
+      position: relative;
+      min-width: 200px;
+      height: 4px;
+      @extend .alignCen;
+
+      .progressDef {
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        background: rgba(51, 51, 51, 0.481);
+        border-radius: 1rem;
+      }
+
+      .progressActive {
+        position: absolute;
+        width: 0;
+        height: 4px;
+        background: dodgerblue;
+        border-radius: 1rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .slider {
+    padding-right: 2rem;
+
+    .container {
+      margin-right: 3rem;
+      width: 90%;
+      border: 1px solid red;
+    }
+    .btnContainer {
+      padding-left: 0;
+      border: 1px solid red;
+    }
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .slider {
+    .container {
+      margin-right: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 475px) {
+  .slider {
+    .container {
+      margin-right: 3rem;
+    }
+  }
+}

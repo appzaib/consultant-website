@@ -18,3 +18,35 @@
   display: flex;
   flex-direction: column;
 }
+
+.flexColCen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.alignStart {
+  display: flex;
+  align-items: flex-start;
+}
+
+.justifyEvenly {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.justifyCen {
+  display: flex;
+  justify-content: center;
+}
+
+.justifyAround {
+  display: flex;
+  justify-content: space-around;
+}
+
+.flexRow {
+  display: flex;
+  flex-direction: row;
+}

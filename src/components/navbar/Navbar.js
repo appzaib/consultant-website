@@ -1,62 +1,63 @@
-import { useState, useRef } from "react";
-
-import useOnClickOutside from "@hook/useClickOutside";
+import { useState } from "react";
+import clsx from "clsx";
 
 import Logo from "@assets/logo.svg";
 import ArrowDown from "@assets/arrow-down.svg";
-import ArrowNext from "@assets/arrow-next.svg";
+import ArrowNext from "@assets/arrow-right.svg";
 
 import stl from "./Navbar.module.scss";
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
   const [dropDownItems, setDropDownItems] = useState([]);
-
-  const ref = useRef();
+  const [careers, setCareers] = useState(false);
+  const [services, setServices] = useState(false);
+  const [howWeWork, setHowWeWork] = useState(false);
+  const [dropDown, setDropDown] = useState(false);
 
   const openDropDown = (name) => {
-    const navbar = document.getElementById("navbar");
-
     if (name === "careers") {
-      document.getElementById("dropDown").classList.add(stl.careers);
+      setCareers(true);
+      setServices(false);
+      setHowWeWork(false);
+    } else if (name === "services") {
+      setServices(true);
+      setCareers(false);
+      setHowWeWork(false);
+    } else if (name === "how_we_work") {
+      setHowWeWork(true);
+      setServices(false);
+      setCareers(false);
     } else {
-      document.getElementById("dropDown").classList.remove(stl.careers);
+      setCareers(false);
+      setServices(false);
+      setHowWeWork(false);
     }
 
-    if (name === "services") {
-      navbar.style.height = "420px";
+    if (name) {
+      setDropDown(true);
     } else {
-      navbar.style.height = "230px";
+      setDropDown(false);
     }
-  };
-
-  const closeDropDown = () => {
-    const nav = document.getElementById("navbar");
-    nav.style.height = "80px";
-    document.getElementById("services").classList.remove(stl.rotateSer);
-    document.getElementById("how_we_work").classList.remove(stl.rotateHow);
-    document.getElementById("careers").classList.remove(stl.rotateCar);
   };
 
   const handleHover = (name) => {
     getDropDownData(name);
-    setIsOpen(true);
     openDropDown(name);
   };
 
   const handleHoverOut = () => {
-    setIsOpen(false);
-    closeDropDown();
+    setDropDown(false);
+    setDropDownItems([]);
   };
 
   const getDropDownData = (name) => {
     const services = [
       { name: "Web Development", href: "/services/web-development" },
-      { name: "Mobile Development", href: "/services/mobile-development" },
       { name: "Design", href: "/services/design" },
       { name: "Fintech", href: "/services/fintech" },
       { name: "Machine Learning", href: "/services/machine-learning" },
       { name: "DevOps", href: "/services/devOps" },
+      { name: "Mobile Development", href: "/services/mobile-development" },
       { name: "MLOps", href: "/services/mlOps" },
       { name: "Blockchain", href: "/services/blockchain" },
       { name: "Testing", href: "/services/testing" },
@@ -78,19 +79,10 @@ const Navbar = () => {
 
     if (name === "services") {
       setDropDownItems(services);
-      document.getElementById("services").classList.add(stl.rotateSer);
-      document.getElementById("how_we_work").classList.remove(stl.rotateHow);
-      document.getElementById("careers").classList.remove(stl.rotateCar);
     } else if (name === "how_we_work") {
       setDropDownItems(how_we_work);
-      document.getElementById("how_we_work").classList.add(stl.rotateHow);
-      document.getElementById("services").classList.remove(stl.rotateSer);
-      document.getElementById("careers").classList.remove(stl.rotateCar);
     } else if (name === "careers") {
       setDropDownItems(careers);
-      document.getElementById("careers").classList.add(stl.rotateCar);
-      document.getElementById("services").classList.remove(stl.rotateSer);
-      document.getElementById("how_we_work").classList.remove(stl.rotateHow);
     }
   };
 
@@ -99,19 +91,23 @@ const Navbar = () => {
     // location.href = `${list.href}`;
   };
 
-  useOnClickOutside(closeDropDown, ref);
+  const getPathName = () => {
+    let pathname = location.pathname;
+    return pathname;
+  };
 
   return (
     <div
       onMouseLeave={handleHoverOut}
-      ref={ref}
       id="navbar"
-      className={stl.navbar}
+      className={clsx(stl.navbar, dropDown ? stl.hideShadow : stl.showShadow)}
     >
       <div className={stl.main}>
         <div
           onClick={() => {
-            location.href = "/";
+            if (getPathName() !== "/") {
+              location.href = "/";
+            }
           }}
           className={stl.left}
         >
@@ -125,6 +121,7 @@ const Navbar = () => {
               // location.href = "/careers";
               console.log("Clicked...");
             }}
+            className={careers ? stl.rotateCar : undefined}
           >
             Careers <ArrowDown />
           </li>
@@ -137,24 +134,26 @@ const Navbar = () => {
             Case Studies
           </li>
           <li
-            id="how_we_work"
-            onMouseOver={() => handleHover("how_we_work")}
-            onClick={() => {
-              // location.href = "/how-we-work";
-              console.log("Clicked...");
-            }}
-          >
-            How We Work <ArrowDown />
-          </li>
-          <li
             id="services"
             onMouseOver={() => handleHover("services")}
             onClick={() => {
               // location.href = "/services";
               console.log("Clicked...");
             }}
+            className={services ? stl.rotateSer : undefined}
           >
             Services <ArrowDown />
+          </li>
+          <li
+            id="how_we_work"
+            onMouseOver={() => handleHover("how_we_work")}
+            onClick={() => {
+              // location.href = "/how_we_work";
+              console.log("Clicked...");
+            }}
+            className={howWeWork ? stl.rotateHow : undefined}
+          >
+            How We Work <ArrowDown />
           </li>
           <li
             onClick={() => {
@@ -166,8 +165,16 @@ const Navbar = () => {
           </li>
         </ul>
       </div>
-      {isOpen && <div className={stl.divider}></div>}
-      <ul id="dropDown" className={stl.dropDown}>
+      <ul
+        id="dropDown"
+        className={clsx(
+          stl.dropDown,
+          careers ? stl.careers : undefined,
+          services ? stl.services : undefined,
+          howWeWork ? stl.how_we_work : undefined,
+          dropDown ? stl.showDropDown : stl.hideDropDown
+        )}
+      >
         {dropDownItems.map((list, i) => {
           return (
             <li

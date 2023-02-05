@@ -1,12 +1,12 @@
+import Homepage from "@components/home";
 import Navbar from "@components/navbar";
 
 const Home = () => {
   return (
-    <>
-      <main>
-        <Navbar />
-      </main>
-    </>
+    <main>
+      <Navbar />
+      <Homepage />
+    </main>
   );
 };
 

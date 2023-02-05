@@ -1,0 +1,152 @@
+@import "styles/common";
+
+@mixin transition(
+  $property: all,
+  $duration: 0.45s,
+  $ease: cubic-bezier(0.65, 0, 0.076, 1)
+) {
+  transition: $property $duration $ease;
+}
+
+.primary {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  vertical-align: middle;
+  text-decoration: none;
+  background: transparent;
+  margin-bottom: 1rem;
+  padding: 0;
+  font-size: inherit;
+  font-family: inherit;
+  border-radius: 23px;
+  transition: transform 0.3s;
+
+  width: 12rem;
+  height: auto;
+
+  .circle {
+    @include transition(all, 0.45s, cubic-bezier(0.65, 0, 0.076, 1));
+    position: relative;
+    display: block;
+    margin: 0;
+    width: 3rem;
+    height: 3rem;
+    background: #282936;
+    border-radius: 1.625rem;
+
+    .icon {
+      @include transition(all, 0.45s, cubic-bezier(0.65, 0, 0.076, 1));
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      background: #fff;
+
+      &.arrow {
+        @include transition(all, 0.45s, cubic-bezier(0.65, 0, 0.076, 1));
+        left: 0.625rem;
+        width: 1.125rem;
+        height: 0.125rem;
+        background: none;
+
+        &::before {
+          position: absolute;
+          content: "";
+          top: -0.25rem;
+          right: 0.0625rem;
+          width: 0.625rem;
+          height: 0.625rem;
+          border-top: 0.125rem solid #fff;
+          border-right: 0.125rem solid #fff;
+          transform: rotate(45deg);
+        }
+      }
+    }
+  }
+
+  .btnText {
+    @include transition(all, 0.45s, cubic-bezier(0.65, 0, 0.076, 1));
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0.75rem 0;
+    margin: 0 0 0 1.85rem;
+    color: #fff;
+    font-family: inherit;
+    font-weight: 700;
+    line-height: 1.6;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      .circle {
+        width: 100%;
+
+        .icon {
+          &.arrow {
+            background: #fff;
+            transform: translate(1rem, 0);
+          }
+        }
+      }
+    }
+  }
+
+  &:active {
+    transform: scale(0.9);
+  }
+}
+
+.secondary {
+  position: relative;
+  outline: none;
+  border: none;
+  @extend .flexCenter;
+  font-family: inherit;
+  font-size: 1.3rem;
+  font-weight: 500;
+  padding: 1rem 1rem;
+  width: 200px;
+  height: 55px;
+  border-radius: 4rem;
+  background: linear-gradient(35deg, #fc5c7d 5%, #6a82fb);
+  color: #fff;
+  transition: all 0.3s;
+  cursor: pointer;
+  user-select: none;
+
+  .icon2 {
+    @extend .alignCen;
+    transition: all 0.3s;
+    width: 35px;
+
+    svg {
+      transition: all 0.3s;
+    }
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      transform: scale(1.1);
+      box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+      width: 195px;
+
+      svg {
+        margin-left: 10px;
+      }
+    }
+  }
+
+  .btnText {
+    @extend .flexCenter;
+    gap: 7px;
+    transition: all 0.5s;
+  }
+}
