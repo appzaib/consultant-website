@@ -21,29 +21,14 @@ const CaseStudyCard = ({
 }) => {
   const [showFullContent, setShowFullContent] = useState(false);
 
-  const isTouchDevice = () => {
-    return (
-      "ontouchstart" in window ||
-      navigator.maxTouchPoints > 0 ||
-      navigator.msMaxTouchPoints > 0
-    );
-  };
-
   return (
     <div
       style={{ width: width, height: height }}
-      onClick={() => {
-        isTouchDevice && console.log("Clicked...");
-      }}
       onMouseOver={() => {
-        if (isTouchDevice === false) {
-          setShowFullContent(true);
-        }
+        setShowFullContent(true);
       }}
       onMouseOut={() => {
-        if (isTouchDevice === false) {
-          setShowFullContent(false);
-        }
+        setShowFullContent(false);
       }}
       className={clsx(stl.caseStudyCard, customClass)}
     >
