@@ -18,48 +18,57 @@ const CaseStudyCard = ({
   title,
   description,
   btnText,
-  animate,
   transitionDelay,
   customClass,
 }) => {
   const [showFullContent, setShowFullContent] = useState(false);
+  const [animation, setAnimation] = useState(false);
+
+  const handleCardAnimation = () => {
+    setAnimation(true);
+  };
 
   return (
     <motion.div
-      initial={{ scaleY: 0, opacity: 0 }}
-      animate={{ scaleY: animate ? 1 : 0, opacity: animate ? 1 : 0 }}
-      transition={{ delay: transitionDelay, duration: 0.5 }}
-      style={{ width: width, height: height }}
-      onMouseOver={() => {
-        setShowFullContent(true);
-      }}
-      onMouseOut={() => {
-        setShowFullContent(false);
-      }}
-      className={clsx(stl.caseStudyCard, customClass)}
+      onViewportEnter={handleCardAnimation}
+      className={stl.caseCardContainer}
     >
-      <Image
-        src={imgSrc}
-        width={100}
-        height={100}
-        alt={imgAlt}
-        className={stl.img}
-      />
-      <div
-        id="content"
-        className={clsx(
-          stl.content,
-          showFullContent ? stl.showFullContent : undefined
-        )}
+      <motion.div
+        initial={{ y: 250, opacity: 0 }}
+        animate={{ y: animation ? 0 : 250, opacity: animation ? 1 : 0 }}
+        transition={{ delay: transitionDelay, duration: 0.3 }}
+        style={{ width: width, height: height }}
+        onMouseOver={() => {
+          setShowFullContent(true);
+        }}
+        onMouseOut={() => {
+          setShowFullContent(false);
+        }}
+        className={clsx(stl.caseStudyCard, customClass)}
       >
-        <h1 className={stl.title}>{title}</h1>
-        <p id="desc" className={stl.desc}>
-          {description}
-        </p>
-        <div className={stl.btnContainer}>
-          <ReadMoreBtn btnText={btnText} />
+        <Image
+          src={imgSrc}
+          width={100}
+          height={100}
+          alt={imgAlt}
+          className={stl.img}
+        />
+        <div
+          id="content"
+          className={clsx(
+            stl.content,
+            showFullContent ? stl.showFullContent : undefined
+          )}
+        >
+          <h1 className={stl.title}>{title}</h1>
+          <p id="desc" className={stl.desc}>
+            {description}
+          </p>
+          <div className={stl.btnContainer}>
+            <ReadMoreBtn btnText={btnText} />
+          </div>
         </div>
-      </div>
+      </motion.div>
     </motion.div>
   );
 };

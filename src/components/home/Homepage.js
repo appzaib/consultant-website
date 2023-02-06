@@ -16,12 +16,9 @@ import stl from "./Homepage.module.scss";
 
 const Homepage = () => {
   const [showArrow, setShowArrow] = useState(false);
-  const [animateSkillCard, setAnimateSkillCard] = useState(false);
   const [skillCardDelay, setSkillCardDelay] = useState(false);
-  const [animateCard, setAnimateCard] = useState(false);
   const [animateSkillBtn, setAnimateSkillBtn] = useState(false);
   const [animateReviewText, setAnimateReviewText] = useState(false);
-  const [animateCaseStudy, setAnimateCaseStudy] = useState(false);
   const [animateCaseStudyBtn, setAnimateCaseStudyBtn] = useState(false);
   const [animateHowWeWorkText, setAnimateHowWeWorkText] = useState(false);
   const [animateHowWeWorkBtn, setAnimateHowWeWorkBtn] = useState(false);
@@ -29,16 +26,11 @@ const Homepage = () => {
   const [animateCareersContent, setAnimateCareersContent] = useState(false);
 
   const handleSkillCard = () => {
-    setAnimateSkillCard(true);
     setSkillCardDelay(true);
 
     setTimeout(() => {
       setSkillCardDelay(false);
     }, 500);
-  };
-
-  const handleCard = () => {
-    setAnimateCard(true);
   };
 
   const handleSkillBtn = () => {
@@ -47,10 +39,6 @@ const Homepage = () => {
 
   const handleReviewContent = () => {
     setAnimateReviewText(true);
-  };
-
-  const handleCaseStudy = () => {
-    setAnimateCaseStudy(true);
   };
 
   const handleCaseStudyBtn = () => {
@@ -136,19 +124,10 @@ const Homepage = () => {
           IT Development Services and Skills for Your Needs
         </h1>
         <div className={stl.container}>
-          <PrimaryCard animate={animateSkillCard} />
-          <PrimaryCard
-            animate={animateSkillCard}
-            transitionDelay={skillCardDelay ? 0.1 : 0}
-          />
-          <PrimaryCard
-            animate={animateSkillCard}
-            transitionDelay={skillCardDelay ? 0.2 : 0}
-          />
-          <PrimaryCard
-            animate={animateSkillCard}
-            transitionDelay={skillCardDelay ? 0.3 : 0}
-          />
+          <PrimaryCard />
+          <PrimaryCard transitionDelay={skillCardDelay ? 0.1 : 0} />
+          <PrimaryCard transitionDelay={skillCardDelay ? 0.2 : 0} />
+          <PrimaryCard transitionDelay={skillCardDelay ? 0.3 : 0} />
         </div>
         <motion.div
           onViewportEnter={handleSkillBtn}
@@ -177,7 +156,7 @@ const Homepage = () => {
           className={stl.text}
         >
           <h1 className={stl.heading}>What customers are saying about us?</h1>
-          <p>
+          <p className={stl.desc}>
             We're very pleased with all the positive feedback we've received
             over the years. Thank you to all of our clients across the globe who
             continue to put their faith in us.
@@ -187,22 +166,10 @@ const Homepage = () => {
       </motion.div>
       <div className={stl.caseStudy}>
         <h1 className={stl.title}>Case Studies</h1>
-        <motion.div
-          onViewportEnter={handleCaseStudy}
-          id="caseStudyCont"
-          className={stl.container}
-        >
-          <CaseStudyCard animate={animateCaseStudy} width="370px" />
-          <CaseStudyCard
-            animate={animateCaseStudy}
-            transitionDelay={0.2}
-            width="370px"
-          />
-          <CaseStudyCard
-            animate={animateCaseStudy}
-            transitionDelay={0.4}
-            width="370px"
-          />
+        <motion.div id="caseStudyCont" className={stl.container}>
+          <CaseStudyCard width="370px" />
+          <CaseStudyCard transitionDelay={0.2} width="370px" />
+          <CaseStudyCard transitionDelay={0.4} width="370px" />
         </motion.div>
         <motion.div
           onViewportEnter={handleCaseStudyBtn}
@@ -247,11 +214,11 @@ const Homepage = () => {
           officia excepteur Lorem magna et eu. Irure tempor sit deserunt dolore
           id aliqua.
         </motion.p>
-        <motion.div onViewportEnter={handleCard} className={stl.cardContainer}>
-          <Card animate={animateCard} width="350px" />
-          <Card animate={animateCard} transitionDelay={0.1} width="350px" />
-          <Card animate={animateCard} transitionDelay={0.2} width="350px" />
-          <Card animate={animateCard} transitionDelay={0.3} width="350px" />
+        <motion.div className={stl.cardContainer}>
+          <Card width="350px" />
+          <Card transitionDelay={0.1} width="350px" />
+          <Card transitionDelay={0.2} width="350px" />
+          <Card transitionDelay={0.3} width="350px" />
         </motion.div>
         <motion.div
           onViewportEnter={handleHowWeWorkBtn}
@@ -265,7 +232,7 @@ const Homepage = () => {
         >
           <ReadMoreBtn variant="secondary" />
         </motion.div>
-        <p className={stl.description}>
+        <motion.p className={stl.description}>
           <span className={stl.descr}>
             <span className={stl.primary}>3</span>
             <span className={stl.secondary}>OFFICES</span>
@@ -278,7 +245,7 @@ const Homepage = () => {
             <span className={stl.primary}>3</span>
             <span className={stl.secondary}>OFFICES</span>
           </span>
-        </p>
+        </motion.p>
       </motion.div>
       <div className={stl.career}>
         <h1 className={stl.title}>We hire and nurture top talent!</h1>

@@ -162,7 +162,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-end;
-    height: 180px;
+    height: auto;
     padding-right: 20%;
 
     .dropDownItem {
@@ -171,11 +171,11 @@
   }
 
   .services {
-    height: 360px;
+    height: auto;
   }
 
   .how_we_work {
-    height: 180px;
+    height: auto;
   }
 
   .showDropDown {
@@ -232,6 +232,12 @@
         gap: 5px;
       }
     }
+
+    .dropDown {
+      .dropDownItem {
+        font-size: 1.3rem;
+      }
+    }
   }
 }
 
@@ -241,6 +247,7 @@
 
     .main {
       justify-content: center;
+
       .right {
         font-size: 1.2rem;
       }
@@ -251,10 +258,10 @@
     }
 
     .dropDown {
-      width: 105%;
-      padding-left: 0;
-      padding-right: 0;
-      margin-left: -10px;
+      justify-content: center;
+      width: 100%;
+      height: auto;
+      padding-left: 13px;
     }
 
     .how_we_work,
@@ -263,6 +270,38 @@
 
       .dropDownItem {
         width: 100%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .navbar {
+    padding: 0;
+
+    .main {
+      padding: 5px;
+
+      .right {
+        width: 100%;
+
+        li {
+          padding: 4px 0;
+        }
+      }
+    }
+
+    .dropDown {
+      grid-template-columns: auto;
+    }
+
+    .careers {
+      align-items: center;
+      padding-left: 10px;
+      padding-right: 10px;
+
+      .dropDownItem {
+        width: 80%;
       }
     }
   }

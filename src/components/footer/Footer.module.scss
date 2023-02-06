@@ -74,7 +74,7 @@
 
   .footer {
     width: 100vw;
-    height: 120%;
+    height: 350px;
     @extend .justifyBtw;
     align-items: flex-start;
     background: #666;
@@ -368,6 +368,7 @@
       justify-content: center;
       flex-wrap: wrap;
       gap: 3rem 0;
+      height: 120%;
 
       .section1 {
         width: 40%;
@@ -429,6 +430,22 @@
       .section2,
       .section3 {
         width: 90%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .footerContainer {
+    .section {
+      .content {
+        .heading {
+          margin-top: 10px;
+        }
+
+        .btnContainer {
+          margin-top: 10px;
+        }
       }
     }
   }

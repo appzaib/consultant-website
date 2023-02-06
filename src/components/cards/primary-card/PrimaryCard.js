@@ -21,25 +21,30 @@ const PrimaryCard = ({
   list,
   btnText,
   link,
-  animate,
   transitionDelay,
   customClass,
 }) => {
   const [flip, setFlip] = useState(false);
+  const [animation, setAnimation] = useState(false);
+
+  const handleAnimation = () => {
+    setAnimation(true);
+  };
 
   return (
     <motion.div
+      onViewportEnter={handleAnimation}
       onMouseOver={() => setFlip(true)}
       onMouseOut={() => setFlip(false)}
       transition={{ delay: transitionDelay }}
       className={clsx(stl.primaryCard, customClass)}
     >
       <motion.div
-        initial={{ y: 300, opacity: 0 }}
+        initial={{ y: 250, opacity: 0 }}
         animate={{
-          y: animate ? 0 : 300,
+          y: animation ? 0 : 250,
           rotateY: flip ? 180 : 0,
-          opacity: animate ? 1 : 0,
+          opacity: animation ? 1 : 0,
         }}
         transition={{ delay: transitionDelay }}
         exit={{ rotateY: 90 }}
