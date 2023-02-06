@@ -33,11 +33,8 @@ const Navbar = () => {
       setHowWeWork(false);
     }
 
-    if (name) {
-      setDropDown(true);
-    } else {
-      setDropDown(false);
-    }
+    if (name) setDropDown(true);
+    else setDropDown(false);
   };
 
   const handleHover = (name) => {
