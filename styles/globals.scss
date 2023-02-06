@@ -19,16 +19,21 @@ body {
 body {
   color: rgb(0, 0, 0);
   background: rgb(255, 255, 255);
+  overflow: scroll;
 
   /* For Temporary Use */
   /* height: 100vh; */
   /* display: flex; */
-  /* align-items: flex-start; */
+  /* align-items: center; */
   /* justify-content: center; */
 }
 
 body::-webkit-scrollbar {
   display: none;
+}
+
+body::selection {
+  background: #3333;
 }
 
 a {

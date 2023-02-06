@@ -1,6 +1,7 @@
 import Image from "next/image";
 import clsx from "clsx";
 import PropTypes from "prop-types";
+import { motion } from "framer-motion";
 
 import HeartIcon from "@assets/heart.svg";
 
@@ -15,10 +16,15 @@ const Card = ({
   description,
   width,
   height,
+  transitionDelay,
+  animate,
   customClass,
 }) => {
   return (
-    <div
+    <motion.div
+      initial={{ y: 300, opacity: 0 }}
+      animate={{ y: animate ? 0 : 300, opacity: animate ? 1 : 0 }}
+      transition={{ delay: transitionDelay }}
       style={{ width: width, height: height }}
       className={clsx(stl.card, stl[variant], customClass)}
     >
@@ -34,7 +40,7 @@ const Card = ({
       )}
       <h2 className={stl.heading}>{heading}</h2>
       <p className={stl.desc}>{description}</p>
-    </div>
+    </motion.div>
   );
 };
 

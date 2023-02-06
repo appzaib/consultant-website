@@ -1,13 +1,20 @@
+import { useEffect, useState } from "react";
+import clsx from "clsx";
 import PropTypes from "prop-types";
+import { motion } from "framer-motion";
 
 import Logo from "@assets/logo.svg";
 import LocationIcon from "@assets/location.svg";
 import PhoneIcon from "@assets/phone.svg";
 import MailIcon from "@assets/mail.svg";
 import FacebookIcon from "@assets/facebook.svg";
+import FacebookIcon2 from "@assets/facebook-2.svg";
 import TwitterIcon from "@assets/twitter.svg";
+import TwitterIcon2 from "@assets/twitter-2.svg";
 import LinkedInIcon from "@assets/linkedIn.svg";
+import LinkedInIcon2 from "@assets/linkedIn-2.svg";
 import GithubIcon from "@assets/github.svg";
+import GithubIcon2 from "@assets/github-2.svg";
 
 import stl from "./Footer.module.scss";
 
@@ -19,10 +26,30 @@ const Footer = ({
   usefulLinkTitle3,
   usefulLinks3,
 }) => {
+  const [animateUpperFooter, setAnimateUpperFooter] = useState(false);
+  const [animateLowerFooter, setAnimateLowerFooter] = useState(false);
+
+  const handleUpperFooter = () => {
+    setAnimateUpperFooter(true);
+  };
+
+  const handleLowerFooter = () => {
+    setAnimateLowerFooter(true);
+  };
+
   return (
-    <div className={stl.footerContainer}>
+    <motion.div
+      onViewportEnter={handleUpperFooter}
+      className={stl.footerContainer}
+      id="footer"
+    >
       <div className={stl.section}>
-        <div className={stl.content}>
+        <div
+          className={clsx(
+            stl.content,
+            animateUpperFooter ? stl.animate : undefined
+          )}
+        >
           <h1 className={stl.heading}>Start a Project With Us</h1>
           <div className={stl.btnContainer}>
             <button
@@ -37,8 +64,15 @@ const Footer = ({
           </div>
         </div>
       </div>
-      <div className={stl.footer}>
-        <div className={stl.section1}>
+      <motion.div onViewportEnter={handleLowerFooter} className={stl.footer}>
+        <motion.div
+          initial={{ x: -500, opacity: 0 }}
+          animate={{
+            x: animateLowerFooter ? 0 : -500,
+            opacity: animateLowerFooter ? 1 : 0,
+          }}
+          className={stl.section1}
+        >
           <div
             onClick={() => {
               console.log("Clicked...");
@@ -75,8 +109,15 @@ const Footer = ({
             support@company.com
           </span>
           <span className={stl.company}>Business Consultation &copy; 2023</span>
-        </div>
-        <div className={stl.section2}>
+        </motion.div>
+        <motion.div
+          initial={{ y: 500, opacity: 0 }}
+          animate={{
+            y: animateLowerFooter ? 0 : 500,
+            opacity: animateLowerFooter ? 1 : 0,
+          }}
+          className={stl.section2}
+        >
           <div className={stl.col}>
             <span
               onClick={() => {
@@ -143,8 +184,15 @@ const Footer = ({
               </span>
             ))}
           </div>
-        </div>
-        <div className={stl.section3}>
+        </motion.div>
+        <motion.div
+          initial={{ x: 500, opacity: 0 }}
+          animate={{
+            x: animateLowerFooter ? 0 : 500,
+            opacity: animateLowerFooter ? 1 : 0,
+          }}
+          className={stl.section3}
+        >
           <h2 className={stl.heading}>About us</h2>
           <p className={stl.desc}>
             Ipsum ex nostrud in id sunt nostrud aute. Proident ipsum minim sint
@@ -158,41 +206,45 @@ const Footer = ({
                 console.log("Clicked...");
                 //   window.open(facebookLink);
               }}
-              className={stl.socialBtn}
+              className={clsx(stl.socialBtn, stl.btn1)}
             >
-              <FacebookIcon />
+              <FacebookIcon2 className={stl.iconPrimary} />
+              <FacebookIcon className={stl.iconSecondary} />
             </button>
             <button
               onClick={() => {
                 console.log("Clicked...");
                 //   window.open(twitterLink);
               }}
-              className={stl.socialBtn}
+              className={clsx(stl.socialBtn, stl.btn2)}
             >
-              <TwitterIcon />
+              <TwitterIcon2 className={stl.iconPrimary} />
+              <TwitterIcon className={stl.iconSecondary} />
             </button>
             <button
               onClick={() => {
                 console.log("Clicked...");
                 //   window.open(linkedInLink);
               }}
-              className={stl.socialBtn}
+              className={clsx(stl.socialBtn, stl.btn3)}
             >
-              <LinkedInIcon />
+              <LinkedInIcon2 className={stl.iconPrimary} />
+              <LinkedInIcon className={stl.iconSecondary} />
             </button>
             <button
               onClick={() => {
                 console.log("Clicked...");
                 //   window.open(githubLink);
               }}
-              className={stl.socialBtn}
+              className={clsx(stl.socialBtn, stl.btn4)}
             >
-              <GithubIcon />
+              <GithubIcon2 className={stl.iconPrimary} />
+              <GithubIcon className={stl.iconSecondary} />
             </button>
           </div>
-        </div>
-      </div>
-    </div>
+        </motion.div>
+      </motion.div>
+    </motion.div>
   );
 };
 

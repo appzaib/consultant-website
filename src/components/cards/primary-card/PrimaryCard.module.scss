@@ -6,19 +6,6 @@
   perspective: 1000px;
   position: relative;
 
-  @media (hover: hover) {
-    &:hover,
-    &:focus-within {
-      .cardFront {
-        transform: rotateY(180deg);
-      }
-
-      .cardBack {
-        transform: rotateY(0);
-      }
-    }
-  }
-
   .cardFront,
   .cardBack {
     position: absolute;
@@ -32,11 +19,11 @@
     );
     border-radius: 24px;
     backface-visibility: hidden;
-    transition: all 0.6s;
     transform-style: preserve-3d;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
       rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
       rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    transition: all 0.3s;
 
     .img {
       @extend .flexCenter;
@@ -75,6 +62,12 @@
   .cardBack {
     @extend .flexColCen;
     justify-content: space-between;
+    background: linear-gradient(
+      -45deg,
+      rgba(30, 144, 255, 1),
+      rgba(255, 0, 255, 0.7)
+    );
+    backdrop-filter: blur(1rem);
     transform: rotateY(-180deg);
     z-index: 1;
 

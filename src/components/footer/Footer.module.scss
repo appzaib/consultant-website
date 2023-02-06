@@ -8,19 +8,20 @@
     position: relative;
     height: 150px;
     width: 100%;
-    background: #999;
 
     .content {
       @extend .flexCol;
       position: absolute;
-      bottom: 0;
+      bottom: 150%;
       left: 50%;
       transform: translateX(-50%);
-      height: 300px;
       width: 70%;
+      height: 300px;
+      opacity: 0;
+      border-radius: 1rem;
       background: dodgerblue;
       box-shadow: 0 10px 20px 2px #333;
-      transition: width 0.3s;
+      transition: all 0.3s;
 
       .heading {
         text-align: center;
@@ -44,8 +45,8 @@
           font-size: 1.3rem;
           font-weight: 500;
           background: #fff;
-          padding: 10px 1rem 10px 10px;
-          border-radius: 2rem;
+          padding: 13px 1.1rem 13px 13px;
+          border-radius: 10px;
           color: dodgerblue;
           transition: all 0.3s;
           cursor: pointer;
@@ -53,8 +54,8 @@
 
           @media (hover: hover) {
             &:hover {
-              box-shadow: rgba(0, 0, 0, 0.7) 0px 3px 8px;
-              transform: scale(1.15);
+              box-shadow: 0 10px 20px 2px #666;
+              transform: scale(1.1);
             }
 
             &:active {
@@ -63,6 +64,11 @@
           }
         }
       }
+    }
+
+    .animate {
+      bottom: 0;
+      opacity: 1;
     }
   }
 
@@ -182,16 +188,173 @@
 
     .social {
       @extend .alignCen;
-      gap: 1.2rem;
+      gap: 1.3rem;
 
       .socialBtn {
         all: unset;
-        cursor: pointer;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: scale(1.15);
+        perspective: 1000px;
+        transform-style: preserve-3d;
         transition: all 0.3s;
+        cursor: pointer;
+
+        .iconPrimary {
+          position: absolute;
+          transition: all 0.3s;
+          z-index: 1;
+        }
+
+        .iconSecondary {
+          transition: all 0.3s;
+          z-index: 2;
+        }
+
+        &::before {
+          content: "";
+          position: absolute;
+          background: dodgerblue;
+          transition: all 0.3s;
+          z-index: 3;
+        }
 
         @media (hover: hover) {
           &:hover {
-            transform: scale(1.15);
+            transform: scale(1.3);
+          }
+        }
+      }
+
+      .btn1 {
+        .iconPrimary {
+          transform-origin: bottom;
+        }
+
+        .iconSecondary {
+          transform: rotateX(-91deg);
+          transform-origin: top;
+        }
+
+        &::before {
+          top: -4%;
+          width: 100%;
+          height: 2px;
+        }
+
+        @media (hover: hover) {
+          &:hover {
+            .iconPrimary {
+              transform: rotateX(90deg);
+            }
+
+            .iconSecondary {
+              transform: rotateX(0);
+            }
+          }
+
+          &:hover::before {
+            top: 98%;
+          }
+        }
+      }
+
+      .btn2 {
+        .iconPrimary {
+          transform-origin: right;
+        }
+
+        .iconSecondary {
+          transform: rotateY(-89deg);
+          transform-origin: left;
+        }
+
+        &::before {
+          left: -5%;
+          width: 2px;
+          height: 100%;
+        }
+
+        @media (hover: hover) {
+          &:hover {
+            .iconPrimary {
+              transform: rotateY(89deg);
+            }
+
+            .iconSecondary {
+              transform: rotateY(0);
+            }
+          }
+
+          &:hover::before {
+            left: 100%;
+          }
+        }
+      }
+
+      .btn3 {
+        .iconPrimary {
+          transform-origin: left;
+        }
+
+        .iconSecondary {
+          transform: rotateY(-91deg);
+          transform-origin: right;
+        }
+
+        &::before {
+          right: -5%;
+          width: 2px;
+          height: 100%;
+        }
+
+        @media (hover: hover) {
+          &:hover {
+            .iconPrimary {
+              transform: rotateY(-89deg);
+            }
+
+            .iconSecondary {
+              transform: rotateY(0);
+            }
+          }
+
+          &:hover::before {
+            right: 100%;
+          }
+        }
+      }
+
+      .btn4 {
+        .iconPrimary {
+          transform-origin: top;
+        }
+
+        .iconSecondary {
+          transform: rotateX(-89deg);
+          transform-origin: bottom;
+        }
+        &::before {
+          bottom: -2%;
+          width: 100%;
+          height: 2px;
+        }
+
+        @media (hover: hover) {
+          &:hover {
+            .iconPrimary {
+              transform: rotateX(-90deg);
+            }
+
+            .iconSecondary {
+              transform: rotateX(0);
+            }
+          }
+
+          &:hover::before {
+            bottom: 98%;
           }
         }
       }

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import clsx from "clsx";
+import { motion } from "framer-motion";
 
 import Logo from "@assets/logo.svg";
 import ArrowDown from "@assets/arrow-down.svg";
@@ -94,9 +95,11 @@ const Navbar = () => {
   };
 
   return (
-    <div
-      onMouseLeave={handleHoverOut}
-      id="navbar"
+    <motion.div
+      initial={{ scaleY: 0 }}
+      animate={{ scaleY: 1 }}
+      style={{ originY: 0 }}
+      onMouseOut={handleHoverOut}
       className={clsx(stl.navbar, dropDown ? stl.hideShadow : stl.showShadow)}
     >
       <div className={stl.main}>
@@ -184,7 +187,7 @@ const Navbar = () => {
           );
         })}
       </ul>
-    </div>
+    </motion.div>
   );
 };
 

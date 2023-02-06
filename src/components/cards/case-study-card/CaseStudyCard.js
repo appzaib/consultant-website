@@ -2,6 +2,7 @@ import Image from "next/image";
 import { useState } from "react";
 import clsx from "clsx";
 import PropTypes from "prop-types";
+import { motion } from "framer-motion";
 
 import ReadMoreBtn from "@components/read-more-btn";
 
@@ -17,12 +18,17 @@ const CaseStudyCard = ({
   title,
   description,
   btnText,
+  animate,
+  transitionDelay,
   customClass,
 }) => {
   const [showFullContent, setShowFullContent] = useState(false);
 
   return (
-    <div
+    <motion.div
+      initial={{ scaleY: 0, opacity: 0 }}
+      animate={{ scaleY: animate ? 1 : 0, opacity: animate ? 1 : 0 }}
+      transition={{ delay: transitionDelay, duration: 0.5 }}
       style={{ width: width, height: height }}
       onMouseOver={() => {
         setShowFullContent(true);
@@ -54,7 +60,7 @@ const CaseStudyCard = ({
           <ReadMoreBtn btnText={btnText} />
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

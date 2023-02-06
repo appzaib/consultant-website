@@ -1,6 +1,7 @@
 import Image from "next/image";
 import clsx from "clsx";
 import PropTypes from "prop-types";
+import { motion } from "framer-motion";
 
 import ReadMoreBtn from "@components/read-more-btn";
 
@@ -8,6 +9,7 @@ import WebDevImage from "@assets/web-dev.webp";
 import WebDevImage2 from "@assets/web-dev-2.png";
 
 import stl from "./PrimaryCard.module.scss";
+import { useState } from "react";
 
 const PrimaryCard = ({
   imgSrc,
@@ -19,11 +21,30 @@ const PrimaryCard = ({
   list,
   btnText,
   link,
+  animate,
+  transitionDelay,
   customClass,
 }) => {
+  const [flip, setFlip] = useState(false);
+
   return (
-    <div className={clsx(stl.primaryCard, customClass)}>
-      <div className={stl.cardFront}>
+    <motion.div
+      onMouseOver={() => setFlip(true)}
+      onMouseOut={() => setFlip(false)}
+      transition={{ delay: transitionDelay }}
+      className={clsx(stl.primaryCard, customClass)}
+    >
+      <motion.div
+        initial={{ y: 300, opacity: 0 }}
+        animate={{
+          y: animate ? 0 : 300,
+          rotateY: flip ? 180 : 0,
+          opacity: animate ? 1 : 0,
+        }}
+        transition={{ delay: transitionDelay }}
+        exit={{ rotateY: 90 }}
+        className={stl.cardFront}
+      >
         <Image
           priority={true}
           src={imgSrc}
@@ -36,8 +57,11 @@ const PrimaryCard = ({
           <p className={stl.heading}>{heading}</p>
           <p className={stl.desc}>{description}</p>
         </div>
-      </div>
-      <div className={stl.cardBack}>
+      </motion.div>
+      <motion.div
+        animate={{ rotateY: flip ? 0 : -180 }}
+        className={stl.cardBack}
+      >
         <Image
           src={imgSrc2}
           width={100}
@@ -51,8 +75,8 @@ const PrimaryCard = ({
           ))}
         </ul>
         <ReadMoreBtn />
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 };
 
