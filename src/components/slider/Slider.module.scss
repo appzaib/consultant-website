@@ -99,17 +99,13 @@
 }
 
 @media screen and (max-width: 575px) {
-  .slider {
-    .container {
-      margin-right: 0;
-    }
+  .slider .container {
+    margin-right: 0;
   }
 }
 
 @media screen and (max-width: 475px) {
-  .slider {
-    .container {
-      margin-right: 3rem;
-    }
+  .slider .container {
+    margin-right: 3rem;
   }
 }

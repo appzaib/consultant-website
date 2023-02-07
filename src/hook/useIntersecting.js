@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import PropTypes from "prop-types";
 
-const useIntersecting = ({ ele, customFunc, threshold }) => {
+const useIntersecting = ({ ele, customFunc, threshold }) =>
   useEffect(() => {
     let options = {
       threshold: threshold,
@@ -17,7 +17,6 @@ const useIntersecting = ({ ele, customFunc, threshold }) => {
 
     observer.observe(ele);
   }, [ele]);
-};
 
 export default useIntersecting;
 

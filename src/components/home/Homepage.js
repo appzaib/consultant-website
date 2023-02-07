@@ -16,7 +16,6 @@ import stl from "./Homepage.module.scss";
 
 const Homepage = () => {
   const [showArrow, setShowArrow] = useState(false);
-  const [skillCardDelay, setSkillCardDelay] = useState(false);
   const [animateSkillBtn, setAnimateSkillBtn] = useState(false);
   const [animateReviewText, setAnimateReviewText] = useState(false);
   const [animateCaseStudyBtn, setAnimateCaseStudyBtn] = useState(false);
@@ -25,41 +24,19 @@ const Homepage = () => {
   const [animateCareersBtn, setAnimateCareersBtn] = useState(false);
   const [animateCareersContent, setAnimateCareersContent] = useState(false);
 
-  const handleSkillCard = () => {
-    setSkillCardDelay(true);
+  const handleSkillBtn = () => setAnimateSkillBtn(true);
 
-    setTimeout(() => {
-      setSkillCardDelay(false);
-    }, 500);
-  };
+  const handleReviewContent = () => setAnimateReviewText(true);
 
-  const handleSkillBtn = () => {
-    setAnimateSkillBtn(true);
-  };
+  const handleCaseStudyBtn = () => setAnimateCaseStudyBtn(true);
 
-  const handleReviewContent = () => {
-    setAnimateReviewText(true);
-  };
+  const handleHowWeWorkText = () => setAnimateHowWeWorkText(true);
 
-  const handleCaseStudyBtn = () => {
-    setAnimateCaseStudyBtn(true);
-  };
+  const handleHowWeWorkBtn = () => setAnimateHowWeWorkBtn(true);
 
-  const handleHowWeWorkText = () => {
-    setAnimateHowWeWorkText(true);
-  };
+  const handleCareersBtn = () => setAnimateCareersBtn(true);
 
-  const handleHowWeWorkBtn = () => {
-    setAnimateHowWeWorkBtn(true);
-  };
-
-  const handleCareersBtn = () => {
-    setAnimateCareersBtn(true);
-  };
-
-  const handleCareersText = () => {
-    setAnimateCareersContent(true);
-  };
+  const handleCareersText = () => setAnimateCareersContent(true);
 
   const skillCardArray = [
     <PrimaryCard key={1} />,
@@ -114,16 +91,9 @@ const Homepage = () => {
               initial={{ y: 150, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.2 }}
-              onMouseOver={() => {
-                setShowArrow(true);
-              }}
-              onMouseOut={() => {
-                setShowArrow(false);
-              }}
-              onClick={() => {
-                console.log("Clicked...");
-                // location.href = "/contact-us";
-              }}
+              onMouseOver={() => setShowArrow(true)}
+              onMouseOut={() => setShowArrow(false)}
+              onClick={() => console.log("Clicked...")}
             >
               Get in Touch{" "}
               {showArrow && (
@@ -135,18 +105,12 @@ const Homepage = () => {
           </div>
         </div>
       </div>
-      <motion.div
-        onViewportEnter={handleSkillCard}
-        id="skills"
-        className={stl.skills}
-      >
+      <motion.div id="skills" className={stl.skills}>
         <h1 className={stl.heading}>
           IT Development Services and Skills for Your Needs
         </h1>
         <div className={stl.container}>
-          {skillCardArray.map((card) => {
-            return card;
-          })}
+          {skillCardArray.map((card) => card)}
         </div>
         <motion.div
           onViewportEnter={handleSkillBtn}
@@ -186,9 +150,7 @@ const Homepage = () => {
       <div className={stl.caseStudy}>
         <h1 className={stl.title}>Case Studies</h1>
         <motion.div id="caseStudyCont" className={stl.container}>
-          {caseStudyCardArray.map((card) => {
-            return card;
-          })}
+          {caseStudyCardArray.map((card) => card)}
         </motion.div>
         <motion.div
           onViewportEnter={handleCaseStudyBtn}
@@ -234,9 +196,7 @@ const Homepage = () => {
           id aliqua.
         </motion.p>
         <motion.div className={stl.cardContainer}>
-          {cardArray.map((card) => {
-            return card;
-          })}
+          {cardArray.map((card) => card)}
         </motion.div>
         <motion.div
           onViewportEnter={handleHowWeWorkBtn}

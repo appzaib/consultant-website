@@ -29,13 +29,9 @@ const Footer = ({
   const [animateUpperFooter, setAnimateUpperFooter] = useState(false);
   const [animateLowerFooter, setAnimateLowerFooter] = useState(false);
 
-  const handleUpperFooter = () => {
-    setAnimateUpperFooter(true);
-  };
+  const handleUpperFooter = () => setAnimateUpperFooter(true);
 
-  const handleLowerFooter = () => {
-    setAnimateLowerFooter(true);
-  };
+  const handleLowerFooter = () => setAnimateLowerFooter(true);
 
   return (
     <motion.div
@@ -53,10 +49,7 @@ const Footer = ({
           <h1 className={stl.heading}>Start a Project With Us</h1>
           <div className={stl.btnContainer}>
             <button
-              onClick={() => {
-                console.log("Clicked...");
-                // location.href = "";
-              }}
+              onClick={() => console.log("Clicked...")}
               className={stl.btn}
             >
               <PhoneIcon /> Contact Us
@@ -73,19 +66,11 @@ const Footer = ({
           }}
           className={stl.section1}
         >
-          <div
-            onClick={() => {
-              console.log("Clicked...");
-              // location.href = "/";
-            }}
-            className={stl.logo}
-          >
+          <div onClick={() => console.log("Clicked...")} className={stl.logo}>
             <Logo />
           </div>
           <span
-            onClick={() => {
-              console.log("Clicked...");
-            }}
+            onClick={() => console.log("Clicked...")}
             className={stl.location}
           >
             <LocationIcon />
@@ -98,13 +83,7 @@ const Footer = ({
             <PhoneIcon />
             +1-202-555-0128
           </span>
-          <span
-            onClick={() => {
-              console.log("Clicked...");
-              // location.href = "mailto:support@company.com";
-            }}
-            className={stl.email}
-          >
+          <span onClick={() => console.log("Clicked...")} className={stl.email}>
             <MailIcon />
             support@company.com
           </span>
@@ -120,66 +99,39 @@ const Footer = ({
         >
           <div className={stl.col}>
             <span
-              onClick={() => {
-                console.log("Clicked...");
-                location.href = "";
-              }}
+              onClick={() => console.log("Clicked...")}
               className={stl.head}
             >
               {usefulLinkTitle1}
             </span>
             {usefulLinks1.map((item, i) => (
-              <span
-                key={i}
-                onClick={() => {
-                  console.log("Clicked...");
-                  location.href = item.link;
-                }}
-              >
+              <span key={i} onClick={() => console.log("Clicked...")}>
                 {item.name}
               </span>
             ))}
           </div>
           <div className={stl.col}>
             <span
-              onClick={() => {
-                console.log("Clicked...");
-                location.href = "";
-              }}
+              onClick={() => console.log("Clicked...")}
               className={stl.head}
             >
               {usefulLinkTitle2}
             </span>
             {usefulLinks2.map((item, i) => (
-              <span
-                key={i}
-                onClick={() => {
-                  console.log("Clicked...");
-                  location.href = item.link;
-                }}
-              >
+              <span key={i} onClick={() => console.log("Clicked...")}>
                 {item.name}
               </span>
             ))}
           </div>
           <div className={stl.col}>
             <span
-              onClick={() => {
-                console.log("Clicked...");
-                location.href = "";
-              }}
+              onClick={() => console.log("Clicked...")}
               className={stl.head}
             >
               {usefulLinkTitle3}
             </span>
             {usefulLinks3.map((item, i) => (
-              <span
-                key={i}
-                onClick={() => {
-                  console.log("Clicked...");
-                  location.href = item.link;
-                }}
-              >
+              <span key={i} onClick={() => console.log("Clicked...")}>
                 {item.name}
               </span>
             ))}
@@ -202,40 +154,28 @@ const Footer = ({
           </p>
           <div className={stl.social}>
             <button
-              onClick={() => {
-                console.log("Clicked...");
-                //   window.open(facebookLink);
-              }}
+              onClick={() => console.log("Clicked...")}
               className={clsx(stl.socialBtn, stl.btn1)}
             >
               <FacebookIcon2 className={stl.iconPrimary} />
               <FacebookIcon className={stl.iconSecondary} />
             </button>
             <button
-              onClick={() => {
-                console.log("Clicked...");
-                //   window.open(twitterLink);
-              }}
+              onClick={() => console.log("Clicked...")}
               className={clsx(stl.socialBtn, stl.btn2)}
             >
               <TwitterIcon2 className={stl.iconPrimary} />
               <TwitterIcon className={stl.iconSecondary} />
             </button>
             <button
-              onClick={() => {
-                console.log("Clicked...");
-                //   window.open(linkedInLink);
-              }}
+              onClick={() => console.log("Clicked...")}
               className={clsx(stl.socialBtn, stl.btn3)}
             >
               <LinkedInIcon2 className={stl.iconPrimary} />
               <LinkedInIcon className={stl.iconSecondary} />
             </button>
             <button
-              onClick={() => {
-                console.log("Clicked...");
-                //   window.open(githubLink);
-              }}
+              onClick={() => console.log("Clicked...")}
               className={clsx(stl.socialBtn, stl.btn4)}
             >
               <GithubIcon2 className={stl.iconPrimary} />

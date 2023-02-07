@@ -107,12 +107,13 @@
         font-size: 2rem;
       }
 
-      p {
+      .desc {
         width: 500px;
         color: rgba(51, 51, 51, 0.596);
         font-size: 1.3rem;
       }
     }
+
     .reviews {
       @extend .flexColCen;
       flex-wrap: wrap;
@@ -273,14 +274,8 @@
 }
 
 @media screen and (max-width: 900px) {
-  .home {
-    .career {
-      .container {
-        .desc {
-          width: 70%;
-        }
-      }
-    }
+  .home .career .container .desc {
+    width: 70%;
   }
 }
 
@@ -325,12 +320,8 @@
       padding: 3rem 2rem;
     }
 
-    .career {
-      .container {
-        .desc {
-          width: 95%;
-        }
-      }
+    .career .container .desc {
+      width: 95%;
     }
 
     .how_we_work {
@@ -340,16 +331,14 @@
 }
 
 @media screen and (max-width: 525px) {
-  .home {
-    .reviewContainer {
-      padding: 3rem 10px;
+  .home .reviewContainer {
+    padding: 3rem 10px;
 
-      .text {
-        padding: 1rem 10px;
+    .text {
+      padding: 1rem 10px;
 
-        .desc {
-          width: 90%;
-        }
+      .desc {
+        width: 90%;
       }
     }
   }
@@ -357,11 +346,9 @@
 
 @media screen and (max-width: 500px) {
   .home {
-    .intro {
-      .info {
-        .main {
-          font-size: 3.5rem;
-        }
+    .intro .info {
+      .main {
+        font-size: 3.5rem;
       }
     }
 
@@ -373,10 +360,8 @@
       }
     }
 
-    .career {
-      .container {
-        padding: 0;
-      }
+    .career .container {
+      padding: 0;
     }
 
     .caseStudy {
@@ -386,12 +371,8 @@
 }
 
 @media screen and (max-width: 450px) {
-  .home {
-    .how_we_work {
-      .description {
-        align-items: center;
-        flex-direction: column;
-      }
-    }
+  .home .how_we_work .description {
+    align-items: center;
+    flex-direction: column;
   }
 }

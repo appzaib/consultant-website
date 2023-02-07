@@ -1,6 +1,6 @@
 import { useState } from "react";
 import clsx from "clsx";
-import { motion } from "framer-motion";
+import { animate, motion } from "framer-motion";
 
 import Logo from "@assets/logo.svg";
 import ArrowDown from "@assets/arrow-down.svg";
@@ -10,33 +10,23 @@ import stl from "./Navbar.module.scss";
 
 const Navbar = () => {
   const [dropDownItems, setDropDownItems] = useState([]);
-  const [careers, setCareers] = useState(false);
-  const [services, setServices] = useState(false);
-  const [howWeWork, setHowWeWork] = useState(false);
   const [dropDown, setDropDown] = useState(false);
+  const [dropDownMenu, setDropDownMenu] = useState({
+    careers: false,
+    services: false,
+    how_we_work: false,
+  });
 
   const openDropDown = (name) => {
-    if (name === "careers") {
-      setCareers(true);
-      setServices(false);
-      setHowWeWork(false);
-    } else if (name === "services") {
-      setServices(true);
-      setCareers(false);
-      setHowWeWork(false);
-    } else if (name === "how_we_work") {
-      setHowWeWork(true);
-      setServices(false);
-      setCareers(false);
+    if (name) {
+      dropDownMenu[name] = true;
+      setDropDown(true);
     } else {
-      setCareers(false);
-      setServices(false);
-      setHowWeWork(false);
+      setDropDown(false);
     }
-
-    if (name) setDropDown(true);
-    else setDropDown(false);
   };
+
+  const { careers, services, how_we_work } = dropDownMenu;
 
   const handleHover = (name) => {
     getDropDownData(name);
@@ -84,10 +74,7 @@ const Navbar = () => {
     }
   };
 
-  const handleLiClick = (list) => {
-    console.log(list.href);
-    // location.href = `${list.href}`;
-  };
+  const handleLiClick = (list) => console.log(list.href);
 
   const getPathName = () => {
     let pathname = location.pathname;
@@ -117,29 +104,16 @@ const Navbar = () => {
           <li
             id="careers"
             onMouseOver={() => handleHover("careers")}
-            onClick={() => {
-              // location.href = "/careers";
-              console.log("Clicked...");
-            }}
+            onClick={() => console.log("Clicked...")}
             className={careers ? stl.rotateCar : undefined}
           >
             Careers <ArrowDown />
           </li>
-          <li
-            onClick={() => {
-              // location.href = "/case-studies";
-              console.log("Clicked...");
-            }}
-          >
-            Case Studies
-          </li>
+          <li onClick={() => console.log("Clicked...")}>Case Studies</li>
           <li
             id="services"
             onMouseOver={() => handleHover("services")}
-            onClick={() => {
-              // location.href = "/services";
-              console.log("Clicked...");
-            }}
+            onClick={() => console.log("Clicked...")}
             className={services ? stl.rotateSer : undefined}
           >
             Services <ArrowDown />
@@ -147,46 +121,33 @@ const Navbar = () => {
           <li
             id="how_we_work"
             onMouseOver={() => handleHover("how_we_work")}
-            onClick={() => {
-              // location.href = "/how_we_work";
-              console.log("Clicked...");
-            }}
-            className={howWeWork ? stl.rotateHow : undefined}
+            onClick={() => console.log("Clicked...")}
+            className={how_we_work ? stl.rotateHow : undefined}
           >
             How We Work <ArrowDown />
           </li>
-          <li
-            onClick={() => {
-              // location.href = "/blog";
-              console.log("Clicked...");
-            }}
-          >
-            Blog
-          </li>
+          <li onClick={() => console.log("Clicked...")}>Blog</li>
         </ul>
       </div>
-      <ul
+      <motion.ul
+        initial={{ scaleY: 0 }}
+        animate={{ scaleY: dropDown ? 1 : 0 }}
         id="dropDown"
         className={clsx(
           stl.dropDown,
-          careers ? stl.careers : undefined,
-          services ? stl.services : undefined,
-          howWeWork ? stl.how_we_work : undefined,
           dropDown ? stl.showDropDown : stl.hideDropDown
         )}
       >
-        {dropDownItems.map((list, i) => {
-          return (
-            <li
-              onClick={() => handleLiClick(list)}
-              key={i}
-              className={stl.dropDownItem}
-            >
-              {list.name} <ArrowNext />
-            </li>
-          );
-        })}
-      </ul>
+        {dropDownItems.map((list, i) => (
+          <li
+            onClick={() => handleLiClick(list)}
+            key={i}
+            className={stl.dropDownItem}
+          >
+            {list.name} <ArrowNext />
+          </li>
+        ))}
+      </motion.ul>
     </motion.div>
   );
 };

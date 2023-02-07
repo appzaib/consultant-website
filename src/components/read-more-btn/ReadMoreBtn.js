@@ -8,10 +8,7 @@ import stl from "./ReadMoreBtn.module.scss";
 const ReadMoreBtn = ({ variant, btnText, link, customClass }) => (
   <button
     id="btn"
-    onClick={() => {
-      console.log("Clicked...");
-      // location.href = link;
-    }}
+    onClick={() => console.log("Clicked...")}
     className={clsx(stl[variant], customClass)}
   >
     <span className={stl.circle} aria-hidden="true">

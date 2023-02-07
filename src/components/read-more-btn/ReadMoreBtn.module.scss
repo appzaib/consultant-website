@@ -85,15 +85,13 @@
   }
 
   @media (hover: hover) {
-    &:hover {
-      .circle {
-        width: 100%;
+    &:hover .circle {
+      width: 100%;
 
-        .icon {
-          &.arrow {
-            background: #fff;
-            transform: translate(1rem, 0);
-          }
+      .icon {
+        &.arrow {
+          background: #fff;
+          transform: translate(1rem, 0);
         }
       }
     }

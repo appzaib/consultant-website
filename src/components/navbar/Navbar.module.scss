@@ -76,50 +76,40 @@
             width: 120%;
           }
 
-          &:hover {
-            svg {
-              transform: rotate(90deg);
-              transition: all 0.3s;
-            }
+          &:hover svg {
+            transform: rotate(90deg);
+            transition: all 0.3s;
           }
         }
       }
 
-      .rotateSer {
-        svg {
-          transform: rotate(90deg);
-          transition: all 0.3s;
-        }
+      .rotateSer svg {
+        transform: rotate(90deg);
+        transition: all 0.3s;
       }
-      .rotateHow {
-        svg {
-          transform: rotate(90deg);
-          transition: all 0.3s;
-        }
+
+      .rotateHow svg {
+        transform: rotate(90deg);
+        transition: all 0.3s;
       }
-      .rotateCar {
-        svg {
-          transform: rotate(90deg);
-          transition: all 0.3s;
-        }
+
+      .rotateCar svg {
+        transform: rotate(90deg);
+        transition: all 0.3s;
       }
     }
   }
 
   .dropDown {
     list-style: none;
-    display: grid;
-    grid-template-columns: auto auto;
-    justify-content: end;
-    align-items: center;
-    height: 0;
+    @extend .flexColCen;
+    height: auto;
     gap: 2rem;
     width: 100%;
     padding: 1.9rem 3rem 2rem 0;
     background: linear-gradient(-45deg, rgb(87, 108, 117), rgb(37, 50, 55));
     transform-origin: top;
     transform: scaleY(0);
-    transition: all 0.3s !important;
 
     .dropDownItem {
       position: relative;
@@ -127,7 +117,7 @@
       gap: 5px;
       font-size: 1.6rem;
       color: #fff;
-      width: 290px;
+      width: 370px;
       transition: gap 0.3s;
       cursor: pointer;
       user-select: none;
@@ -138,6 +128,7 @@
           gap: 10px;
         }
       }
+
       &::after {
         content: "";
         position: absolute;
@@ -155,35 +146,6 @@
         }
       }
     }
-  }
-
-  .careers {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-end;
-    height: auto;
-    padding-right: 20%;
-
-    .dropDownItem {
-      width: 370px;
-    }
-  }
-
-  .services {
-    height: auto;
-  }
-
-  .how_we_work {
-    height: auto;
-  }
-
-  .showDropDown {
-    transform: scaleY(1);
-  }
-
-  .hideDropDown {
-    transform: scaleY(0);
   }
 }
 
@@ -206,6 +168,7 @@
 
     .main {
       padding: 0;
+
       .left {
         margin: 0;
       }
@@ -214,35 +177,28 @@
 }
 
 @media screen and (max-width: 900px) {
-  .navbar {
-    .main {
-      .right {
-        transition: all 0.3s;
-        gap: 5px;
-      }
-    }
+  .navbar .main .right {
+    transition: all 0.3s;
+    gap: 5px;
   }
 }
 
 @media screen and (max-width: 850px) {
   .navbar {
-    .main {
-      .right {
-        font-size: 1.3rem;
-        gap: 5px;
-      }
+    .main .right {
+      font-size: 1.3rem;
+      gap: 5px;
     }
 
-    .dropDown {
-      .dropDownItem {
-        font-size: 1.3rem;
-      }
+    .dropDown .dropDownItem {
+      font-size: 1.3rem;
     }
   }
 }
 
 @media screen and (max-width: 800px) {
   .navbar {
+    // transition: all 0.3s !important;
     justify-content: center;
 
     .main {
@@ -254,22 +210,6 @@
 
       .left {
         display: none;
-      }
-    }
-
-    .dropDown {
-      justify-content: center;
-      width: 100%;
-      height: auto;
-      padding-left: 13px;
-    }
-
-    .how_we_work,
-    .services {
-      padding-right: 1rem;
-
-      .dropDownItem {
-        width: 100%;
       }
     }
   }
@@ -292,17 +232,7 @@
     }
 
     .dropDown {
-      grid-template-columns: auto;
-    }
-
-    .careers {
-      align-items: center;
-      padding-left: 10px;
-      padding-right: 10px;
-
-      .dropDownItem {
-        width: 80%;
-      }
+      padding-left: 3rem;
     }
   }
 }
