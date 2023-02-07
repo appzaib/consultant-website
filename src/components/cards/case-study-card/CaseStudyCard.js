@@ -11,6 +11,7 @@ import Img from "@assets/case-study-1.webp";
 import stl from "./CaseStudyCard.module.scss";
 
 const CaseStudyCard = ({
+  key,
   width,
   height,
   imgSrc,
@@ -32,6 +33,7 @@ const CaseStudyCard = ({
     <motion.div
       onViewportEnter={handleCardAnimation}
       className={stl.caseCardContainer}
+      key={key}
     >
       <motion.div
         initial={{ y: 250, opacity: 0 }}

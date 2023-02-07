@@ -19,6 +19,7 @@ const PrimaryCard = ({
   heading,
   description,
   list,
+  key,
   btnText,
   link,
   transitionDelay,
@@ -38,6 +39,7 @@ const PrimaryCard = ({
       onMouseOut={() => setFlip(false)}
       transition={{ delay: transitionDelay }}
       className={clsx(stl.primaryCard, customClass)}
+      key={key}
     >
       <motion.div
         initial={{ y: 250, opacity: 0 }}

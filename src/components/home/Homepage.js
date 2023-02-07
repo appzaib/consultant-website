@@ -62,23 +62,23 @@ const Homepage = () => {
   };
 
   const skillCardArray = [
-    <PrimaryCard />,
-    <PrimaryCard transitionDelay={0.1} />,
-    <PrimaryCard transitionDelay={0.2} />,
-    <PrimaryCard transitionDelay={0.3} />,
+    <PrimaryCard key={1} />,
+    <PrimaryCard key={2} transitionDelay={0.1} />,
+    <PrimaryCard key={3} transitionDelay={0.2} />,
+    <PrimaryCard key={4} transitionDelay={0.3} />,
   ];
 
   const cardArray = [
-    <Card width="350px" />,
-    <Card transitionDelay={0.1} width="350px" />,
-    <Card transitionDelay={0.2} width="350px" />,
-    <Card transitionDelay={0.3} width="350px" />,
+    <Card key={1} width="350px" />,
+    <Card key={2} transitionDelay={0.1} width="350px" />,
+    <Card key={3} transitionDelay={0.2} width="350px" />,
+    <Card key={4} transitionDelay={0.3} width="350px" />,
   ];
 
   const caseStudyCardArray = [
-    <CaseStudyCard width="370px" />,
-    <CaseStudyCard transitionDelay={0.2} width="370px" />,
-    <CaseStudyCard transitionDelay={0.4} width="370px" />,
+    <CaseStudyCard key={1} width="370px" />,
+    <CaseStudyCard key={2} transitionDelay={0.2} width="370px" />,
+    <CaseStudyCard key={3} transitionDelay={0.4} width="370px" />,
   ];
 
   return (

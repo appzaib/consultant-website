@@ -9,6 +9,7 @@ import HeartIcon from "@assets/heart.svg";
 import stl from "./Card.module.scss";
 
 const Card = ({
+  key,
   variant,
   icon,
   imgSrc,
@@ -29,6 +30,7 @@ const Card = ({
     <motion.div
       onViewportEnter={handleCardAnimation}
       className={stl.cardContainer}
+      key={key}
     >
       <motion.div
         initial={{ y: 300, opacity: 0 }}
