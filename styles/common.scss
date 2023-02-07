@@ -1,0 +1,20 @@
+.justifyBtw {
+  display: flex;
+  justify-content: space-between;
+}
+
+.alignCen {
+  display: flex;
+  align-items: center;
+}
+
+.flexCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flexCol {
+  display: flex;
+  flex-direction: column;
+}

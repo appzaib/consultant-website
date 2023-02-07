@@ -1,0 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Itim&display=swap");
+@import "styles/common";
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-family: "Itim", cursive;
+}
+
+body {
+  color: rgb(0, 0, 0);
+  background: rgb(255, 255, 255);
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}
