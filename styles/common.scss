@@ -46,6 +46,11 @@
   justify-content: space-around;
 }
 
+.justifyEnd {
+  display: flex;
+  justify-content: flex-end;
+}
+
 .flexRow {
   display: flex;
   flex-direction: row;

@@ -129,25 +129,31 @@ const Navbar = () => {
           <li onClick={() => console.log("Clicked...")}>Blog</li>
         </ul>
       </div>
-      <motion.ul
+      <motion.div
+        style={{ originY: 0 }}
         initial={{ scaleY: 0 }}
         animate={{ scaleY: dropDown ? 1 : 0 }}
-        id="dropDown"
-        className={clsx(
-          stl.dropDown,
-          dropDown ? stl.showDropDown : stl.hideDropDown
-        )}
+        transition={{ duration: 0.3 }}
+        className={stl.dropDownContainer}
       >
-        {dropDownItems.map((list, i) => (
-          <li
-            onClick={() => handleLiClick(list)}
-            key={i}
-            className={stl.dropDownItem}
-          >
-            {list.name} <ArrowNext />
-          </li>
-        ))}
-      </motion.ul>
+        <ul
+          id="dropDown"
+          className={clsx(
+            stl.dropDown,
+            dropDown ? stl.showDropDown : stl.hideDropDown
+          )}
+        >
+          {dropDownItems.map((list, i) => (
+            <li
+              onClick={() => handleLiClick(list)}
+              key={i}
+              className={stl.dropDownItem}
+            >
+              {list.name} <ArrowNext />
+            </li>
+          ))}
+        </ul>
+      </motion.div>
     </motion.div>
   );
 };
