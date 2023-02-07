@@ -61,6 +61,26 @@ const Homepage = () => {
     setAnimateCareersContent(true);
   };
 
+  const skillCardArray = [
+    <PrimaryCard />,
+    <PrimaryCard transitionDelay={0.1} />,
+    <PrimaryCard transitionDelay={0.2} />,
+    <PrimaryCard transitionDelay={0.3} />,
+  ];
+
+  const cardArray = [
+    <Card width="350px" />,
+    <Card transitionDelay={0.1} width="350px" />,
+    <Card transitionDelay={0.2} width="350px" />,
+    <Card transitionDelay={0.3} width="350px" />,
+  ];
+
+  const caseStudyCardArray = [
+    <CaseStudyCard width="370px" />,
+    <CaseStudyCard transitionDelay={0.2} width="370px" />,
+    <CaseStudyCard transitionDelay={0.4} width="370px" />,
+  ];
+
   return (
     <div className={stl.home}>
       <div className={stl.intro}>
@@ -124,10 +144,9 @@ const Homepage = () => {
           IT Development Services and Skills for Your Needs
         </h1>
         <div className={stl.container}>
-          <PrimaryCard />
-          <PrimaryCard transitionDelay={skillCardDelay ? 0.1 : 0} />
-          <PrimaryCard transitionDelay={skillCardDelay ? 0.2 : 0} />
-          <PrimaryCard transitionDelay={skillCardDelay ? 0.3 : 0} />
+          {skillCardArray.map((card) => {
+            return card;
+          })}
         </div>
         <motion.div
           onViewportEnter={handleSkillBtn}
@@ -167,9 +186,9 @@ const Homepage = () => {
       <div className={stl.caseStudy}>
         <h1 className={stl.title}>Case Studies</h1>
         <motion.div id="caseStudyCont" className={stl.container}>
-          <CaseStudyCard width="370px" />
-          <CaseStudyCard transitionDelay={0.2} width="370px" />
-          <CaseStudyCard transitionDelay={0.4} width="370px" />
+          {caseStudyCardArray.map((card) => {
+            return card;
+          })}
         </motion.div>
         <motion.div
           onViewportEnter={handleCaseStudyBtn}
@@ -215,10 +234,9 @@ const Homepage = () => {
           id aliqua.
         </motion.p>
         <motion.div className={stl.cardContainer}>
-          <Card width="350px" />
-          <Card transitionDelay={0.1} width="350px" />
-          <Card transitionDelay={0.2} width="350px" />
-          <Card transitionDelay={0.3} width="350px" />
+          {cardArray.map((card) => {
+            return card;
+          })}
         </motion.div>
         <motion.div
           onViewportEnter={handleHowWeWorkBtn}
