@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import PropTypes from "prop-types";
 
-const useOnClickOutside = ({ onClick, ref }) => {
+const useOnClickOutside = (onClick, ref) =>
   useEffect(() => {
     function handleClickOutside(event) {
       if (ref.current && !ref.current.contains(event.target)) {
@@ -9,11 +9,8 @@ const useOnClickOutside = ({ onClick, ref }) => {
       }
     }
     document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [onClick, ref]);
-};
 
 useOnClickOutside.propTypes = {
   onClick: PropTypes.func.isRequired,

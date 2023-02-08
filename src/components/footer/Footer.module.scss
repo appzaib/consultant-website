@@ -1,0 +1,432 @@
+@import "styles/common";
+
+.footerContainer {
+  height: 100%;
+  margin-top: 200px;
+
+  .section {
+    position: relative;
+    height: 150px;
+    width: 100%;
+
+    .content {
+      @extend .flexCol;
+      position: absolute;
+      bottom: 150%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 70%;
+      height: 300px;
+      opacity: 0;
+      border-radius: 1rem;
+      background: dodgerblue;
+      box-shadow: 0 10px 20px 2px #333;
+      transition: all 0.3s;
+
+      .heading {
+        text-align: center;
+        color: #fff;
+        font-size: 3rem;
+        margin: 3rem;
+      }
+
+      .btnContainer {
+        width: 100%;
+        margin-top: 3rem;
+        display: flex;
+        justify-content: center;
+
+        .btn {
+          all: unset;
+          width: max-content;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          font-size: 1.3rem;
+          font-weight: 500;
+          background: #fff;
+          padding: 13px 1.1rem 13px 13px;
+          border-radius: 10px;
+          color: dodgerblue;
+          transition: all 0.3s;
+          cursor: pointer;
+          user-select: none;
+
+          @media (hover: hover) {
+            &:hover {
+              box-shadow: 0 10px 20px 2px #666;
+              transform: scale(1.1);
+            }
+
+            &:active {
+              transform: scale(1.1);
+            }
+          }
+        }
+      }
+    }
+
+    .animate {
+      bottom: 0;
+      opacity: 1;
+    }
+  }
+
+  .footer {
+    width: 100vw;
+    height: 350px;
+    @extend .justifyBtw;
+    align-items: flex-start;
+    background: #666;
+    padding: 2rem 3rem 1rem 3rem;
+
+    .section1 {
+      @extend .flexColCen;
+      gap: 1rem;
+      align-items: flex-start;
+      padding: 1rem 10px;
+      color: #fff;
+      width: 25%;
+
+      .logo {
+        cursor: pointer;
+      }
+
+      .location {
+        display: flex;
+        gap: 10px;
+        cursor: pointer;
+
+        .address {
+          @extend .flexCol;
+          gap: 5px;
+        }
+      }
+
+      .contact {
+        @extend .alignCen;
+        gap: 10px;
+        cursor: pointer;
+      }
+
+      .email {
+        @extend .alignCen;
+        gap: 10px;
+        cursor: pointer;
+      }
+
+      .company {
+        margin: 1rem 0 0 1rem;
+      }
+    }
+
+    .section2 {
+      @extend .flexRow;
+      justify-content: space-evenly;
+      gap: 3rem;
+      padding: 1rem 10px;
+      color: #fff;
+      width: 35%;
+      user-select: none;
+
+      .col {
+        @extend .flexCol;
+        gap: 1rem;
+
+        span {
+          position: relative;
+          display: flex;
+          flex-wrap: wrap;
+          cursor: pointer;
+
+          &::after {
+            content: "";
+            position: absolute;
+            bottom: -15%;
+            left: 0;
+            width: 0;
+            height: 1.5px;
+            background: none;
+            transition: all 0.3s;
+          }
+
+          @media (hover: hover) {
+            &:hover {
+              font-weight: 400;
+            }
+
+            &:hover::after {
+              width: 100%;
+              background: dodgerblue;
+            }
+          }
+        }
+
+        .head {
+          font-size: 1.3rem;
+          margin-bottom: 1rem;
+
+          &::after {
+            display: none;
+          }
+        }
+      }
+    }
+
+    .section3 {
+      @extend .flexColCen;
+      align-items: center;
+      width: 30%;
+      padding: 1rem 10px;
+      color: #fff;
+      gap: 3rem;
+
+      h2 {
+        width: 100%;
+      }
+    }
+
+    .social {
+      @extend .alignCen;
+      gap: 1.3rem;
+
+      .socialBtn {
+        all: unset;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: scale(1.15);
+        perspective: 1000px;
+        transform-style: preserve-3d;
+        transition: all 0.3s;
+        cursor: pointer;
+
+        .iconPrimary {
+          position: absolute;
+          transition: all 0.3s;
+          z-index: 1;
+        }
+
+        .iconSecondary {
+          transition: all 0.3s;
+          z-index: 2;
+        }
+
+        &::before {
+          content: "";
+          position: absolute;
+          background: dodgerblue;
+          transition: all 0.3s;
+          z-index: 3;
+        }
+
+        @media (hover: hover) {
+          &:hover {
+            transform: scale(1.3);
+          }
+        }
+      }
+
+      .btn1 {
+        .iconPrimary {
+          transform-origin: bottom;
+        }
+
+        .iconSecondary {
+          transform: rotateX(-91deg);
+          transform-origin: top;
+        }
+
+        &::before {
+          top: -4%;
+          width: 100%;
+          height: 2px;
+        }
+
+        @media (hover: hover) {
+          &:hover {
+            .iconPrimary {
+              transform: rotateX(90deg);
+            }
+
+            .iconSecondary {
+              transform: rotateX(0);
+            }
+          }
+
+          &:hover::before {
+            top: 98%;
+          }
+        }
+      }
+
+      .btn2 {
+        .iconPrimary {
+          transform-origin: right;
+        }
+
+        .iconSecondary {
+          transform: rotateY(-89deg);
+          transform-origin: left;
+        }
+
+        &::before {
+          left: -5%;
+          width: 2px;
+          height: 100%;
+        }
+
+        @media (hover: hover) {
+          &:hover {
+            .iconPrimary {
+              transform: rotateY(89deg);
+            }
+
+            .iconSecondary {
+              transform: rotateY(0);
+            }
+          }
+
+          &:hover::before {
+            left: 100%;
+          }
+        }
+      }
+
+      .btn3 {
+        .iconPrimary {
+          transform-origin: left;
+        }
+
+        .iconSecondary {
+          transform: rotateY(-91deg);
+          transform-origin: right;
+        }
+
+        &::before {
+          right: -5%;
+          width: 2px;
+          height: 100%;
+        }
+
+        @media (hover: hover) {
+          &:hover {
+            .iconPrimary {
+              transform: rotateY(-89deg);
+            }
+
+            .iconSecondary {
+              transform: rotateY(0);
+            }
+          }
+
+          &:hover::before {
+            right: 100%;
+          }
+        }
+      }
+
+      .btn4 {
+        .iconPrimary {
+          transform-origin: top;
+        }
+
+        .iconSecondary {
+          transform: rotateX(-89deg);
+          transform-origin: bottom;
+        }
+        &::before {
+          bottom: -2%;
+          width: 100%;
+          height: 2px;
+        }
+
+        @media (hover: hover) {
+          &:hover {
+            .iconPrimary {
+              transform: rotateX(-90deg);
+            }
+
+            .iconSecondary {
+              transform: rotateX(0);
+            }
+          }
+
+          &:hover::before {
+            bottom: 98%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .footerContainer .footer {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 3rem 0;
+    height: 120%;
+
+    .section1 {
+      width: 40%;
+    }
+
+    .section2 {
+      width: 60%;
+    }
+
+    .section3 {
+      width: 50%;
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .footerContainer .section .content {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .footerContainer .footer {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+
+    .section1,
+    .section2,
+    .section3 {
+      width: 60%;
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .footerContainer .section .content .heading {
+    font-size: 2.5rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .footerContainer .footer {
+    .section1,
+    .section2,
+    .section3 {
+      width: 90%;
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .footerContainer .section .content {
+    .heading {
+      margin-top: 10px;
+    }
+
+    .btnContainer {
+      margin-top: 10px;
+    }
+  }
+}

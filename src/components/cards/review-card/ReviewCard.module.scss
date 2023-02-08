@@ -1,0 +1,84 @@
+@import url("https://fonts.googleapis.com/css2?family=Itim&display=swap");
+@import "styles/common";
+
+.reviewCard {
+  position: relative;
+  min-width: 430px;
+  max-width: 430px;
+  height: 280px;
+  border-radius: 20px;
+  background: #fff;
+  transition: all 0.3s;
+  box-shadow: 0 0 10px 3px #3333;
+  cursor: pointer;
+
+  @media (hover: hover) {
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: rgba(51, 51, 51, 0.342) 1px 7px 29px 5px;
+    }
+  }
+
+  .imgContainer {
+    position: absolute;
+    left: -10%;
+    top: -13%;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: linear-gradient(
+      -45deg,
+      rgba(255, 0, 255, 0.7),
+      rgba(30, 143, 255, 0.7)
+    );
+    z-index: 10;
+    @extend .flexCenter;
+
+    .img {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+    }
+  }
+
+  .reviewStars {
+    height: 70px;
+    @extend .alignCen;
+    padding-left: 3.5rem;
+    gap: 1.3rem;
+
+    .num {
+      font-size: 2.3rem;
+    }
+
+    .stars {
+      display: flex;
+      gap: 5px;
+
+      .active {
+        transform: scale(1.15);
+
+        path {
+          fill: #059862;
+          stroke: #059862;
+        }
+      }
+    }
+  }
+
+  .content {
+    @extend .flexCenter;
+    height: 160px;
+    padding: 0 2.5rem;
+    font-family: "Itim", cursive;
+    font-size: 1.1rem;
+    line-height: 1.3rem;
+  }
+
+  .info {
+    color: rgba(51, 51, 51, 0.7);
+    font-size: 0.95rem;
+    padding: 5px 2.5rem;
+    height: 50px;
+  }
+}
