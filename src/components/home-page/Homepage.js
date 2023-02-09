@@ -10,6 +10,7 @@ import Footer from "@components/footer";
 import Intro from "@components/intro";
 
 import CareerImage from "@assets/careers.jpeg";
+import ArrowNext from "@assets/arrow-right-2.svg";
 
 import stl from "./Homepage.module.scss";
 
