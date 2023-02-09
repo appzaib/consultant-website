@@ -8,7 +8,8 @@ const Home = () => {
     <main>
       <Navbar />
       <CareersPage />
-      <Footer />
+      {/* <Homepage /> */}
+      <Footer showContactCard={false} />
     </main>
   );
 };

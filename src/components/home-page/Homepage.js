@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { useState } from "react";
 import { motion } from "framer-motion";
 
 import PrimaryCard from "@components/cards/primary-card";
@@ -6,37 +6,19 @@ import Slider from "@components/slider";
 import CaseStudyCard from "@components/cards/case-study-card";
 import ReadMoreBtn from "@components/read-more-btn";
 import Card from "@components/cards/card";
-import Footer from "@components/footer";
 import Intro from "@components/intro";
-
-import CareerImage from "@assets/careers.jpeg";
-import ArrowNext from "@assets/arrow-right-2.svg";
+import CareersSection from "@components/careers-sections/upper-section";
 
 import stl from "./Homepage.module.scss";
 
 const Homepage = () => {
-  const [showArrow, setShowArrow] = useState(false);
   const [animateSkillBtn, setAnimateSkillBtn] = useState(false);
   const [animateReviewText, setAnimateReviewText] = useState(false);
   const [animateCaseStudyBtn, setAnimateCaseStudyBtn] = useState(false);
   const [animateHowWeWorkText, setAnimateHowWeWorkText] = useState(false);
   const [animateHowWeWorkBtn, setAnimateHowWeWorkBtn] = useState(false);
+  const [animateBriefInfo, setAnimateBriefInfo] = useState(false);
   const [animateCareersBtn, setAnimateCareersBtn] = useState(false);
-  const [animateCareersContent, setAnimateCareersContent] = useState(false);
-
-  const handleSkillBtn = () => setAnimateSkillBtn(true);
-
-  const handleReviewContent = () => setAnimateReviewText(true);
-
-  const handleCaseStudyBtn = () => setAnimateCaseStudyBtn(true);
-
-  const handleHowWeWorkText = () => setAnimateHowWeWorkText(true);
-
-  const handleHowWeWorkBtn = () => setAnimateHowWeWorkBtn(true);
-
-  const handleCareersBtn = () => setAnimateCareersBtn(true);
-
-  const handleCareersText = () => setAnimateCareersContent(true);
 
   const skillCardArray = [
     <PrimaryCard key={1} />,
@@ -58,53 +40,15 @@ const Homepage = () => {
     <CaseStudyCard key={3} transitionDelay={0.4} width="370px" />,
   ];
 
+  const briefInfo = [
+    { num: 10, name: "Lorem" },
+    { num: 10, name: "Lorem" },
+    { num: 10, name: "Lorem" },
+  ];
+
   return (
     <div className={stl.home}>
-      <div className={stl.intro}>
-        <Image
-          src={`${BGImage.src}`}
-          height={100}
-          width={100}
-          alt="Background Image"
-          className={stl.bgImage}
-        />
-        <div className={stl.info}>
-          <motion.h1
-            initial={{ x: 1800, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ delay: 0.4 }}
-            className={stl.main}
-          >
-            World class design, agile delivery and product development
-          </motion.h1>
-          <motion.div
-            initial={{ x: 1800, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ delay: 0.4 }}
-            className={stl.content}
-          >
-            200 experts who have served more than 500 international clients.
-            Let's bring your idea to life!
-          </motion.div>
-          <div className={stl.btnContainer}>
-            <motion.button
-              initial={{ y: 150, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.2 }}
-              onMouseOver={() => setShowArrow(true)}
-              onMouseOut={() => setShowArrow(false)}
-              onClick={() => console.log("Clicked...")}
-            >
-              Get in Touch{" "}
-              {showArrow && (
-                <span>
-                  <ArrowNext />
-                </span>
-              )}
-            </motion.button>
-          </div>
-        </div>
-      </div>
+      <Intro />
       <motion.div id="skills" className={stl.skills}>
         <h1 className={stl.heading}>
           IT Development Services and Skills for Your Needs
@@ -113,9 +57,10 @@ const Homepage = () => {
           {skillCardArray.map((card) => card)}
         </div>
         <motion.div
-          onViewportEnter={handleSkillBtn}
-          initial={{ scale: 0, opacity: 0 }}
+          onViewportEnter={() => setAnimateSkillBtn(true)}
+          initial={{ display: "none", scale: 0, opacity: 0 }}
           animate={{
+            display: animateSkillBtn ? "flex" : "none",
             scale: animateSkillBtn ? 1 : 0,
             opacity: animateSkillBtn ? 1 : 0,
           }}
@@ -126,16 +71,16 @@ const Homepage = () => {
         </motion.div>
       </motion.div>
       <motion.div
-        onViewportEnter={handleReviewContent}
+        onViewportEnter={() => setAnimateReviewText(true)}
         className={stl.reviewContainer}
       >
         <motion.div
-          initial={{ x: -1000, opacity: 0 }}
+          initial={{ display: "none", x: -1000, opacity: 0 }}
           animate={{
+            display: animateReviewText ? "flex" : "none",
             x: animateReviewText ? 0 : 1000,
             opacity: animateReviewText ? 1 : 0,
           }}
-          transition={{ duration: 0.5 }}
           className={stl.text}
         >
           <h1 className={stl.heading}>What customers are saying about us?</h1>
@@ -153,25 +98,26 @@ const Homepage = () => {
           {caseStudyCardArray.map((card) => card)}
         </motion.div>
         <motion.div
-          onViewportEnter={handleCaseStudyBtn}
-          initial={{ scale: 0, opacity: 0 }}
+          onViewportEnter={() => setAnimateCaseStudyBtn(true)}
+          initial={{ display: "none", scale: 0, opacity: 0 }}
           animate={{
+            display: animateCaseStudyBtn ? "flex" : "none",
             scale: animateCaseStudyBtn ? 1 : 0,
             opacity: animateCaseStudyBtn ? 1 : 0,
           }}
-          transition={{ duration: 0.5 }}
           className={stl.btnContainer}
         >
           <ReadMoreBtn variant="secondary" />
         </motion.div>
       </div>
       <motion.div
-        onViewportEnter={handleHowWeWorkText}
+        onViewportEnter={() => setAnimateHowWeWorkText(true)}
         className={stl.how_we_work}
       >
         <motion.h1
-          initial={{ x: 1000, opacity: 0 }}
+          initial={{ display: "none", x: 1000, opacity: 0 }}
           animate={{
+            display: animateHowWeWorkText ? "block" : "none",
             x: animateHowWeWorkText ? 0 : 1000,
             opacity: animateHowWeWorkText ? 1 : 0,
           }}
@@ -180,8 +126,9 @@ const Homepage = () => {
           Discover How We Deliver Your Products
         </motion.h1>
         <motion.p
-          initial={{ x: 1000, opacity: 0 }}
+          initial={{ display: "none", x: 1000, opacity: 0 }}
           animate={{
+            display: animateHowWeWorkText ? "block" : "none",
             x: animateHowWeWorkText ? 0 : 1000,
             opacity: animateHowWeWorkText ? 1 : 0,
           }}
@@ -199,9 +146,10 @@ const Homepage = () => {
           {cardArray.map((card) => card)}
         </motion.div>
         <motion.div
-          onViewportEnter={handleHowWeWorkBtn}
-          initial={{ scale: 0, opacity: 0 }}
+          onViewportEnter={() => setAnimateHowWeWorkBtn(true)}
+          initial={{ display: "none", scale: 0, opacity: 0 }}
           animate={{
+            display: animateHowWeWorkBtn ? "flex" : "none",
             scale: animateHowWeWorkBtn ? 1 : 0,
             opacity: animateHowWeWorkBtn ? 1 : 0,
           }}
@@ -210,55 +158,35 @@ const Homepage = () => {
         >
           <ReadMoreBtn variant="secondary" />
         </motion.div>
-        <motion.p className={stl.description}>
-          <span className={stl.descr}>
-            <span className={stl.primary}>3</span>
-            <span className={stl.secondary}>OFFICES</span>
-          </span>
-          <span className={stl.descr}>
-            <span className={stl.primary}>3</span>
-            <span className={stl.secondary}>OFFICES</span>
-          </span>
-          <span className={stl.descr}>
-            <span className={stl.primary}>3</span>
-            <span className={stl.secondary}>OFFICES</span>
-          </span>
+        <motion.p
+          onViewportEnter={() => setAnimateBriefInfo(true)}
+          className={stl.description}
+        >
+          {briefInfo.map((item, i) => (
+            <motion.span
+              initial={{ display: "none", opacity: 0, y: 100 }}
+              animate={{
+                display: animateBriefInfo ? "flex" : "none",
+                opacity: animateBriefInfo ? 1 : 0,
+                y: animateBriefInfo ? 0 : 200,
+              }}
+              key={i}
+              className={stl.descr}
+            >
+              <span className={stl.primary}>{item.num}</span>
+              <span className={stl.secondary}>{item.name}</span>
+            </motion.span>
+          ))}
         </motion.p>
       </motion.div>
       <div className={stl.career}>
         <h1 className={stl.title}>We hire and nurture top talent!</h1>
+        <CareersSection />
         <motion.div
-          onViewportEnter={handleCareersText}
-          className={stl.container}
-        >
-          <motion.p
-            initial={{ x: -500 }}
-            animate={{ x: animateCareersContent ? 0 : -500 }}
-            className={stl.desc}
-          >
-            Exercitation sint cillum exercitation eiusmod non fugiat dolor
-            commodo culpa ea consectetur minim. Adipisicing amet laborum ea
-            voluptate nulla amet nisi nulla nulla eu elit deserunt magna nulla.
-            Nisi occaecat consequat proident proident nisi culpa excepteur
-            commodo ex enim commodo.
-          </motion.p>
-          <motion.span
-            initial={{ x: 500 }}
-            animate={{ x: animateCareersContent ? 0 : 500 }}
-          >
-            <Image
-              src={`${CareerImage.src}`}
-              width={100}
-              height={100}
-              alt="career-image"
-              className={stl.img}
-            />
-          </motion.span>
-        </motion.div>
-        <motion.div
-          onViewportEnter={handleCareersBtn}
-          initial={{ scale: 0, opacity: 0 }}
+          onViewportEnter={() => setAnimateCareersBtn(true)}
+          initial={{ display: "none", scale: 0, opacity: 0 }}
           animate={{
+            display: animateCareersBtn ? "flex" : "none",
             scale: animateCareersBtn ? 1 : 0,
             opacity: animateCareersBtn ? 1 : 0,
           }}

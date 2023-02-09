@@ -1,0 +1,50 @@
+@import "styles/common";
+
+.container {
+  .weAreHiring {
+    .info {
+      @extend .flexColCen;
+      padding: 5rem 4rem;
+      gap: 3rem;
+
+      .desc {
+        width: 50%;
+        color: rgba(0, 0, 0, 0.7);
+        font-family: "Itim", cursive;
+        font-size: 1.3rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .container .weAreHiring {
+    .info {
+      .title {
+        text-align: center;
+        width: 100%;
+      }
+      .desc {
+        width: 80%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 670px) {
+  .container .weAreHiring .info .desc {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .container .weAreHiring {
+    width: 100vw;
+  }
+}
+
+@media screen and (max-width: 475px) {
+  .container .weAreHiring .info {
+    padding: 4rem 1rem;
+  }
+}

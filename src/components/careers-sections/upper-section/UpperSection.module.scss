@@ -1,3 +1,5 @@
+@import "styles/common";
+
 .careersSecCont {
   .section {
     height: 100%;
@@ -9,8 +11,7 @@
     padding: 7rem 4rem;
 
     .text {
-      display: flex;
-      flex-direction: column;
+      @extend .flexCol;
       justify-content: space-evenly;
       width: 45%;
 
@@ -23,7 +24,9 @@
     }
 
     .imgContainer {
-      width: 45%;
+      width: 40%;
+      overflow: hidden;
+      border-radius: 2rem;
 
       .img {
         width: 100%;

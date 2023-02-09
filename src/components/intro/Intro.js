@@ -34,16 +34,16 @@ const Intro = ({
       />
       <div className={stl.info}>
         <motion.h1
-          initial={{ x: 1800, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
+          initial={{ display: "none", x: 1800, opacity: 0 }}
+          animate={{ display: "block", x: 0, opacity: 1 }}
           transition={{ delay: transitionDelayHeading }}
           className={stl.main}
         >
           {heading}
         </motion.h1>
         <motion.div
-          initial={{ x: 1800, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
+          initial={{ display: "none", x: 1800, opacity: 0 }}
+          animate={{ display: "block", x: 0, opacity: 1 }}
           transition={{ delay: transitionDelayDesc }}
           className={stl.content}
         >
@@ -51,12 +51,13 @@ const Intro = ({
         </motion.div>
         <div className={stl.btnContainer}>
           <motion.button
-            initial={{ y: 150, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
+            initial={{ display: "none", y: 150, opacity: 0 }}
+            animate={{ display: "flex", y: 0, opacity: 1 }}
             transition={{ delay: 0.2 }}
             onMouseOver={() => setShowArrow(true)}
             onMouseOut={() => setShowArrow(false)}
             onClick={() => console.log("Clicked...")}
+            className={stl.btn}
           >
             {btnText} {showArrow && <span>{icon}</span>}
           </motion.button>

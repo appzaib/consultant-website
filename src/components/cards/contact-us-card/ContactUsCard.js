@@ -1,5 +1,7 @@
+import { useState } from "react";
 import clsx from "clsx";
 import PropTypes from "prop-types";
+import { motion } from "framer-motion";
 
 import PhoneIcon from "@assets/phone.svg";
 
@@ -14,9 +16,23 @@ const ContactUsCard = ({
   icon,
   customClass,
 }) => {
+  const [animation, setAnimation] = useState(false);
+
   return (
-    <div className={clsx(stl.contCardContainer, customClass)}>
-      <div style={{ width: width, height: height }} className={stl.contactCard}>
+    <motion.div
+      onViewportEnter={() => setAnimation(true)}
+      className={clsx(stl.contCardContainer, customClass)}
+    >
+      <motion.div
+        initial={{ display: "none", opacity: 0, y: -1000 }}
+        animate={{
+          display: animation ? "flex" : "none",
+          opacity: animation ? 1 : 0,
+          y: animation ? 0 : -1000,
+        }}
+        style={{ width: width, height: height }}
+        className={stl.contactCard}
+      >
         <h1 className={stl.heading}>{heading}</h1>
         {desc && <p className={stl.desc}>{desc}</p>}
         <div className={stl.btnContainer}>
@@ -24,8 +40,8 @@ const ContactUsCard = ({
             {icon} {btnText}
           </button>
         </div>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 };
 

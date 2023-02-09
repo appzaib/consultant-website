@@ -9,7 +9,7 @@ import HeartIcon from "@assets/heart.svg";
 import stl from "./Card.module.scss";
 
 const Card = ({
-  cstmKey,
+  background,
   variant,
   icon,
   imgSrc,
@@ -23,19 +23,21 @@ const Card = ({
 }) => {
   const [animation, setAnimation] = useState(false);
 
-  const handleCardAnimation = () => setAnimation(true);
-
   return (
     <motion.div
-      onViewportEnter={handleCardAnimation}
+      onViewportEnter={() => setAnimation(true)}
       className={stl.cardContainer}
-      key={cstmKey}
     >
       <motion.div
-        initial={{ y: 300, opacity: 0 }}
-        animate={{ y: animation ? 0 : 300, opacity: animation ? 1 : 0 }}
+        initial={{ display: "none", y: 300, opacity: 0 }}
+        animate={{
+          display: animation ? "flex" : "none",
+          y: animation ? 0 : 300,
+          opacity: animation ? 1 : 0,
+        }}
+        whileHover={{ y: -10, boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px" }}
         transition={{ delay: transitionDelay, duration: 0.3 }}
-        style={{ width: width, height: height }}
+        style={{ width: width, height: height, background: background }}
         className={clsx(stl.card, stl[variant], customClass)}
       >
         {icon !== "undefined" && <div className={stl.icon}>{icon}</div>}

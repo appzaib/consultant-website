@@ -6,9 +6,9 @@ import { motion } from "framer-motion";
 
 import CareersImg from "@assets/careers-3.jpg";
 
-import stl from "./CareersSection.module.scss";
+import stl from "./UpperSection.module.scss";
 
-const CareersSection = ({
+const UpperSection = ({
   imgSrc,
   imgAlt,
   heading,
@@ -26,16 +26,24 @@ const CareersSection = ({
       {imgPosition === "left" ? (
         <div className={stl.section}>
           <motion.div
-            initial={{ opacity: 0, x: -500 }}
-            animate={{ opacity: animation ? 1 : 0, x: animation ? 0 : -500 }}
+            initial={{ display: "none", opacity: 0, x: -500 }}
+            animate={{
+              display: animation ? "flex" : "none",
+              opacity: animation ? 1 : 0,
+              x: animation ? 0 : -500,
+            }}
             className={stl.text}
           >
             <h1 className={stl.heading}>{heading}</h1>
             <p className={stl.desc}>{desc}</p>
           </motion.div>
           <motion.div
-            initial={{ opacity: 0, x: 500 }}
-            animate={{ opacity: animation ? 1 : 0, x: animation ? 0 : 500 }}
+            initial={{ display: "none", opacity: 0, x: 500 }}
+            animate={{
+              display: animation ? "block" : "none",
+              opacity: animation ? 1 : 0,
+              x: animation ? 0 : 500,
+            }}
             className={stl.imgContainer}
           >
             <Image
@@ -50,8 +58,12 @@ const CareersSection = ({
       ) : (
         <div className={stl.section}>
           <motion.div
-            initial={{ opacity: 0, x: -500 }}
-            animate={{ opacity: animation ? 1 : 0, x: animation ? 0 : -500 }}
+            initial={{ display: "none", opacity: 0, x: -500 }}
+            animate={{
+              display: animation ? "block" : "none",
+              opacity: animation ? 1 : 0,
+              x: animation ? 0 : -500,
+            }}
             className={stl.imgContainer}
           >
             <Image
@@ -63,8 +75,12 @@ const CareersSection = ({
             />
           </motion.div>
           <motion.div
-            initial={{ opacity: 0, x: 500 }}
-            animate={{ opacity: animation ? 1 : 0, x: animation ? 0 : 500 }}
+            initial={{ display: "none", opacity: 0, x: 500 }}
+            animate={{
+              display: animation ? "flex" : "none",
+              opacity: animation ? 1 : 0,
+              x: animation ? 0 : 500,
+            }}
             className={stl.text}
           >
             <h1 className={stl.heading}>{heading}</h1>
@@ -76,7 +92,7 @@ const CareersSection = ({
   );
 };
 
-CareersSection.defaultProps = {
+UpperSection.defaultProps = {
   imgSrc: `${CareersImg.src}`,
   imgAlt: "careers-img",
   imgPosition: "right",
@@ -84,7 +100,7 @@ CareersSection.defaultProps = {
   desc: "Proident laborum cupidatat laborum mollit qui ea esse. Cupidatat fugiat tempor enim et enim Lorem dolore et consectetur ut ex qui anim. Aliquip quis voluptate tempor laboris. Laboris quis tempor veniam eiusmod duis ea proident non duis anim proident. Ut non pariatur ullamco dolore fugiat pariatur ipsum aliqua ipsum ut aute.",
 };
 
-CareersSection.propTypes = {
+UpperSection.propTypes = {
   imgSrc: PropTypes.string,
   imgAlt: PropTypes.string,
   imgPosition: PropTypes.string,
@@ -93,4 +109,4 @@ CareersSection.propTypes = {
   customClass: PropTypes.string,
 };
 
-export default CareersSection;
+export default UpperSection;

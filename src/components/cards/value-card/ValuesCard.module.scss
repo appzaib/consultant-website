@@ -1,0 +1,29 @@
+@import "styles/common";
+
+.cardContainer {
+  .valueCard {
+    @extend .flexCol;
+    align-items: center;
+    padding: 1rem;
+    justify-content: space-evenly;
+    width: 380px;
+    height: 500px;
+    border: 1px solid transparent;
+
+    .desc {
+      font-size: 1.3rem;
+      font-family: "Itim", cursive;
+      color: rgba(0, 0, 0, 0.7);
+    }
+
+    .btn {
+      all: unset;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+
+    &:hover {
+      border-color: #3333;
+    }
+  }
+}

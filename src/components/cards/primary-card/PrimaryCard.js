@@ -19,7 +19,6 @@ const PrimaryCard = ({
   heading,
   description,
   list,
-  cstmKey,
   btnText,
   link,
   transitionDelay,
@@ -27,8 +26,16 @@ const PrimaryCard = ({
 }) => {
   const [flip, setFlip] = useState(false);
   const [animation, setAnimation] = useState(false);
+  const [transDelay, setTransDelay] = useState(false);
 
-  const handleAnimation = () => setAnimation(true);
+  const handleAnimation = () => {
+    setAnimation(true);
+    setTransDelay(true);
+
+    setTimeout(() => {
+      setTransDelay(false);
+    }, 200);
+  };
 
   return (
     <motion.div
@@ -37,16 +44,16 @@ const PrimaryCard = ({
       onMouseOut={() => setFlip(false)}
       transition={{ delay: transitionDelay }}
       className={clsx(stl.primaryCard, customClass)}
-      key={cstmKey}
     >
       <motion.div
-        initial={{ y: 250, opacity: 0 }}
+        initial={{ display: "none", y: 250, opacity: 0 }}
         animate={{
+          display: animation ? "block" : "none",
           y: animation ? 0 : 250,
           rotateY: flip ? 180 : 0,
           opacity: animation ? 1 : 0,
         }}
-        transition={{ delay: transitionDelay }}
+        transition={{ delay: transDelay ? transitionDelay : 0 }}
         exit={{ rotateY: 90 }}
         className={stl.cardFront}
       >

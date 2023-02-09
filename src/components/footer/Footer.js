@@ -15,40 +15,28 @@ import LinkedInIcon from "@assets/linkedIn.svg";
 import LinkedInIcon2 from "@assets/linkedIn-2.svg";
 import GithubIcon from "@assets/github.svg";
 import GithubIcon2 from "@assets/github-2.svg";
-
-import stl from "./Footer.module.scss";
 import ContactUsCard from "@components/cards/contact-us-card";
 
-const Footer = ({
-  usefulLinkTitle1,
-  usefulLinks1,
-  usefulLinkTitle2,
-  usefulLinks2,
-  usefulLinkTitle3,
-  usefulLinks3,
-}) => {
-  const [animateUpperFooter, setAnimateUpperFooter] = useState(false);
-  const [animateLowerFooter, setAnimateLowerFooter] = useState(false);
+import stl from "./Footer.module.scss";
 
-  const handleUpperFooter = () => setAnimateUpperFooter(true);
-
-  const handleLowerFooter = () => setAnimateLowerFooter(true);
+const Footer = ({ usefulLinks, showContactCard }) => {
+  const [animation, setAnimation] = useState(false);
 
   return (
-    <motion.div
-      onViewportEnter={handleUpperFooter}
-      className={stl.footerContainer}
-      id="footer"
-    >
+    <motion.div className={stl.footerContainer} id="footer">
       <div className={stl.section}>
-        <ContactUsCard customClass={stl.contCard} />
+        {showContactCard && <ContactUsCard customClass={stl.contCard} />}
       </div>
-      <motion.div onViewportEnter={handleLowerFooter} className={stl.footer}>
+      <motion.div
+        onViewportEnter={() => setAnimation(true)}
+        className={stl.footer}
+      >
         <motion.div
-          initial={{ x: -500, opacity: 0 }}
+          initial={{ display: "none", x: -500, opacity: 0 }}
           animate={{
-            x: animateLowerFooter ? 0 : -500,
-            opacity: animateLowerFooter ? 1 : 0,
+            display: animation ? "flex" : "none",
+            x: animation ? 0 : -500,
+            opacity: animation ? 1 : 0,
           }}
           className={stl.section1}
         >
@@ -76,58 +64,36 @@ const Footer = ({
           <span className={stl.company}>Business Consultation &copy; 2023</span>
         </motion.div>
         <motion.div
-          initial={{ y: 500, opacity: 0 }}
+          initial={{ display: "none", y: 500, opacity: 0 }}
           animate={{
-            y: animateLowerFooter ? 0 : 500,
-            opacity: animateLowerFooter ? 1 : 0,
+            display: animation ? "flex" : "none",
+            y: animation ? 0 : 500,
+            opacity: animation ? 1 : 0,
           }}
           className={stl.section2}
         >
-          <div className={stl.col}>
-            <span
-              onClick={() => console.log("Clicked...")}
-              className={stl.head}
-            >
-              {usefulLinkTitle1}
-            </span>
-            {usefulLinks1.map((item, i) => (
-              <span key={i} onClick={() => console.log("Clicked...")}>
+          {usefulLinks.map((item, i) => (
+            <div key={i} className={stl.col}>
+              <span
+                onClick={() => console.log("Clicked...")}
+                className={stl.head}
+              >
                 {item.name}
               </span>
-            ))}
-          </div>
-          <div className={stl.col}>
-            <span
-              onClick={() => console.log("Clicked...")}
-              className={stl.head}
-            >
-              {usefulLinkTitle2}
-            </span>
-            {usefulLinks2.map((item, i) => (
-              <span key={i} onClick={() => console.log("Clicked...")}>
-                {item.name}
-              </span>
-            ))}
-          </div>
-          <div className={stl.col}>
-            <span
-              onClick={() => console.log("Clicked...")}
-              className={stl.head}
-            >
-              {usefulLinkTitle3}
-            </span>
-            {usefulLinks3.map((item, i) => (
-              <span key={i} onClick={() => console.log("Clicked...")}>
-                {item.name}
-              </span>
-            ))}
-          </div>
+              {item.childs.map((item, i) => (
+                <span key={i} onClick={() => console.log("Clicked...")}>
+                  {item.childName}
+                </span>
+              ))}
+            </div>
+          ))}
         </motion.div>
         <motion.div
-          initial={{ x: 500, opacity: 0 }}
+          initial={{ display: "none", x: 500, opacity: 0 }}
           animate={{
-            x: animateLowerFooter ? 0 : 500,
-            opacity: animateLowerFooter ? 1 : 0,
+            display: animation ? "flex" : "none",
+            x: animation ? 0 : 500,
+            opacity: animation ? 1 : 0,
           }}
           className={stl.section3}
         >
@@ -175,45 +141,53 @@ const Footer = ({
 };
 
 Footer.defaultProps = {
-  usefulLinkTitle1: "Lorem",
-  usefulLinkTitle2: "Lorem",
-  usefulLinkTitle3: "Lorem",
-  usefulLinks1: [
-    { name: "Ipsum1.1", link: "" },
-    { name: "Ipsum1.2", link: "" },
-    { name: "Ipsum1.3", link: "" },
-    { name: "Ipsum1.4", link: "" },
-    { name: "Ipsum1.5", link: "" },
-    { name: "Ipsum1.6", link: "" },
-    { name: "Ipsum1.7", link: "" },
-  ],
-  usefulLinks2: [
-    { name: "Ipsum2.1", link: "" },
-    { name: "Ipsum2.2", link: "" },
-    { name: "Ipsum2.3", link: "" },
-    { name: "Ipsum2.4", link: "" },
-    { name: "Ipsum2.5", link: "" },
-    { name: "Ipsum2.6", link: "" },
-    { name: "Ipsum2.7", link: "" },
-  ],
-  usefulLinks3: [
-    { name: "Ipsum3.1", link: "" },
-    { name: "Ipsum3.2", link: "" },
-    { name: "Ipsum3.3", link: "" },
-    { name: "Ipsum3.4", link: "" },
-    { name: "Ipsum3.5", link: "" },
-    { name: "Ipsum3.6", link: "" },
-    { name: "Ipsum3.7", link: "" },
+  showContactCard: true,
+  usefulLinks: [
+    {
+      name: "Lorem",
+      link: "",
+      childs: [
+        { childName: "Ipsum1.1", childLink: "" },
+        { childName: "Ipsum1.2", childLink: "" },
+        { childName: "Ipsum1.3", childLink: "" },
+        { childName: "Ipsum1.4", childLink: "" },
+        { childName: "Ipsum1.5", childLink: "" },
+        { childName: "Ipsum1.6", childLink: "" },
+        { childName: "Ipsum1.7", childLink: "" },
+      ],
+    },
+    {
+      name: "Lorem",
+      link: "",
+      childs: [
+        { childName: "Ipsum2.1", childLink: "" },
+        { childName: "Ipsum2.2", childLink: "" },
+        { childName: "Ipsum2.3", childLink: "" },
+        { childName: "Ipsum2.4", childLink: "" },
+        { childName: "Ipsum2.5", childLink: "" },
+        { childName: "Ipsum2.6", childLink: "" },
+        { childName: "Ipsum2.7", childLink: "" },
+      ],
+    },
+    {
+      name: "Lorem",
+      link: "",
+      childs: [
+        { childName: "Ipsum3.1", childLink: "" },
+        { childName: "Ipsum3.2", childLink: "" },
+        { childName: "Ipsum3.3", childLink: "" },
+        { childName: "Ipsum3.4", childLink: "" },
+        { childName: "Ipsum3.5", childLink: "" },
+        { childName: "Ipsum3.6", childLink: "" },
+        { childName: "Ipsum3.7", childLink: "" },
+      ],
+    },
   ],
 };
 
 Footer.propTypes = {
-  usefulLinkTitle1: PropTypes.string,
-  usefulLinks1: PropTypes.array,
-  usefulLinkTitle2: PropTypes.string,
-  usefulLinks2: PropTypes.array,
-  usefulLinkTitle3: PropTypes.string,
-  usefulLinks3: PropTypes.array,
+  showContactCard: PropTypes.bool,
+  usefulLinks: PropTypes.array,
 };
 
 export default Footer;

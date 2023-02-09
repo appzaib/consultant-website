@@ -22,24 +22,20 @@ const SearchBox = ({ categoryList, customClass }) => {
     setTimeout(() => setDelay(false), 300);
   };
 
-  const hideDropdown = () => {
-    setShowDropdown(false);
-  };
-
-  const animateSearchBox = () => {
-    setAnimation(true);
-  };
-
-  // useTypingAnimtion();
+  useTypingAnimtion();
 
   return (
     <motion.div
-      onViewportEnter={animateSearchBox}
+      onViewportEnter={() => setAnimation(true)}
       className={clsx(stl.searchBoxContainer, customClass)}
     >
       <motion.div
-        initial={{ opacity: 0, y: 300 }}
-        animate={{ opacity: animation ? 1 : 0, y: animation ? 0 : 300 }}
+        initial={{ display: "none", opacity: 0, y: 300 }}
+        animate={{
+          display: animation ? "flex" : "none",
+          opacity: animation ? 1 : 0,
+          y: animation ? 0 : 300,
+        }}
         transition={{ duration: 0.3 }}
         className={stl.searchBox}
       >
@@ -65,14 +61,15 @@ const SearchBox = ({ categoryList, customClass }) => {
             outline: "3px solid dodgerblue",
           }}
           onMouseOver={showDropdown}
-          onMouseOut={hideDropdown}
+          onMouseOut={() => setShowDropdown(false)}
           id="category"
           className={stl.category}
         >
           {value}
           <motion.ul
-            initial={{ opacity: 0, y: -2000 }}
+            initial={{ display: "none", opacity: 0, y: -2000 }}
             animate={{
+              display: showDropDown ? "flex" : "none",
               opacity: showDropDown ? 1 : 0,
               y: showDropDown ? 0 : -2000,
             }}
@@ -86,8 +83,9 @@ const SearchBox = ({ categoryList, customClass }) => {
                   x: 20,
                 }}
                 whileTap={{ scale: 1.05 }}
-                initial={{ y: -200, opacity: 0 }}
+                initial={{ display: "none", y: -200, opacity: 0 }}
                 animate={{
+                  display: showDropDown ? "block" : "none",
                   y: showDropDown ? 0 : -200,
                   opacity: showDropDown ? 1 : 0,
                 }}
