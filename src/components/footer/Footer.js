@@ -17,6 +17,7 @@ import GithubIcon from "@assets/github.svg";
 import GithubIcon2 from "@assets/github-2.svg";
 
 import stl from "./Footer.module.scss";
+import ContactUsCard from "@components/cards/contact-us-card";
 
 const Footer = ({
   usefulLinkTitle1,
@@ -40,22 +41,7 @@ const Footer = ({
       id="footer"
     >
       <div className={stl.section}>
-        <div
-          className={clsx(
-            stl.content,
-            animateUpperFooter ? stl.animate : undefined
-          )}
-        >
-          <h1 className={stl.heading}>Start a Project With Us</h1>
-          <div className={stl.btnContainer}>
-            <button
-              onClick={() => console.log("Clicked...")}
-              className={stl.btn}
-            >
-              <PhoneIcon /> Contact Us
-            </button>
-          </div>
-        </div>
+        <ContactUsCard customClass={stl.contCard} />
       </div>
       <motion.div onViewportEnter={handleLowerFooter} className={stl.footer}>
         <motion.div

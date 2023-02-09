@@ -22,12 +22,12 @@
     color: #fff;
     @extend .flexColCen;
 
-    .heading,
-    .desc {
+    .main,
+    .content {
       width: 50%;
     }
 
-    .desc {
+    .content {
       margin-top: 2rem;
       font-size: 2rem;
     }
@@ -41,7 +41,7 @@
       font-size: 1.7rem;
       padding: 10px 1rem;
       cursor: pointer;
-      transition: all 0.3s;
+      transition: all 0.2s;
 
       @media (hover: hover) {
         &:hover {

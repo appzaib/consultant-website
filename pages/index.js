@@ -1,4 +1,5 @@
 import CareersPage from "@components/careers-page";
+import Footer from "@components/footer";
 import Homepage from "@components/home-page";
 import Navbar from "@components/navbar";
 import Homepage from "@components/home";
@@ -9,7 +10,7 @@ const Home = () => {
     <main>
       <Navbar />
       <CareersPage />
-      {/* <Homepage /> */}
+      <Footer />
     </main>
   );
 };

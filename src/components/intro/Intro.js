@@ -2,6 +2,7 @@ import { useState } from "react";
 import Image from "next/image";
 import clsx from "clsx";
 import PropTypes from "prop-types";
+import { motion } from "framer-motion";
 
 import Imag from "@assets/consulting.jpg";
 import ArrowNext from "@assets/arrow-right-2.svg";
@@ -16,6 +17,8 @@ const Intro = ({
   btnText,
   icon,
   link,
+  transitionDelayHeading,
+  transitionDelayDesc,
   customClass,
 }) => {
   const [showArrow, setShowArrow] = useState(false);
@@ -30,23 +33,33 @@ const Intro = ({
         className={stl.bgImage}
       />
       <div className={stl.info}>
-        <h1 className={stl.heading}>{heading}</h1>
-        <div className={stl.desc}>{desc}</div>
+        <motion.h1
+          initial={{ x: 1800, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ delay: transitionDelayHeading }}
+          className={stl.main}
+        >
+          {heading}
+        </motion.h1>
+        <motion.div
+          initial={{ x: 1800, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ delay: transitionDelayDesc }}
+          className={stl.content}
+        >
+          {desc}
+        </motion.div>
         <div className={stl.btnContainer}>
-          <button
-            onMouseOver={() => {
-              setShowArrow(true);
-            }}
-            onMouseOut={() => {
-              setShowArrow(false);
-            }}
-            onClick={() => {
-              console.log("Clicked...");
-              // location.href = link;
-            }}
+          <motion.button
+            initial={{ y: 150, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.2 }}
+            onMouseOver={() => setShowArrow(true)}
+            onMouseOut={() => setShowArrow(false)}
+            onClick={() => console.log("Clicked...")}
           >
             {btnText} {showArrow && <span>{icon}</span>}
-          </button>
+          </motion.button>
         </div>
       </div>
     </div>
