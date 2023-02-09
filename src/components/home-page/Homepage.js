@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
@@ -8,10 +7,9 @@ import CaseStudyCard from "@components/cards/case-study-card";
 import ReadMoreBtn from "@components/read-more-btn";
 import Card from "@components/cards/card";
 import Footer from "@components/footer";
+import Intro from "@components/intro";
 
-import BGImage from "@assets/consulting.jpg";
-import CareerImage from "@assets/career.jpeg";
-import ArrowNext from "@assets/arrow-right-2.svg";
+import CareerImage from "@assets/careers.jpeg";
 
 import stl from "./Homepage.module.scss";
 

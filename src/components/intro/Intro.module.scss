@@ -1,0 +1,103 @@
+@import "styles/common";
+
+.intro {
+  height: 100vh;
+
+  .bgImage {
+    height: 100%;
+    width: 100%;
+  }
+
+  .info {
+    position: absolute;
+    font-size: 2rem;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(
+      -45deg,
+      rgba(30, 143, 255, 0.5),
+      rgba(5, 152, 98, 0.5)
+    );
+    color: #fff;
+    @extend .flexColCen;
+
+    .heading,
+    .desc {
+      width: 50%;
+    }
+
+    .desc {
+      margin-top: 2rem;
+      font-size: 2rem;
+    }
+
+    button {
+      all: unset;
+      @extend .alignCen;
+      gap: 0 5px;
+      margin-top: 3rem;
+      border: 3px solid #fff;
+      font-size: 1.7rem;
+      padding: 10px 1rem;
+      cursor: pointer;
+      transition: all 0.3s;
+
+      @media (hover: hover) {
+        &:hover {
+          border-color: transparent;
+          backdrop-filter: blur(4px);
+          transform: scale(1.1);
+          box-shadow: 0 0 10px 6px rgba(51, 51, 51, 0.596);
+        }
+      }
+
+      &:active {
+        transform: scale(1);
+      }
+
+      & span {
+        width: 25px;
+
+        svg {
+          animation: show-arrow 2s infinite;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .intro {
+    height: 110vh;
+
+    .info {
+      height: 110vh;
+
+      .heading,
+      .desc {
+        width: 75%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .intro {
+    height: 120vh;
+
+    .info {
+      height: 120vh;
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .intro {
+    .info {
+      .heading {
+        font-size: 3.5rem;
+      }
+    }
+  }
+}
