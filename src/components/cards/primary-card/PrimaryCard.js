@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { useState } from "react";
 import clsx from "clsx";
 import PropTypes from "prop-types";
 import { motion } from "framer-motion";
@@ -9,7 +10,6 @@ import WebDevImage from "@assets/web-dev.webp";
 import WebDevImage2 from "@assets/web-dev-2.png";
 
 import stl from "./PrimaryCard.module.scss";
-import { useState } from "react";
 
 const PrimaryCard = ({
   imgSrc,

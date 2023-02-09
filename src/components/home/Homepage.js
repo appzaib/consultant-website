@@ -7,6 +7,7 @@ import Slider from "@components/slider";
 import CaseStudyCard from "@components/cards/case-study-card";
 import ReadMoreBtn from "@components/read-more-btn";
 import Card from "@components/cards/card";
+import Footer from "@components/footer";
 
 import BGImage from "@assets/consulting.jpg";
 import CareerImage from "@assets/career.jpeg";

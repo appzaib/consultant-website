@@ -113,7 +113,6 @@
         font-size: 1.3rem;
       }
     }
-
     .reviews {
       @extend .flexColCen;
       flex-wrap: wrap;
@@ -143,12 +142,7 @@
     .container {
       @extend .flexCenter;
       flex-wrap: wrap;
-      gap: 5rem 5rem;
-      transition: all 0.3s;
-    }
-
-    .showCases {
-      transform: translateX(0);
+      gap: 7rem 5rem;
     }
 
     .btnContainer {

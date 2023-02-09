@@ -1,6 +1,6 @@
 import { useState } from "react";
 import clsx from "clsx";
-import { animate, motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 import Logo from "@assets/logo.svg";
 import ArrowDown from "@assets/arrow-down.svg";
