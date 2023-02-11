@@ -24,7 +24,17 @@ const Intro = ({
 
   return (
     <div
-      style={{ backgroundImage: `url(${imgSrc})` }}
+      style={{
+        background: `url(${BGImg.src}) , linear-gradient(
+          -45deg,
+          rgba(30, 143, 255, 0.5),
+          rgba(5, 152, 98, 0.5)
+          )`,
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundBlendMode: "multiply",
+      }}
       className={clsx(stl.intro, customClass)}
     >
       <div className={stl.content}>
