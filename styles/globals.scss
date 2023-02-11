@@ -9,7 +9,7 @@
 
 html,
 body {
-  max-width: 100vw;
+  /* max-width: 100vw; */
   overflow-x: hidden;
   /* font-family: "Itim", cursive; */
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
@@ -18,13 +18,13 @@ body {
 
 body {
   color: rgb(0, 0, 0);
-  background: rgb(255, 255, 255);
+  background: #f4f4f4;
 
   /* For Temporary Use */
-  /* height: 100vh; */
-  /* display: flex; */
-  /* align-items: center; */
-  /* justify-content: center; */
+  // height: 100vh;
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
 }
 
 body::-webkit-scrollbar {

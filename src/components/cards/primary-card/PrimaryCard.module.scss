@@ -6,6 +6,19 @@
   perspective: 1000px;
   position: relative;
 
+  @media (hover: hover) {
+    &:hover,
+    &:focus-within {
+      .cardFront {
+        transform: rotateY(180deg);
+      }
+
+      .cardBack {
+        transform: rotateY(0);
+      }
+    }
+  }
+
   .cardFront,
   .cardBack {
     position: absolute;

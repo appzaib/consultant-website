@@ -1,0 +1,80 @@
+@import "styles/common";
+
+.careersSecCont {
+  .section {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 7rem;
+    padding: 7rem 4rem;
+
+    .text {
+      @extend .flexCol;
+      justify-content: space-evenly;
+      width: 45%;
+
+      .desc {
+        padding: 1rem;
+        @extend .description;
+      }
+    }
+
+    .imgContainer {
+      width: 40%;
+      overflow: hidden;
+      border-radius: 2rem;
+
+      .img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1250px) {
+  .careersSecCont .section {
+    gap: 3rem;
+    padding: 5rem 2rem;
+
+    .text {
+      width: 40%;
+    }
+
+    .imgContainer {
+      width: 55%;
+    }
+  }
+}
+
+@media screen and (max-width: 1010px) {
+  .careersSecCont .section {
+    .text,
+    .imgContainer {
+      width: 70%;
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .careersSecCont .section {
+    .text,
+    .imgContainer {
+      width: 95%;
+    }
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .careersSecCont .section {
+    padding: 4rem 10px;
+
+    .text {
+      .imgContainer {
+        width: 100%;
+      }
+    }
+  }
+}

@@ -1,13 +1,17 @@
-import Navbar from "@components/navbar";
-import Homepage from "@components/home";
+import CareersPage from "@components/careers-page";
 import Footer from "@components/footer";
+import Homepage from "@components/home-page";
+import Navbar from "@components/navbar";
 
-const Home = () => (
-  <main>
-    <Navbar />
-    <Homepage />
-    <Footer />
-  </main>
-);
+const Home = () => {
+  return (
+    <main>
+      <Navbar />
+      <CareersPage />
+      {/* <Homepage /> */}
+      <Footer showContactCard={false} />
+    </main>
+  );
+};
 
 export default Home;

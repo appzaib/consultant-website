@@ -1,0 +1,93 @@
+@import url("https://fonts.googleapis.com/css2?family=Itim&display=swap");
+@import "styles/common";
+
+.contCardContainer {
+  .contactCard {
+    @extend .flexColCen;
+    height: auto;
+    width: 70vw;
+    background: dodgerblue;
+    padding: 2rem 0;
+    border-radius: 1rem;
+    box-shadow: 0 10px 20px 2px #333;
+    transition: width 0.3s;
+    color: #fff;
+
+    .heading {
+      font-size: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    .desc {
+      font-size: 1.3rem;
+      width: 70%;
+      text-align: center;
+    }
+
+    .btnContainer {
+      width: 100%;
+      margin-top: 3rem;
+      display: flex;
+      justify-content: center;
+
+      .btn {
+        all: unset;
+        width: max-content;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 1.3rem;
+        font-weight: 500;
+        background: #fff;
+        padding: 10px 1rem 10px 10px;
+        border-radius: 10px;
+        color: dodgerblue;
+        transition: all 0.3s;
+        cursor: pointer;
+        user-select: none;
+
+        @media (hover: hover) {
+          &:hover {
+            box-shadow: rgba(0, 0, 0, 0.7) 0px 3px 8px;
+            transform: scale(1.15);
+          }
+
+          &:active {
+            transform: scale(1.1);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .contCardContainer {
+    .contactCard {
+      width: 90vw;
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .contCardContainer {
+    .contactCard {
+      .heading {
+        font-size: 2.5rem;
+        margin: 10px 1rem;
+      }
+
+      .btnContainer {
+        margin-top: 1rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .contCardContainer {
+    .contactCard {
+      justify-content: space-evenly;
+    }
+  }
+}

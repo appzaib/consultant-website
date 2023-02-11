@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Ultra&display=swap");
+@import "styles/common";
+
+.recruitCard {
+  position: absolute;
+  margin: 20px;
+  padding: 20px;
+  width: 500px;
+  min-height: 250px;
+  @extend .flexCol;
+  gap: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.25);
+  transition: all 0.2s;
+  background: radial-gradient(#1fe4f5, #3fbafe);
+
+  .title {
+    color: #fff;
+  }
+
+  .desc {
+    color: #fff;
+    font-size: 1.3rem;
+  }
+
+  &:hover {
+    box-shadow: 0 6px 20px 8px rgba(0, 0, 0, 0.4);
+    transform: scale(1.01);
+  }
+}

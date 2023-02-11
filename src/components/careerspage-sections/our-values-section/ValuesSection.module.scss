@@ -1,0 +1,31 @@
+@import "styles/common";
+
+.ourValues {
+  padding: 4rem;
+
+  .heading {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 500;
+  }
+
+  .cardContainer {
+    margin-top: 5rem;
+    padding: 3rem;
+    @extend .flexCenter;
+    flex-wrap: wrap;
+    gap: 5rem;
+  }
+}
+
+@media screen and (max-width: 1110px) {
+  .ourValues {
+    padding: 4rem 0;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .ourValues .cardContainer {
+    padding: 3rem 1rem;
+    gap: 4rem 1rem;
+  }
+}

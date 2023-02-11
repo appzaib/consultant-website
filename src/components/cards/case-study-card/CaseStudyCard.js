@@ -11,7 +11,6 @@ import Img from "@assets/case-study-1.webp";
 import stl from "./CaseStudyCard.module.scss";
 
 const CaseStudyCard = ({
-  cstmKey,
   width,
   height,
   imgSrc,
@@ -25,17 +24,17 @@ const CaseStudyCard = ({
   const [showFullContent, setShowFullContent] = useState(false);
   const [animation, setAnimation] = useState(false);
 
-  const handleCardAnimation = () => setAnimation(true);
-
   return (
     <motion.div
-      onViewportEnter={handleCardAnimation}
+      onViewportEnter={() => setAnimation(true)}
       className={stl.caseCardContainer}
-      key={cstmKey}
     >
       <motion.div
         initial={{ y: 250, opacity: 0 }}
-        animate={{ y: animation ? 0 : 250, opacity: animation ? 1 : 0 }}
+        animate={{
+          y: animation ? 0 : 250,
+          opacity: animation ? 1 : 0,
+        }}
         transition={{ delay: transitionDelay, duration: 0.3 }}
         style={{ width: width, height: height }}
         onMouseOver={() => setShowFullContent(true)}

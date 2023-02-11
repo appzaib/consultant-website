@@ -1,0 +1,12 @@
+@import "styles/common";
+
+.blogSection {
+  padding: 5rem 0;
+  @extend .flexColCen;
+  gap: 7rem;
+
+  .heading {
+    width: 100%;
+    padding-left: 7rem;
+  }
+}

@@ -1,7 +1,8 @@
+import { useState } from "react";
 import Image from "next/image";
-import { useEffect, useState } from "react";
 import clsx from "clsx";
 import PropTypes from "prop-types";
+import { motion } from "framer-motion";
 
 import ProfilePic from "@assets/profile-pic.jpg";
 import Star from "@assets/star.svg";
@@ -16,44 +17,63 @@ const ReviewCard = ({
   info,
   customClass,
 }) => {
+  const [animation, setAnimation] = useState(false);
+
   return (
-    <div
-      onClick={() => (location.href = "/reviews1")}
-      id="card"
-      className={clsx(stl.reviewCard, customClass)}
+    <motion.div
+      onViewportEnter={() => setAnimation(true)}
+      className={stl.container}
     >
-      <div className={stl.imgContainer}>
-        <Image
-          src={imgSrc}
-          width={100}
-          height={100}
-          alt={imgAlt}
-          className={stl.img}
-        />
-      </div>
-      <div className={stl.reviewStars}>
-        <span className={stl.num}>{reviewRating}</span>
-        <span id="stars" className={stl.stars}>
-          <span id="1" className={reviewRating >= 1 ? stl.active : undefined}>
-            <Star />
+      <motion.div
+        initial={{ opacity: 0, y: 300 }}
+        animate={{ opacity: animation ? 1 : 0, y: animation ? 0 : 300 }}
+        whileHover={{ scale: 1.05 }}
+        transition={{ type: "spring" }}
+        onClick={() => console.log("Clicked...")}
+        id="card"
+        className={clsx(stl.reviewCard, customClass)}
+      >
+        <motion.div
+          initial={{ opacity: 0, x: -500, y: 300 }}
+          animate={{
+            opacity: animation ? 1 : 0,
+            x: animation ? 0 : -500,
+            y: animation ? 0 : 300,
+          }}
+          className={stl.imgContainer}
+        >
+          <Image
+            src={imgSrc}
+            width={100}
+            height={100}
+            alt={imgAlt}
+            className={stl.img}
+          />
+        </motion.div>
+        <div className={stl.reviewStars}>
+          <span className={stl.num}>{reviewRating}</span>
+          <span id="stars" className={stl.stars}>
+            <span id="1" className={reviewRating >= 1 ? stl.active : undefined}>
+              <Star />
+            </span>
+            <span id="2" className={reviewRating >= 2 ? stl.active : undefined}>
+              <Star />
+            </span>
+            <span id="3" className={reviewRating >= 3 ? stl.active : undefined}>
+              <Star />
+            </span>
+            <span id="4" className={reviewRating >= 4 ? stl.active : undefined}>
+              <Star />
+            </span>
+            <span id="5" className={reviewRating >= 5 ? stl.active : undefined}>
+              <Star />
+            </span>
           </span>
-          <span id="2" className={reviewRating >= 2 ? stl.active : undefined}>
-            <Star />
-          </span>
-          <span id="3" className={reviewRating >= 3 ? stl.active : undefined}>
-            <Star />
-          </span>
-          <span id="4" className={reviewRating >= 4 ? stl.active : undefined}>
-            <Star />
-          </span>
-          <span id="5" className={reviewRating >= 5 ? stl.active : undefined}>
-            <Star />
-          </span>
-        </span>
-      </div>
-      <div className={stl.content}>{`" ${content} "`}</div>
-      <div className={stl.info}>{info}</div>
-    </div>
+        </div>
+        <div className={stl.content}>{`" ${content} "`}</div>
+        <div className={stl.info}>{info}</div>
+      </motion.div>
+    </motion.div>
   );
 };
 

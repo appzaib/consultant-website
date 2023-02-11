@@ -1,0 +1,46 @@
+@import "styles/common";
+
+.weAreHiring {
+  .info {
+    @extend .flexColCen;
+    padding: 5rem 4rem;
+    gap: 3rem;
+
+    .desc {
+      width: 50%;
+      @extend .description;
+    }
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .weAreHiring {
+    .info {
+      .title {
+        text-align: center;
+        width: 100%;
+      }
+      .desc {
+        width: 80%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 670px) {
+  .weAreHiring .info .desc {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .weAreHiring {
+    width: 100vw;
+  }
+}
+
+@media screen and (max-width: 475px) {
+  .weAreHiring .info {
+    padding: 4rem 1rem;
+  }
+}

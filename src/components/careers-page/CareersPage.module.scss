@@ -1,0 +1,9 @@
+@import "styles/common";
+
+.careersPage {
+  @extend .flexColCen;
+
+  .divider {
+    @extend .divider;
+  }
+}

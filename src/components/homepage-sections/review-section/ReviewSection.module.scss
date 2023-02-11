@@ -1,0 +1,50 @@
+@import "styles/common";
+
+.reviewSection {
+  @extend .flexColCen;
+  padding: 3rem 5rem;
+  gap: 5rem;
+
+  .text {
+    width: 100%;
+    @extend .flexColCen;
+    gap: 3rem;
+    padding: 1rem 4rem;
+
+    .heading {
+      text-align: center;
+      font-size: 2rem;
+    }
+
+    .desc {
+      width: 500px;
+      @extend .description;
+    }
+  }
+  .reviews {
+    @extend .flexColCen;
+    flex-wrap: wrap;
+    gap: 5rem 8.5rem;
+    height: 80vh;
+    padding: 3.5rem 3rem 0 4rem;
+    overflow: scroll;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .reviewSection {
+    padding: 3rem 1rem;
+
+    .text {
+      padding: 1rem 0;
+
+      .desc {
+        width: 95%;
+      }
+    }
+  }
+}

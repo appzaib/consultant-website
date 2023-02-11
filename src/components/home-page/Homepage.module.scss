@@ -1,0 +1,9 @@
+@import "styles/common";
+
+.home {
+  @extend .flexColCen;
+
+  .divider {
+    @extend .divider;
+  }
+}

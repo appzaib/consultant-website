@@ -2,7 +2,7 @@
 
 .navbar {
   position: absolute;
-  height: 70px;
+  height: 90px;
   width: 100vw;
   box-shadow: 0 3px 8px 6px rgba(51, 51, 51, 0.497);
   background: linear-gradient(
@@ -15,7 +15,7 @@
   user-select: none;
 
   .main {
-    height: 70px;
+    height: 90px;
     padding: 5px 3rem;
     @extend .justifyBtw;
     align-items: center;
@@ -96,6 +96,10 @@
       .rotateCar svg {
         transform: rotate(90deg);
         transition: all 0.3s;
+      }
+
+      .undoRotate svg {
+        transform: rotate(0);
       }
     }
   }

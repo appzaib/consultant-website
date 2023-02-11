@@ -1,0 +1,32 @@
+@import "styles/common";
+
+.benefitSection {
+  padding: 3rem 3rem 5rem 3rem;
+
+  .heading {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 500;
+  }
+
+  .cardContainer {
+    margin-top: 5rem;
+    padding: 3rem;
+    @extend .flexCenter;
+    flex-wrap: wrap;
+    gap: 5rem;
+  }
+}
+
+@media screen and (max-width: 1110px) {
+  .benefitSection {
+    padding: 3rem 0 5rem 0;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .benefitSection .cardContainer {
+    padding: 3rem 1rem;
+    gap: 3rem 1rem;
+  }
+}
