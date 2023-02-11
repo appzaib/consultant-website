@@ -75,6 +75,11 @@ const PrimaryCard = ({
       </motion.div>
       <motion.div
         animate={{ rotateY: flip ? 0 : -180 }}
+        transition={{
+          delay: transDelay ? transitionDelay : 0,
+          type: "spring",
+          stiffness: 50,
+        }}
         className={stl.cardBack}
       >
         <Image
