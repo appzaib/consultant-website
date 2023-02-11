@@ -42,7 +42,6 @@ const PrimaryCard = ({
       onViewportEnter={handleAnimation}
       onMouseOver={() => setFlip(true)}
       onMouseOut={() => setFlip(false)}
-      transition={{ delay: transitionDelay }}
       className={clsx(stl.primaryCard, customClass)}
     >
       <motion.div

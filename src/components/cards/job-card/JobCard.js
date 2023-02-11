@@ -28,9 +28,8 @@ const JobCard = ({
         whileHover={{
           background: "linear-gradient(-45deg, #7f7fd5, #86a8e7, #91eae4)",
         }}
-        initial={{ display: "none", opacity: 0, y: 400 }}
+        initial={{ opacity: 0, y: 400 }}
         animate={{
-          display: animation ? "flex" : "none",
           opacity: animation ? 1 : 0,
           y: animation ? 0 : 400,
         }}

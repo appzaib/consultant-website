@@ -1,0 +1,82 @@
+@import "styles/common";
+
+.hwwSection {
+  padding: 3rem 5rem 4rem 5rem;
+  @extend .flexColCen;
+  gap: 7rem;
+
+  .text {
+    @extend .flexColCen;
+    gap: 3rem;
+
+    .desc {
+      max-width: 800px;
+      @extend .description;
+      text-align: center;
+    }
+  }
+
+  .cardContainer {
+    width: 105%;
+    margin-top: 1rem;
+    @extend .flexCenter;
+    flex-wrap: wrap;
+    gap: 3rem 5rem;
+  }
+
+  .description {
+    width: 100%;
+    @extend .justifyEvenly;
+    gap: 1rem;
+    flex-wrap: wrap;
+
+    .descr {
+      display: flex;
+      gap: 10px;
+
+      .primary,
+      .secondary {
+        font-size: 1.7rem;
+        color: dodgerblue;
+      }
+
+      .secondary {
+        color: rgb(0, 0, 0, 0.6);
+      }
+    }
+  }
+
+  .btnContainer {
+    @extend .justifyCen;
+    width: 100%;
+    margin: 1rem 0 2rem 0;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .hwwSection {
+    padding: 1rem 2rem;
+
+    .description {
+      .descr {
+        gap: 5px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .hwwSection {
+    padding: 1rem 10px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .hwwSection {
+    padding: 1rem 3rem;
+
+    .description {
+      gap: 10px;
+    }
+  }
+}

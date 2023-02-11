@@ -24,19 +24,18 @@ const BenefitSection = () => {
   return (
     <motion.div
       onViewportEnter={() => setAnimation(true)}
-      className={stl.container}
+      className={stl.benefitSection}
     >
-      <div className={stl.benefitSection}>
-        <motion.h2
-          initial={{ opacity: 0, x: 1000 }}
-          animate={{ opacity: animation ? 1 : 0, x: animation ? 0 : 1000 }}
-          className={stl.heading}
-        >
-          Sunt aliquip commodo esse duis in.
-        </motion.h2>
-        <div className={stl.cardContainer}>
-          {benefitCards.map((item) => item)}
-        </div>
+      <motion.h2
+        initial={{ opacity: 0, x: 1000 }}
+        animate={{ opacity: animation ? 1 : 0, x: animation ? 0 : 1000 }}
+        transition={{ type: "spring" }}
+        className={stl.heading}
+      >
+        Sunt aliquip commodo esse duis in.
+      </motion.h2>
+      <div className={stl.cardContainer}>
+        {benefitCards.map((item) => item)}
       </div>
     </motion.div>
   );

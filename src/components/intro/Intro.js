@@ -4,14 +4,13 @@ import clsx from "clsx";
 import PropTypes from "prop-types";
 import { motion } from "framer-motion";
 
-import Imag from "@assets/consulting.jpg";
+import BGImg from "@assets/consulting.jpg";
 import ArrowNext from "@assets/arrow-right-2.svg";
 
 import stl from "./Intro.module.scss";
 
 const Intro = ({
   imgSrc,
-  imgAlt,
   heading,
   desc,
   btnText,
@@ -24,28 +23,32 @@ const Intro = ({
   const [showArrow, setShowArrow] = useState(false);
 
   return (
-    <div className={clsx(stl.intro, customClass)}>
-      <Image
-        src={imgSrc}
-        height={100}
-        width={100}
-        alt={imgAlt}
-        className={stl.bgImage}
-      />
-      <div className={stl.info}>
+    <div
+      style={{ backgroundImage: `url(${imgSrc})` }}
+      className={clsx(stl.intro, customClass)}
+    >
+      <div className={stl.content}>
         <motion.h1
           initial={{ display: "none", x: 1800, opacity: 0 }}
           animate={{ display: "block", x: 0, opacity: 1 }}
-          transition={{ delay: transitionDelayHeading }}
-          className={stl.main}
+          transition={{
+            delay: transitionDelayHeading,
+            type: "spring",
+            stiffness: 50,
+          }}
+          className={stl.heading}
         >
           {heading}
         </motion.h1>
         <motion.div
           initial={{ display: "none", x: 1800, opacity: 0 }}
           animate={{ display: "block", x: 0, opacity: 1 }}
-          transition={{ delay: transitionDelayDesc }}
-          className={stl.content}
+          transition={{
+            delay: transitionDelayDesc,
+            type: "spring",
+            stiffness: 50,
+          }}
+          className={stl.desc}
         >
           {desc}
         </motion.div>
@@ -53,7 +56,7 @@ const Intro = ({
           <motion.button
             initial={{ display: "none", y: 150, opacity: 0 }}
             animate={{ display: "flex", y: 0, opacity: 1 }}
-            transition={{ delay: 0.2 }}
+            transition={{ delay: 0.2, type: "spring", stiffness: 50 }}
             onMouseOver={() => setShowArrow(true)}
             onMouseOut={() => setShowArrow(false)}
             onClick={() => console.log("Clicked...")}
@@ -68,7 +71,7 @@ const Intro = ({
 };
 
 Intro.defaultProps = {
-  imgSrc: `${Imag.src}`,
+  imgSrc: `${BGImg.src}`,
   imgAlt: "background-image",
   heading: "World class design, agile delivery and product development",
   desc: "200 experts who have served more than 500 international clients. Let's bring your idea to life!",

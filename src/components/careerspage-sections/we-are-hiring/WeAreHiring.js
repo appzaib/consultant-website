@@ -10,19 +10,17 @@ const WeAreHiring = ({ heading, desc, customClass }) => {
   return (
     <motion.div
       onViewportEnter={() => setAnimation(true)}
-      className={clsx(stl.container, customClass)}
+      className={clsx(stl.weAreHiring, customClass)}
     >
-      <div className={stl.weAreHiring}>
-        <motion.div
-          initial={{ opacity: 0, x: 1000 }}
-          animate={{ opacity: animation ? 1 : 0, x: animation ? 0 : 1000 }}
-          transition={{ type: "spring" }}
-          className={stl.info}
-        >
-          <h1 className={stl.title}>{heading}</h1>
-          <p className={stl.desc}>{desc}</p>
-        </motion.div>
-      </div>
+      <motion.div
+        initial={{ opacity: 0, x: 1000 }}
+        animate={{ opacity: animation ? 1 : 0, x: animation ? 0 : 1000 }}
+        transition={{ type: "spring", stiffness: 50 }}
+        className={stl.info}
+      >
+        <h1 className={stl.title}>{heading}</h1>
+        <p className={stl.desc}>{desc}</p>
+      </motion.div>
     </motion.div>
   );
 };

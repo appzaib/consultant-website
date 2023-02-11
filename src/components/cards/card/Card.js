@@ -29,9 +29,8 @@ const Card = ({
       className={stl.cardContainer}
     >
       <motion.div
-        initial={{ display: "none", y: 300, opacity: 0 }}
+        initial={{ y: 300, opacity: 0 }}
         animate={{
-          display: animation ? "flex" : "none",
           y: animation ? 0 : 300,
           opacity: animation ? 1 : 0,
         }}

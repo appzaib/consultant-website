@@ -11,7 +11,7 @@
     @extend .flexColCen;
     flex-wrap: wrap;
     width: 80%;
-    height: 100vh;
+    height: 90vh;
     gap: 3rem 5rem;
     padding: 4.5rem 3rem 3.5rem 8rem;
     border-radius: 250px 0 250px 0;
@@ -39,6 +39,10 @@
       justify-content: center;
       align-items: center;
       border-radius: 50%;
+
+      &:disabled {
+        pointer-events: none;
+      }
 
       @media (hover: hover) {
         &:hover {
@@ -89,11 +93,7 @@
     padding-right: 2rem;
 
     .container {
-      margin-right: 3rem;
       width: 90%;
-    }
-    .btnContainer {
-      padding-left: 0;
     }
   }
 }
@@ -106,6 +106,12 @@
 
 @media screen and (max-width: 475px) {
   .slider .container {
-    margin-right: 3rem;
+    margin-right: -2rem;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .slider .container {
+    width: 80%;
   }
 }

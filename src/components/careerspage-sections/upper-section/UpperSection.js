@@ -32,6 +32,7 @@ const UpperSection = ({
               opacity: animation ? 1 : 0,
               x: animation ? 0 : -500,
             }}
+            transition={{ type: "spring", stiffness: 50 }}
             className={stl.text}
           >
             <h1 className={stl.heading}>{heading}</h1>

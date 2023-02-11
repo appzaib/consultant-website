@@ -24,12 +24,13 @@ const ContactUsCard = ({
       className={clsx(stl.contCardContainer, customClass)}
     >
       <motion.div
-        initial={{ display: "none", opacity: 0, y: -1000 }}
+        initial={{ display: "none", opacity: 0, y: -300 }}
         animate={{
           display: animation ? "flex" : "none",
           opacity: animation ? 1 : 0,
-          y: animation ? 0 : -1000,
+          y: animation ? 0 : -300,
         }}
+        transition={{ type: "spring", stiffness: 50 }}
         style={{ width: width, height: height }}
         className={stl.contactCard}
       >

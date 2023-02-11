@@ -10,13 +10,11 @@ const JobSection = () => {
     jobCards.push(<JobCard key={i} />);
   }
   return (
-    <div className={stl.container}>
-      <div className={stl.jobSection}>
-        <SearchBox />
-        <div className={stl.jobCards}>{jobCards.map((card) => card)}</div>
-        <div className={stl.foundJobNot}>
-          <ContactUsCard />
-        </div>
+    <div className={stl.jobSection}>
+      <SearchBox />
+      <div className={stl.jobCards}>{jobCards.map((card) => card)}</div>
+      <div className={stl.foundJobNot}>
+        <ContactUsCard />
       </div>
     </div>
   );

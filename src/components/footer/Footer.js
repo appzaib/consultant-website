@@ -24,9 +24,11 @@ const Footer = ({ usefulLinks, showContactCard }) => {
 
   return (
     <motion.div className={stl.footerContainer} id="footer">
-      <div className={stl.section}>
-        {showContactCard && <ContactUsCard customClass={stl.contCard} />}
-      </div>
+      {showContactCard && (
+        <div className={stl.section}>
+          <ContactUsCard customClass={stl.contCard} />
+        </div>
+      )}
       <motion.div
         onViewportEnter={() => setAnimation(true)}
         className={stl.footer}
@@ -38,6 +40,7 @@ const Footer = ({ usefulLinks, showContactCard }) => {
             x: animation ? 0 : -500,
             opacity: animation ? 1 : 0,
           }}
+          transition={{ type: "spring", stiffness: 50 }}
           className={stl.section1}
         >
           <div onClick={() => console.log("Clicked...")} className={stl.logo}>

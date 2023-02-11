@@ -15,6 +15,11 @@ const SearchBox = ({ categoryList, customClass }) => {
   const [showDropDown, setShowDropdown] = useState(false);
   const [delay, setDelay] = useState(false);
 
+  if (animation) {
+    const ele = document.getElementById("search");
+    useTypingAnimtion(ele);
+  }
+
   const showDropdown = () => {
     setShowDropdown(true);
     setDelay(true);
@@ -22,21 +27,18 @@ const SearchBox = ({ categoryList, customClass }) => {
     setTimeout(() => setDelay(false), 300);
   };
 
-  useTypingAnimtion();
-
   return (
     <motion.div
       onViewportEnter={() => setAnimation(true)}
       className={clsx(stl.searchBoxContainer, customClass)}
     >
       <motion.div
-        initial={{ display: "none", opacity: 0, y: 300 }}
+        initial={{ opacity: 0, y: 300 }}
         animate={{
-          display: animation ? "flex" : "none",
           opacity: animation ? 1 : 0,
           y: animation ? 0 : 300,
         }}
-        transition={{ duration: 0.3 }}
+        transition={{ duration: 0.3, type: "spring" }}
         className={stl.searchBox}
       >
         <div className={stl.inputWrapper}>
@@ -67,9 +69,8 @@ const SearchBox = ({ categoryList, customClass }) => {
         >
           {value}
           <motion.ul
-            initial={{ display: "none", opacity: 0, y: -2000 }}
+            initial={{ opacity: 0, y: -2000 }}
             animate={{
-              display: showDropDown ? "flex" : "none",
               opacity: showDropDown ? 1 : 0,
               y: showDropDown ? 0 : -2000,
             }}
@@ -83,9 +84,8 @@ const SearchBox = ({ categoryList, customClass }) => {
                   x: 20,
                 }}
                 whileTap={{ scale: 1.05 }}
-                initial={{ display: "none", y: -200, opacity: 0 }}
+                initial={{ y: -200, opacity: 0 }}
                 animate={{
-                  display: showDropDown ? "block" : "none",
                   y: showDropDown ? 0 : -200,
                   opacity: showDropDown ? 1 : 0,
                 }}

@@ -1,0 +1,28 @@
+@import "styles/common";
+
+.jobSection {
+  padding: 2rem 0;
+  @extend .flexColCen;
+  gap: 10rem;
+
+  .jobCards {
+    height: 100%;
+    padding: 3rem;
+    width: 100%;
+    gap: 5rem;
+    @extend .flexCenter;
+    flex-wrap: wrap;
+  }
+
+  .foundJobNot {
+    padding: 3rem;
+    margin-bottom: 3rem;
+  }
+}
+
+@media screen and (max-width: 1150px) {
+  .jobSection .jobCards {
+    padding: 5rem 1rem;
+    gap: 5rem 1rem;
+  }
+}

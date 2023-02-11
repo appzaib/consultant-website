@@ -1,6 +1,7 @@
 import { useState } from "react";
 import clsx from "clsx";
 import PropTypes from "prop-types";
+import { motion } from "framer-motion";
 
 import ReviewCard from "@components/cards/review-card";
 
@@ -14,16 +15,26 @@ const Slider = ({
   scrollNum,
   backgroundSlider,
   backgroundCont,
+  height,
+  width,
   customClassSlider,
   customClassCont,
 }) => {
   const [enableScroll, setEnableScroll] = useState(false);
   const [progress, setProgress] = useState(0);
+  const [isPrevDisabled, setIsPrevDisabled] = useState(false);
+  const [isNextDisabled, setIsNextDisabled] = useState(false);
+  const [animation, setAnimation] = useState(false);
 
   if (typeof window !== "undefined") {
     setTimeout(() => {
       const ele = document.getElementById("active");
       ele.style.width = `${progress}%`;
+      if (progress === 0) {
+        setIsPrevDisabled(true);
+      } else if (progress === 100) {
+        setIsNextDisabled(true);
+      }
     }, 50);
   }
 
@@ -51,34 +62,50 @@ const Slider = ({
   };
 
   return (
-    <div
+    <motion.div
+      onViewportEnter={() => setAnimation(true)}
       style={{ background: backgroundSlider }}
       className={clsx(stl.slider, customClassSlider)}
     >
-      <div
+      <motion.div
+        initial={{ opacity: 0, x: 1000 }}
+        animate={{ opacity: animation ? 1 : 0, x: animation ? 0 : 1000 }}
+        transition={{ type: "spring", stiffness: 50 }}
         id="scrollable"
         style={{
           overflow: enableScroll ? "scroll" : "hidden",
           background: backgroundCont,
+          width: width,
+          height: height,
         }}
         onScroll={handleScroll}
         className={clsx(stl.container, customClassCont)}
       >
         {content.map((item) => item)}
-      </div>
+      </motion.div>
       <div className={stl.btnContainer}>
-        <button id="prev" onClick={handlePrev} className={stl.prev}>
+        <button
+          disabled={isPrevDisabled}
+          id="prev"
+          onClick={handlePrev}
+          className={stl.prev}
+        >
           <PrevIcon />
         </button>
         <div className={stl.progress}>
           <span className={stl.progressDef}></span>
           <span id="active" className={stl.progressActive}></span>
         </div>
-        <button id="next" onClick={handleNext} className={stl.next}>
+        <button
+          disabled={isNextDisabled}
+          id="next"
+          onClick={handleNext}
+          className={stl.next}
+        >
           <NextIcon />
         </button>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

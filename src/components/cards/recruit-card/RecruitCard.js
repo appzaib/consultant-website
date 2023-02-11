@@ -23,7 +23,7 @@ const RecruitCard = ({
     <motion.div
       initial={initial}
       whileInView={whileInView}
-      transition={{ type: "spring" }}
+      transition={{ type: "spring", stiffness: 50 }}
       style={{
         width: width,
         height: height,

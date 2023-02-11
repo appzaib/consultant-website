@@ -80,3 +80,14 @@
     }
   }
 }
+
+@media screen and (max-width: 450px) {
+  .jobCardContainer .jobCard {
+    width: 400px;
+  }
+}
+@media screen and (max-wdith: 400px) {
+  .jobCardContainer .jobCard {
+    width: 350px;
+  }
+}

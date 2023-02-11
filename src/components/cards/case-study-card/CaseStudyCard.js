@@ -30,9 +30,8 @@ const CaseStudyCard = ({
       className={stl.caseCardContainer}
     >
       <motion.div
-        initial={{ display: "none", y: 250, opacity: 0 }}
+        initial={{ y: 250, opacity: 0 }}
         animate={{
-          display: animation ? "flex" : "none",
           y: animation ? 0 : 250,
           opacity: animation ? 1 : 0,
         }}

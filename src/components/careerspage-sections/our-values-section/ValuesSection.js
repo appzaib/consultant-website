@@ -8,13 +8,9 @@ const ValuesSection = () => {
     valueCards.push(<ValuesCard key={i} />);
   }
   return (
-    <div className={stl.container}>
-      <div className={stl.ourValues}>
-        <h2 className={stl.heading}>Lorem Ipsum</h2>
-        <div className={stl.cardContainer}>
-          {valueCards.map((item) => item)}
-        </div>
-      </div>
+    <div className={stl.ourValues}>
+      <h2 className={stl.heading}>Lorem Ipsum</h2>
+      <div className={stl.cardContainer}>{valueCards.map((item) => item)}</div>
     </div>
   );
 };
