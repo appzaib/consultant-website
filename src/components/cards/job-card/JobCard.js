@@ -33,6 +33,7 @@ const JobCard = ({
           opacity: animation ? 1 : 0,
           y: animation ? 0 : 400,
         }}
+        transition={{ type: "spring", stiffness: 50 }}
         style={{ width: width, height: height }}
         className={stl.jobCard}
       >

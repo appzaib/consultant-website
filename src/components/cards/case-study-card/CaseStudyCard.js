@@ -30,12 +30,12 @@ const CaseStudyCard = ({
       className={stl.caseCardContainer}
     >
       <motion.div
-        initial={{ y: 250, opacity: 0 }}
+        initial={{ y: 300, opacity: 0 }}
         animate={{
-          y: animation ? 0 : 250,
+          y: animation ? 0 : 300,
           opacity: animation ? 1 : 0,
         }}
-        transition={{ delay: transitionDelay, duration: 0.3 }}
+        transition={{ delay: transitionDelay, type: "spring", stiffness: 50 }}
         style={{ width: width, height: height }}
         onMouseOver={() => setShowFullContent(true)}
         onMouseOut={() => setShowFullContent(false)}
