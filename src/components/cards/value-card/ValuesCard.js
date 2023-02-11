@@ -18,6 +18,7 @@ const ValuesCard = ({ width, height, icon, heading, desc, customClass }) => {
       <motion.div
         initial={{ opacity: 0, y: 300 }}
         animate={{ opacity: animation ? 1 : 0, y: animation ? 0 : 300 }}
+        transition={{ type: "spring", stiffness: 50 }}
         style={{ width: width, height: height }}
         className={stl.valueCard}
       >

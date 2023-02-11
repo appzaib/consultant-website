@@ -52,7 +52,11 @@ const PrimaryCard = ({
           rotateY: flip ? 180 : 0,
           opacity: animation ? 1 : 0,
         }}
-        transition={{ delay: transDelay ? transitionDelay : 0 }}
+        transition={{
+          delay: transDelay ? transitionDelay : 0,
+          type: "spring",
+          stiffness: 50,
+        }}
         exit={{ rotateY: 90 }}
         className={stl.cardFront}
       >

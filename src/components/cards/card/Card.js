@@ -35,7 +35,7 @@ const Card = ({
           opacity: animation ? 1 : 0,
         }}
         whileHover={{ y: -10, boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px" }}
-        transition={{ delay: transitionDelay, duration: 0.3 }}
+        transition={{ delay: transitionDelay, type: "spring", stiffness: 50 }}
         style={{ width: width, height: height, background: background }}
         className={clsx(stl.card, stl[variant], customClass)}
       >
