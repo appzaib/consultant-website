@@ -11,14 +11,12 @@ import stl from "./SearchBox.module.scss";
 
 const SearchBox = ({ categoryList, customClass }) => {
   const [value, setValue] = useState(categoryList[1].name);
+  const [searchValue, setSearchValue] = useState("");
   const [animation, setAnimation] = useState(false);
   const [showDropDown, setShowDropdown] = useState(false);
   const [delay, setDelay] = useState(false);
 
-  if (animation) {
-    const ele = document.getElementById("search");
-    useTypingAnimtion(ele);
-  }
+  useTypingAnimtion();
 
   const showDropdown = () => {
     setShowDropdown(true);
@@ -29,7 +27,9 @@ const SearchBox = ({ categoryList, customClass }) => {
 
   return (
     <motion.div
-      onViewportEnter={() => setAnimation(true)}
+      onViewportEnter={() => {
+        setAnimation(true);
+      }}
       className={clsx(stl.searchBoxContainer, customClass)}
     >
       <motion.div
@@ -52,6 +52,7 @@ const SearchBox = ({ categoryList, customClass }) => {
             type="text"
             name="search"
             id="search"
+            onChange={(event) => setSearchValue(event.target.value)}
             className={stl.input}
           />
         </div>
