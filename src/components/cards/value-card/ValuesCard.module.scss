@@ -1,27 +1,25 @@
 @import "styles/common";
 
-.cardContainer {
-  .valueCard {
-    @extend .flexCol;
-    align-items: center;
-    padding: 1rem;
-    justify-content: space-evenly;
-    width: 380px;
-    height: 500px;
-    border: 1px solid transparent;
+.cardContainer .valueCard {
+  @extend .flexCol;
+  align-items: center;
+  padding: 1rem;
+  justify-content: space-evenly;
+  width: 380px;
+  height: 500px;
+  border: 1px solid transparent;
 
-    .desc {
-      @extend .description;
-    }
+  .desc {
+    @extend .description;
+  }
 
-    .btn {
-      all: unset;
-      padding: 5px 10px;
-      cursor: pointer;
-    }
+  .btn {
+    all: unset;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
 
-    &:hover {
-      border-color: #3333;
-    }
+  &:hover {
+    border-color: #3333;
   }
 }

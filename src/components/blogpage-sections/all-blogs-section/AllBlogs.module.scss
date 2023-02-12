@@ -1,0 +1,89 @@
+@import "styles/common";
+
+.allBlogs {
+  width: 100%;
+  padding: 2rem 0 3rem;
+  @extend .flexColCen;
+  gap: 7rem;
+
+  .header {
+    padding-top: 1.5rem;
+    width: 100%;
+    @extend .flexColCen;
+    gap: 1rem;
+    background: #fff;
+
+    .category {
+      display: flex;
+      width: 100%;
+      gap: 3rem;
+      padding: 3rem;
+
+      .prevBtn,
+      .nextBtn {
+        @extend .flexCenter;
+        border: none;
+        outline: none;
+        background: none;
+        cursor: pointer;
+      }
+
+      .container {
+        width: 100%;
+        @extend .alignCen;
+        gap: 2rem;
+        overflow-x: scroll;
+        scroll-behavior: smooth;
+
+        &::-webkit-scrollbar {
+          display: none;
+        }
+
+        .label {
+          width: 100%;
+          min-width: max-content;
+          height: 55px;
+          font-size: 1.7rem;
+          padding: 12px 1rem;
+          border-radius: 8px;
+          background: rgba(51, 51, 51, 0.1);
+          cursor: pointer;
+          user-select: none;
+          transition: all 0.3s;
+
+          &:hover {
+            background: #1e90ff;
+            color: #fff;
+            text-decoration: underline;
+          }
+
+          &:active {
+            background: #059862;
+          }
+        }
+      }
+    }
+  }
+
+  .blogs {
+    @extend .alignCen;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 7rem 3rem;
+    padding: 5rem 3rem;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .allBlogs .blogs {
+    gap: 7rem 1rem;
+    padding: 5rem 10px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .allBlogs .header .category {
+    gap: 1rem;
+    padding: 3rem 1rem;
+  }
+}

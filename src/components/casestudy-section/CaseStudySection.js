@@ -9,9 +9,7 @@ const CaseStudySection = () => {
   const [animation, setAnimation] = useState(false);
 
   let cases = [];
-  for (let i = 0; i < 20; i++) {
-    cases.push(<CaseStudyCard key={i} />);
-  }
+  for (let i = 0; i < 20; i++) cases.push(<CaseStudyCard key={i} />);
 
   return (
     <div className={stl.caseStudySec}>

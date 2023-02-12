@@ -1,28 +1,24 @@
 @import "styles/common";
 
-.weAreHiring {
-  .info {
-    @extend .flexColCen;
-    padding: 5rem 4rem;
-    gap: 3rem;
+.weAreHiring .info {
+  @extend .flexColCen;
+  padding: 5rem 4rem;
+  gap: 3rem;
 
-    .desc {
-      width: 50%;
-      @extend .description;
-    }
+  .desc {
+    width: 50%;
+    @extend .description;
   }
 }
 
 @media screen and (max-width: 950px) {
-  .weAreHiring {
-    .info {
-      .title {
-        text-align: center;
-        width: 100%;
-      }
-      .desc {
-        width: 80%;
-      }
+  .weAreHiring .info {
+    .title {
+      text-align: center;
+      width: 100%;
+    }
+    .desc {
+      width: 80%;
     }
   }
 }

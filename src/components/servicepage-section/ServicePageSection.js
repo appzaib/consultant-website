@@ -9,9 +9,7 @@ const ServicePageSection = () => {
   const [animation, setAnimation] = useState(false);
 
   let services = [];
-  for (let i = 0; i < 10; i++) {
-    services.push(<PrimaryCard key={i} />);
-  }
+  for (let i = 0; i < 10; i++) services.push(<PrimaryCard key={i} />);
 
   return (
     <div className={stl.servPageSec}>

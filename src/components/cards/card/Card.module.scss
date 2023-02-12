@@ -1,54 +1,52 @@
 @import url("https://fonts.googleapis.com/css2?family=Itim&display=swap");
 @import "styles/common";
 
-.cardContainer {
-  .card {
-    @extend .flexColCen;
-    justify-content: space-evenly;
-    gap: 1rem;
-    width: 400px;
-    height: 100%;
-    padding: 1rem 1rem;
-    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
-      rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
-    background: #fff;
+.cardContainer .card {
+  @extend .flexColCen;
+  justify-content: space-evenly;
+  gap: 1rem;
+  width: 400px;
+  height: 100%;
+  padding: 1rem 1rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  background: #fff;
 
-    .desc {
-      @extend .description;
-    }
+  .desc {
+    @extend .description;
+  }
+}
+
+.primary {
+  width: 370px;
+  height: 500px;
+
+  .img {
+    width: 100%;
+    height: auto;
   }
 
-  .primary {
-    width: 370px;
-    height: 500px;
-
-    .img {
-      width: 100%;
-      height: auto;
-    }
-
-    .heading {
-      color: dodgerblue;
-      font-weight: 400;
-      letter-spacing: -5px;
-      font-size: 6rem;
-    }
-
-    .desc {
-      font-size: 1.7rem;
-    }
+  .heading {
+    color: dodgerblue;
+    font-weight: 400;
+    letter-spacing: -5px;
+    font-size: 6rem;
   }
 
-  .secondary {
-    height: 500px;
+  .desc {
+    font-size: 1.7rem;
+  }
+}
 
-    .img {
-      width: 100%;
-      height: auto;
-    }
+.secondary {
+  height: 500px;
 
-    .desc {
-      text-align: center;
-    }
+  .img {
+    width: 100%;
+    height: auto;
+  }
+
+  .desc {
+    text-align: center;
   }
 }

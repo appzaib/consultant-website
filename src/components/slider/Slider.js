@@ -110,10 +110,7 @@ const Slider = ({
 };
 
 let array = [];
-
-for (let i = 0; i < 20; i++) {
-  array.push(<ReviewCard key={i} />);
-}
+for (let i = 0; i < 20; i++) array.push(<ReviewCard key={i} />);
 
 Slider.defaultProps = {
   content: array,

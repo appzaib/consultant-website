@@ -20,17 +20,17 @@ const CareersPage = () => {
     <div className={stl.careersPage}>
       <Intro />
       {upperSections.map((section) => section)}
-      <div className={stl.divider}></div>
+      <div className={stl.divider} />
       <WeAreHiring />
-      <div className={stl.divider}></div>
+      <div className={stl.divider} />
       <JobSection />
-      <div className={stl.divider}></div>
+      <div className={stl.divider} />
       <BenefitSection />
-      <div className={stl.divider}></div>
+      <div className={stl.divider} />
       <ValuesSection />
-      <div className={stl.divider}></div>
+      <div className={stl.divider} />
       <BlogSection />
-      <div className={stl.divider}></div>
+      <div className={stl.divider} />
       <AwardSection />
     </div>
   );

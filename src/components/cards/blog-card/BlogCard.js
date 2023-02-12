@@ -1,13 +1,24 @@
+import { useState } from "react";
 import clsx from "clsx";
 import PropTypes from "prop-types";
 import { motion } from "framer-motion";
 
 import BlogImage from "@assets/blog.jpg";
 
-import stl from "./BlogCard.module.scss";
-import { useState } from "react";
+import NextIcon from "@assets/arrow-right-long-2.svg";
 
-const BlogCard = ({ imgSrc, tag, date, title, author, link, customClass }) => {
+import stl from "./BlogCard.module.scss";
+
+const BlogCard = ({
+  big,
+  imgSrc,
+  tags,
+  date,
+  title,
+  author,
+  link,
+  customClass,
+}) => {
   const [animation, setAnimation] = useState(false);
 
   return (
@@ -20,7 +31,7 @@ const BlogCard = ({ imgSrc, tag, date, title, author, link, customClass }) => {
         animate={{ opacity: animation ? 1 : 0, y: animation ? 0 : 150 }}
         transition={{ type: "spring", stiffness: 50 }}
         onClick={() => console.log("Clicked...")}
-        className={stl.card}
+        className={clsx(stl.card, big ? stl.big : undefined)}
       >
         <div className={stl.imgContainer}>
           <div
@@ -32,11 +43,20 @@ const BlogCard = ({ imgSrc, tag, date, title, author, link, customClass }) => {
         </div>
         <div className={stl.blogInfo}>
           <div className={stl.blogAbout}>
-            <span className={stl.tag}>{tag}</span>
+            {tags.map((tag, i) => (
+              <span key={i} className={stl.tag}>
+                {tag}
+              </span>
+            ))}
             <div className={stl.date}>{date}</div>
           </div>
           <h1 className={stl.blogTitle}>{title}</h1>
           <div className={stl.blogAuthor}>by {author}</div>
+        </div>
+        <div className={stl.iconContainer}>
+          <span className={stl.icon}>
+            <NextIcon />
+          </span>
         </div>
       </motion.div>
     </motion.div>
@@ -45,10 +65,11 @@ const BlogCard = ({ imgSrc, tag, date, title, author, link, customClass }) => {
 
 BlogCard.defaultProps = {
   imgSrc: `${BlogImage.src}`,
-  tag: "Ipsum",
+  tags: ["Ipsum"],
   date: "01/01/10",
   title: "Qui duis Lorem nulla ullamco excepteur sit labore.",
   author: "John Doe",
+  big: false,
 };
 
 BlogCard.propTypes = {
@@ -58,6 +79,7 @@ BlogCard.propTypes = {
   title: PropTypes.string,
   author: PropTypes.string,
   link: PropTypes.string,
+  big: PropTypes.bool,
   customClass: PropTypes.string,
 };
 

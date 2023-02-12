@@ -1,0 +1,133 @@
+@import "styles/common";
+
+.subNewsLetter {
+  @extend .flexCenter;
+  padding: 5rem 0 8rem;
+  width: 100%;
+  height: 100%;
+
+  .container {
+    display: flex;
+    gap: 1rem;
+    width: 80%;
+    height: 550px;
+    background: #fff;
+    border-radius: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    overflow: hidden;
+    transition: box-shadow 0.2s;
+
+    .imgContainer {
+      width: 45%;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .textContainer {
+      @extend .flexColCen;
+      gap: 2rem;
+      width: 60%;
+      padding-right: 1rem;
+
+      .title {
+        font-size: 2.5rem;
+        font-weight: 600;
+      }
+
+      .desc {
+        width: 100%;
+        color: rgba(0, 0, 0, 0.6);
+        font-size: 1.5rem;
+      }
+
+      .input {
+        width: 100%;
+        font-size: 1.3rem;
+        padding: 1rem;
+        outline: none;
+        border: none;
+        border-bottom: 3px solid dodgerblue;
+      }
+
+      .btn {
+        width: 100%;
+        font-size: 1.3rem;
+        padding: 1rem;
+        outline: none;
+        border: none;
+        border-radius: 10px;
+        background: dodgerblue;
+        color: #fff;
+        cursor: pointer;
+        transition: all 0.2s;
+
+        &:hover {
+          text-decoration: underline;
+        }
+
+        &:active {
+          transform: scale(0.97);
+        }
+      }
+    }
+
+    &:hover {
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+        rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+        rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    }
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .blogPage {
+    .subNewsLetter {
+      .container {
+        width: 90%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .blogPage .subNewsLetter .container {
+    width: 95%;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .blogPage .subNewsLetter .container {
+    align-items: center;
+    flex-direction: column;
+    width: 80%;
+    height: 100%;
+
+    .imgContainer {
+      width: 100%;
+    }
+
+    .textContainer {
+      width: 100%;
+      padding: 2rem;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .blogPage .subNewsLetter .container {
+    width: 95%;
+
+    .textContainer {
+      padding: 1rem;
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .blogPage .subNewsLetter .container {
+    width: 100%;
+  }
+}
