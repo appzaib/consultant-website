@@ -12,11 +12,10 @@ const useTypingAnimtion = () => {
 
     const typeAnimation = async (rtl, text, time) => {
       let placeholder;
-      for (let i = 1; i <= text.length; i++) {
+      for (let i = 1; i <= text.length; i++)
         placeholder = text.slice(0, rtl ? -i : +i);
-        await delay(time);
-        ele.setAttribute("placeholder", placeholder);
-      }
+      await delay(time);
+      ele.setAttribute("placeholder", placeholder);
     };
 
     const main = async () => {

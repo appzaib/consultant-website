@@ -1,35 +1,33 @@
 @import "styles/common";
 
-.careersSecCont {
-  .section {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 7rem;
-    padding: 7rem 4rem;
+.careersSecCont .section {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 7rem;
+  padding: 7rem 4rem;
 
-    .text {
-      @extend .flexCol;
-      justify-content: space-evenly;
-      width: 45%;
+  .text {
+    @extend .flexCol;
+    justify-content: space-evenly;
+    width: 45%;
 
-      .desc {
-        padding: 1rem;
-        @extend .description;
-      }
+    .desc {
+      padding: 1rem;
+      @extend .description;
     }
+  }
 
-    .imgContainer {
-      width: 40%;
-      overflow: hidden;
-      border-radius: 2rem;
+  .imgContainer {
+    width: 40%;
+    overflow: hidden;
+    border-radius: 2rem;
 
-      .img {
-        width: 100%;
-        height: auto;
-      }
+    .img {
+      width: 100%;
+      height: auto;
     }
   }
 }

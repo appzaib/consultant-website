@@ -6,9 +6,8 @@ import stl from "./JobSection.module.scss";
 
 const JobSection = () => {
   let jobCards = [];
-  for (let i = 0; i < 10; i++) {
-    jobCards.push(<JobCard key={i} />);
-  }
+  for (let i = 0; i < 10; i++) jobCards.push(<JobCard key={i} />);
+
   return (
     <div className={stl.jobSection}>
       <SearchBox />

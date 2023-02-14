@@ -7,6 +7,7 @@ import stl from "./WeAreHiring.module.scss";
 
 const WeAreHiring = ({ heading, desc, customClass }) => {
   const [animation, setAnimation] = useState(false);
+
   return (
     <motion.div
       onViewportEnter={() => setAnimation(true)}

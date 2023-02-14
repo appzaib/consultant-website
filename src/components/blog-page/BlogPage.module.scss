@@ -1,0 +1,9 @@
+@import "styles/common";
+
+.blogPage {
+  @extend .flexColCen;
+
+  .divider {
+    @extend .divider;
+  }
+}

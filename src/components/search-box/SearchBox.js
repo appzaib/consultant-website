@@ -52,7 +52,7 @@ const SearchBox = ({ categoryList, customClass }) => {
             type="text"
             name="search"
             id="search"
-            onChange={(event) => setSearchValue(event.target.value)}
+            onChange={(e) => setSearchValue(e.target.value)}
             className={stl.input}
           />
         </div>

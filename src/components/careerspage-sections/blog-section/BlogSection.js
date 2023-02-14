@@ -5,9 +5,7 @@ import stl from "./BlogSection.module.scss";
 
 const BlogSection = () => {
   let blogCards = [];
-  for (let i = 0; i < 15; i++) {
-    blogCards.push(<BlogCard key={i} />);
-  }
+  for (let i = 0; i < 15; i++) blogCards.push(<BlogCard key={i} />);
 
   return (
     <div className={stl.blogSection}>

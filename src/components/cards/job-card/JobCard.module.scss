@@ -1,83 +1,81 @@
 @import "styles/common";
 
-.jobCardContainer {
-  .jobCard {
-    position: relative;
-    @extend .flexCol;
-    justify-content: space-between;
-    background: #fff;
-    gap: 10px;
-    width: 450px;
-    height: 300px;
-    border-radius: 1rem;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+.jobCardContainer .jobCard {
+  position: relative;
+  @extend .flexCol;
+  justify-content: space-between;
+  background: #fff;
+  gap: 10px;
+  width: 450px;
+  height: 300px;
+  border-radius: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
-    .icon {
-      position: absolute;
-      right: 5%;
-      top: 5%;
+  .icon {
+    position: absolute;
+    right: 5%;
+    top: 5%;
+    cursor: pointer;
+  }
+
+  .fill path {
+    stroke: none;
+    fill: dodgerblue;
+  }
+
+  .title {
+    padding: 1rem 1.3rem;
+    margin-top: 10px;
+    font-size: 2rem;
+  }
+
+  .salary {
+    font-size: 1.3rem;
+    color: rgba(0, 0, 0, 0.6);
+    padding: 0 1.3rem;
+    margin-top: -3rem;
+  }
+
+  .labels {
+    display: flex;
+    gap: 10px;
+    margin-left: 1rem;
+
+    .label {
+      padding: 6px 12px;
+      background: #f1f4f7;
+      font-size: 1.2rem;
+      border-radius: 5px;
+    }
+  }
+
+  .footer {
+    @extend .alignCen;
+    justify-content: space-between;
+    height: 60px;
+    padding: 10px 1rem;
+    border-radius: 0 0 1rem 1rem;
+
+    .postInfo {
+      color: rgba(0, 0, 0, 0.6);
+    }
+
+    .applyBtn {
+      border: none;
+      outline: none;
+      background: dodgerblue;
+      font-size: 1.3rem;
+      color: #fff;
+      padding: 10px 1rem;
+      border-radius: 7px;
       cursor: pointer;
     }
+  }
 
-    .fill path {
-      stroke: none;
-      fill: dodgerblue;
-    }
-
-    .title {
-      padding: 1rem 1.3rem;
-      margin-top: 10px;
-      font-size: 2rem;
-    }
-
-    .salary {
-      font-size: 1.3rem;
-      color: rgba(0, 0, 0, 0.6);
-      padding: 0 1.3rem;
-      margin-top: -3rem;
-    }
-
-    .labels {
-      display: flex;
-      gap: 10px;
-      margin-left: 1rem;
-
-      .label {
-        padding: 6px 12px;
-        background: #f1f4f7;
-        font-size: 1.2rem;
-        border-radius: 5px;
-      }
-    }
-
-    .footer {
-      @extend .alignCen;
-      justify-content: space-between;
-      height: 60px;
-      padding: 10px 1rem;
-      border-radius: 0 0 1rem 1rem;
-
-      .postInfo {
-        color: rgba(0, 0, 0, 0.6);
-      }
-
-      .applyBtn {
-        border: none;
-        outline: none;
-        background: dodgerblue;
-        font-size: 1.3rem;
-        color: #fff;
-        padding: 10px 1rem;
-        border-radius: 7px;
-        cursor: pointer;
-      }
-    }
-
-    &:hover {
-      box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
-        rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
-        rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-    }
+  &:hover {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+      rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+      rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
   }
 }
 

@@ -12,13 +12,13 @@ const Homepage = () => {
     <div className={stl.home}>
       <Intro />
       <SkillsSection />
-      <div className={stl.divider}></div>
+      <div className={stl.divider} />
       <ReviewSection />
-      <div className={stl.divider}></div>
+      <div className={stl.divider} />
       <CaseStudySection />
-      <div className={stl.divider}></div>
+      <div className={stl.divider} />
       <HWWSection />
-      <div className={stl.divider}></div>
+      <div className={stl.divider} />
       <CareersSection />
     </div>
   );

@@ -21,6 +21,7 @@
       @extend .description;
     }
   }
+
   .reviews {
     @extend .flexColCen;
     flex-wrap: wrap;

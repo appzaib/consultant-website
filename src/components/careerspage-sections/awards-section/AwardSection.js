@@ -4,9 +4,7 @@ import stl from "./AwardSection.module.scss";
 
 const AwardSection = () => {
   let awards = [];
-  for (let i = 0; i < 6; i++) {
-    awards.push(<AwardCard key={i} />);
-  }
+  for (let i = 0; i < 6; i++) awards.push(<AwardCard key={i} />);
 
   return (
     <div className={stl.awardSection}>
