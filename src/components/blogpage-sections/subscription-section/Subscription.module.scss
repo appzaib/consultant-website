@@ -9,7 +9,8 @@
   .container {
     display: flex;
     gap: 1rem;
-    width: 80%;
+    width: 90%;
+    max-width: 1000px;
     height: 550px;
     background: #fff;
     border-radius: 1rem;
@@ -83,23 +84,19 @@
 }
 
 @media screen and (max-width: 950px) {
-  .blogPage {
-    .subNewsLetter {
-      .container {
-        width: 90%;
-      }
-    }
+  .subNewsLetter .container {
+    width: 90%;
   }
 }
 
 @media screen and (max-width: 800px) {
-  .blogPage .subNewsLetter .container {
+  .subNewsLetter .container {
     width: 95%;
   }
 }
 
 @media screen and (max-width: 700px) {
-  .blogPage .subNewsLetter .container {
+  .subNewsLetter .container {
     align-items: center;
     flex-direction: column;
     width: 80%;
@@ -117,7 +114,7 @@
 }
 
 @media screen and (max-width: 600px) {
-  .blogPage .subNewsLetter .container {
+  .subNewsLetter .container {
     width: 95%;
 
     .textContainer {
@@ -127,7 +124,7 @@
 }
 
 @media screen and (max-width: 450px) {
-  .blogPage .subNewsLetter .container {
+  .subNewsLetter .container {
     width: 100%;
   }
 }
