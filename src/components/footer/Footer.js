@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import clsx from "clsx";
 import PropTypes from "prop-types";
 import { motion } from "framer-motion";
@@ -23,7 +23,7 @@ const Footer = ({ usefulLinks, showContactCard }) => {
   const [animation, setAnimation] = useState(false);
 
   return (
-    <motion.div className={stl.footerContainer} id="footer">
+    <div className={stl.footerContainer} id="footer">
       {showContactCard && (
         <div className={stl.section}>
           <ContactUsCard customClass={stl.contCard} />
@@ -139,7 +139,7 @@ const Footer = ({ usefulLinks, showContactCard }) => {
           </div>
         </motion.div>
       </motion.div>
-    </motion.div>
+    </div>
   );
 };
 

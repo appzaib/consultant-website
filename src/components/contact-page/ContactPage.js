@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 import EmailIcon from "@assets/mail.svg";
 import PhoneIcon from "@assets/phone.svg";
@@ -15,6 +16,9 @@ const ContactPage = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [msg, setMsg] = useState("");
+  const [animationLeft, setAnimationLeft] = useState(false);
+  const [animationRight, setAnimationRight] = useState(false);
+  const [animationSocialBtn, setAnimationSocialBtn] = useState(false);
 
   console.log(name, "name");
   console.log(email, "email");
@@ -22,8 +26,19 @@ const ContactPage = () => {
 
   return (
     <div className={stl.contactPage}>
-      <div className={stl.left}>
-        <div className={stl.text}>
+      <motion.div
+        onViewportEnter={() => setAnimationLeft(true)}
+        className={stl.left}
+      >
+        <motion.div
+          initial={{ opacity: 0, x: -1000 }}
+          animate={{
+            opacity: animationLeft ? 1 : 0,
+            x: animationLeft ? 0 : -1000,
+          }}
+          transition={{ type: "spring", stiffness: 50 }}
+          className={stl.text}
+        >
           <h1 className={stl.heading}>Let's talk</h1>
           <p className={stl.desc}>
             Officia ad cupidatat ea proident elit exercitation cupidatat. Esse
@@ -32,8 +47,16 @@ const ContactPage = () => {
             anim aliqua non occaecat Lorem ipsum. Ex Lorem reprehenderit
             exercitation ea in cupidatat ipsum do.
           </p>
-        </div>
-        <div className={stl.contactOpt}>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, x: -1000 }}
+          animate={{
+            opacity: animationLeft ? 1 : 0,
+            x: animationLeft ? 0 : -1000,
+          }}
+          transition={{ type: "spring", stiffness: 50 }}
+          className={stl.contactOpt}
+        >
           <button
             onClick={() => console.log("Clicked...")}
             className={stl.emailBtn}
@@ -55,68 +78,130 @@ const ContactPage = () => {
             <LocationIcon />
             Find us on Map
           </button>
-        </div>
-        <div className={stl.social}>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, x: -1000 }}
+          animate={{
+            opacity: animationLeft ? 1 : 0,
+            x: animationLeft ? 0 : -1000,
+          }}
+          transition={{ type: "spring", stiffness: 50 }}
+          className={stl.social}
+        >
           <div className={stl.text}>
             <h2 className={stl.desc}>Connect with us on social</h2>
           </div>
-          <div className={stl.btnContainer}>
-            <button
+          <motion.div
+            onViewportEnter={() => setAnimationSocialBtn(true)}
+            className={stl.btnContainer}
+          >
+            <motion.button
+              initial={{ opacity: 0, y: 500 }}
+              animate={{
+                opacity: animationSocialBtn ? 1 : 0,
+                y: animationSocialBtn ? 0 : 500,
+              }}
+              transition={{ type: "spring", stiffness: 50 }}
               onClick={() => console.log("Clicked...")}
               className={stl.socialBtn}
             >
               <FacebookIcon />
-            </button>
-            <button
+            </motion.button>
+            <motion.button
+              initial={{ opacity: 0, y: 500 }}
+              animate={{
+                opacity: animationSocialBtn ? 1 : 0,
+                y: animationSocialBtn ? 0 : 500,
+              }}
+              transition={{ type: "spring", stiffness: 50 }}
               onClick={() => console.log("Clicked...")}
               className={stl.socialBtn}
             >
               <GithubIcon />
-            </button>
-            <button
+            </motion.button>
+            <motion.button
+              initial={{ opacity: 0, y: 500 }}
+              animate={{
+                opacity: animationSocialBtn ? 1 : 0,
+                y: animationSocialBtn ? 0 : 500,
+              }}
+              transition={{ type: "spring", stiffness: 50 }}
               onClick={() => console.log("Clicked...")}
               className={stl.socialBtn}
             >
               <LinkedInIcon />
-            </button>
-            <button
+            </motion.button>
+            <motion.button
+              initial={{ opacity: 0, y: 500 }}
+              animate={{
+                opacity: animationSocialBtn ? 1 : 0,
+                y: animationSocialBtn ? 0 : 500,
+              }}
+              transition={{ type: "spring", stiffness: 50 }}
               onClick={() => console.log("Clicked...")}
               className={stl.socialBtn}
             >
               <TwitterIcon />
-            </button>
-          </div>
-        </div>
-      </div>
-      <div className={stl.right}>
-        <input
+            </motion.button>
+          </motion.div>
+        </motion.div>
+      </motion.div>
+      <motion.div
+        onViewportEnter={() => setAnimationRight(true)}
+        className={stl.right}
+      >
+        <motion.input
+          initial={{ opacity: 0, x: 1000 }}
+          animate={{
+            opacity: animationRight ? 1 : 0,
+            x: animationRight ? 0 : 1000,
+          }}
+          transition={{ type: "spring", stiffness: 50 }}
           type="text"
           name="name"
           placeholder="Your Name"
           onChange={(e) => setName(e.target.value)}
           className={stl.input}
         />
-        <input
+        <motion.input
+          initial={{ opacity: 0, x: 1000 }}
+          animate={{
+            opacity: animationRight ? 1 : 0,
+            x: animationRight ? 0 : 1000,
+          }}
+          transition={{ type: "spring", stiffness: 50 }}
           type="email"
           name="email"
           placeholder="Your Email"
           onChange={(e) => setEmail(e.target.value)}
           className={stl.input}
         />
-        <textarea
+        <motion.textarea
+          initial={{ opacity: 0, x: 1000 }}
+          animate={{
+            opacity: animationRight ? 1 : 0,
+            x: animationRight ? 0 : 1000,
+          }}
+          transition={{ type: "spring", stiffness: 50 }}
           placeholder="Your Message..."
           onChange={(e) => setMsg(e.target.value)}
           className={stl.msg}
-        ></textarea>
-        <button
+        ></motion.textarea>
+        <motion.button
+          initial={{ opacity: 0, y: 500 }}
+          animate={{
+            opacity: animationRight ? 1 : 0,
+            y: animationRight ? 0 : 500,
+          }}
+          transition={{ type: "spring", stiffness: 50 }}
           onClick={() => console.log("Clicked...")}
           type="submit"
           className={stl.submitBtn}
         >
           <SendIcon />
           Send
-        </button>
-      </div>
+        </motion.button>
+      </motion.div>
     </div>
   );
 };
