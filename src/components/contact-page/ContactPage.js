@@ -20,9 +20,9 @@ const ContactPage = () => {
   const [animationRight, setAnimationRight] = useState(false);
   const [animationSocialBtn, setAnimationSocialBtn] = useState(false);
 
-  console.log(name, "name");
-  console.log(email, "email");
-  console.log(msg, "msg");
+  // console.log(name, "name");
+  // console.log(email, "email");
+  // console.log(msg, "msg");
 
   return (
     <div className={stl.contactPage}>
