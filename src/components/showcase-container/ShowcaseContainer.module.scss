@@ -1,0 +1,6 @@
+@import "styles/common";
+
+.projContainer {
+  width: 100%;
+  @extend .flexColCen;
+}

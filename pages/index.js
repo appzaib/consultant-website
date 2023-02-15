@@ -3,7 +3,7 @@ import CareersPage from "@components/careers-page";
 import CaseStudyPage from "@components/casestudy-page";
 import Footer from "@components/footer";
 import Homepage from "@components/home-page";
-import HowWeWorkSec from "@components/how-we-work-section";
+import HowWeWorkPage from "@components/how-we-work-page";
 import Navbar from "@components/navbar";
 import ServicesPage from "@components/services-page";
 
@@ -15,8 +15,8 @@ const Home = () => {
       {/* <Homepage /> */}
       {/* <CaseStudyPage /> */}
       {/* <ServicesPage /> */}
-      <BlogPage />
-      {/* <HowWeWorkSec /> */}
+      {/* <BlogPage /> */}
+      <HowWeWorkPage />
       <Footer />
     </main>
   );

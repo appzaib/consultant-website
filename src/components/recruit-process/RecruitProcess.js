@@ -9,19 +9,19 @@ const RecruitProcess = () => {
       <div className={stl.process}>
         <div className={stl.right}>
           <div className={stl.item}>
-            <RecruitCard right="52%" />
+            <RecruitCard right="51%" />
             <span className={stl.dot}>01</span>
           </div>
           <div className={stl.item}>
             <RecruitCard
-              right="52%"
+              right="51%"
               background="radial-gradient(#f588d8, #c0a3e5)"
             />
             <div className={stl.dot}>03</div>
           </div>
           <div className={stl.item}>
             <RecruitCard
-              right="52%"
+              right="51%"
               background="radial-gradient(#76b2fe, #b69efe)"
             />
             <div className={stl.dot}>05</div>
@@ -32,16 +32,16 @@ const RecruitProcess = () => {
         <div className={stl.left}>
           <div className={stl.item}>
             <RecruitCard
-              left="52%"
-              initial={{ x: 300, rotate: -25 }}
+              left="51%"
+              initial={{ x: 200, rotate: -25 }}
               background="radial-gradient(#fbc1cc, #fa99b2)"
             />
             <div className={stl.dot}>02</div>
           </div>
           <div className={stl.item}>
             <RecruitCard
-              left="52%"
-              initial={{ x: 300, rotate: -25 }}
+              left="51%"
+              initial={{ x: 200, rotate: -25 }}
               background="radial-gradient(#60efbc, #58d5c9)"
             />
             <div className={stl.dot}>04</div>
