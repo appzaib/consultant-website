@@ -1,25 +1,19 @@
-import Image from "next/image";
-
 import Intro from "@components/intro";
-import UpperSection from "@components/careerspage-sections/upper-section";
+import UpperSecCont from "@components/upper-section-container";
 import RecruitProcess from "@components/recruit-process";
-
-import stl from "./HowWeWorkPage.module.scss";
 import ShowcaseContainer from "@components/showcase-container";
 import BlogSection from "@components/careerspage-sections/blog-section";
 
-const HowWeWorkPage = () => {
-  return (
-    <div className={stl.hwwPage}>
-      <Intro />
-      <UpperSection />
-      <UpperSection imgPosition="left" />
-      <UpperSection />
-      <RecruitProcess />
-      <ShowcaseContainer />
-      <BlogSection />
-    </div>
-  );
-};
+import stl from "./HowWeWorkPage.module.scss";
+
+const HowWeWorkPage = () => (
+  <div className={stl.hwwPage}>
+    <Intro />
+    <UpperSecCont />
+    <RecruitProcess />
+    <ShowcaseContainer />
+    <BlogSection />
+  </div>
+);
 
 export default HowWeWorkPage;
