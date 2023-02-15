@@ -1,11 +1,13 @@
+import PropTypes from "prop-types";
+
 import RecruitCard from "@components/cards/recruit-card";
 
 import stl from "./RecruitProcess.module.scss";
 
-const RecruitProcess = () => {
+const RecruitProcess = ({ heading }) => {
   return (
     <div className={stl.recruitProcessCont}>
-      <h1 className={stl.heading}>Recruitment Process</h1>
+      <h1 className={stl.heading}>{heading}</h1>
       <div className={stl.process}>
         <div className={stl.right}>
           <div className={stl.item}>
@@ -51,6 +53,14 @@ const RecruitProcess = () => {
       </div>
     </div>
   );
+};
+
+RecruitProcess.defaultProps = {
+  heading: "Recruit Process",
+};
+
+RecruitProcess.propTypes = {
+  heading: PropTypes.string,
 };
 
 export default RecruitProcess;

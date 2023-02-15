@@ -10,7 +10,7 @@ const HowWeWorkPage = () => (
   <div className={stl.hwwPage}>
     <Intro />
     <UpperSecCont />
-    <RecruitProcess />
+    <RecruitProcess heading="How We Work" />
     <ShowcaseContainer />
     <BlogSection />
   </div>
