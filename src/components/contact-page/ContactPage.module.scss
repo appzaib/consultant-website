@@ -1,0 +1,176 @@
+@import url("https://fonts.googleapis.com/css2?family=Itim&display=swap");
+@import "styles/common";
+
+.contactPage {
+  display: flex;
+  padding-top: 100px;
+  min-height: 100vh;
+  height: 100%;
+  background: #fff;
+
+  .left,
+  .right {
+    @extend .flexColCen;
+    gap: 2rem;
+    width: 50%;
+    padding: 3rem;
+  }
+
+  .left {
+    justify-content: space-between;
+
+    .text {
+      @extend .flexCol;
+      gap: 1rem;
+      width: 70%;
+
+      .heading {
+        font-size: 3rem;
+      }
+
+      .desc {
+        @extend .description;
+      }
+    }
+
+    .contactOpt {
+      @extend .flexColCen;
+      gap: 10px;
+
+      .emailBtn,
+      .phoneBtn,
+      .locationBtn {
+        @extend .flexCenter;
+        gap: 10px;
+        width: 260px;
+        height: 63px;
+        border: none;
+        outline: none;
+        background: dodgerblue;
+        padding: 10px;
+        border-radius: 10px;
+        color: #fff;
+        font-size: 1.5rem;
+        font-family: inherit;
+        cursor: pointer;
+
+        &:hover {
+          text-decoration: underline;
+        }
+
+        svg path {
+          fill: #fff;
+        }
+      }
+    }
+
+    .social {
+      @extend .flexColCen;
+      gap: 2rem;
+      width: 100%;
+
+      .text .desc {
+        text-align: center;
+        text-decoration: underline;
+      }
+
+      .btnContainer {
+        @extend .alignCen;
+        gap: 2rem;
+
+        .socialBtn {
+          border: none;
+          outline: none;
+          background: none;
+          cursor: pointer;
+          transform: scale(1.2);
+          transition: all 0.2s;
+
+          &:hover {
+            transform: scale(1.4);
+          }
+
+          &:active {
+            transform: scale(1.2);
+          }
+        }
+      }
+    }
+  }
+
+  .right {
+    justify-content: space-evenly;
+
+    .input {
+      outline: none;
+      border: 3px solid transparent;
+      width: 100%;
+      padding: 1rem;
+      font-size: 1.5rem;
+      border-bottom: 3px solid dodgerblue;
+      border-radius: 10px;
+      font-family: "Itim", cursive;
+
+      &:focus {
+        border: 3px solid dodgerblue;
+      }
+    }
+
+    .msg {
+      outline: none;
+      width: 100%;
+      height: 350px;
+      border: 3px solid dodgerblue;
+      border-radius: 10px;
+      padding: 1rem;
+      font-size: 1.5rem;
+      font-family: "Itim", cursive;
+      resize: none;
+    }
+
+    .submitBtn {
+      @extend .flexCenter;
+      gap: 10px;
+      outline: none;
+      border: none;
+      background: dodgerblue;
+      padding: 10px 1rem;
+      border-radius: 10px;
+      height: 55px;
+      width: 150px;
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .contactPage .left .text {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .contactPage {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+
+    .left,
+    .right {
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .contactPage .left,
+  .right {
+    padding: 2rem 10px;
+  }
+}

@@ -1,6 +1,7 @@
 import BlogPage from "@components/blog-page";
 import CareersPage from "@components/careers-page";
 import CaseStudyPage from "@components/casestudy-page";
+import ContactPage from "@components/contact-page";
 import Footer from "@components/footer";
 import Homepage from "@components/home-page";
 import HowWeWorkPage from "@components/how-we-work-page";
@@ -16,8 +17,9 @@ const Home = () => {
       {/* <CaseStudyPage /> */}
       {/* <ServicesPage /> */}
       {/* <BlogPage /> */}
-      <HowWeWorkPage />
-      <Footer />
+      {/* <HowWeWorkPage /> */}
+      <ContactPage />
+      <Footer showContactCard={false} />
     </main>
   );
 };
