@@ -1,11 +1,8 @@
 import { Html, Head, Main, NextScript } from "next/document";
-import CusHead from "@/src/components/head";
 
 const Document = () => (
   <Html lang="en">
-    <Head>
-      <CusHead />
-    </Head>
+    <Head />
     <body>
       <Main />
       <NextScript />

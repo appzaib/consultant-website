@@ -32,7 +32,7 @@ const SkillsSection = () => {
         transition={{ duration: 0.5 }}
         className={stl.btnContainer}
       >
-        <ReadMoreBtn variant="secondary" />
+        <ReadMoreBtn link="/services.html" variant="secondary" />
       </motion.div>
     </motion.div>
   );

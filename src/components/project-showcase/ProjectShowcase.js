@@ -32,7 +32,7 @@ const ProjectShowcase = () => {
           </p>
         </div>
         <div className={stl.btnContainer}>
-          <ReadMoreBtn variant="secondary" />
+          <ReadMoreBtn link="#" variant="secondary" />
         </div>
       </motion.div>
       <motion.div

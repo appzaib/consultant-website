@@ -21,7 +21,7 @@ const CareersSection = () => {
         }}
         className={stl.btnContainer}
       >
-        <ReadMoreBtn variant="secondary" />
+        <ReadMoreBtn link="/careers.html" variant="secondary" />
       </motion.div>
     </div>
   );

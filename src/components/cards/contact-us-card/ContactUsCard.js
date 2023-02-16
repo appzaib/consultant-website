@@ -37,7 +37,7 @@ const ContactUsCard = ({
         {desc && <p className={stl.desc}>{desc}</p>}
         <div className={stl.btnContainer}>
           <button
-            onClick={() => (location.href = "/contact")}
+            onClick={() => (location.href = "/contact.html")}
             className={stl.btn}
           >
             {icon} {btnText}

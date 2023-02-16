@@ -102,6 +102,18 @@
         transform: rotate(0);
       }
     }
+
+    .iconContainer {
+      @extend .alignCen;
+      justify-content: space-evenly;
+      gap: 1rem;
+      width: 100%;
+      display: none;
+
+      .icon {
+        cursor: pointer;
+      }
+    }
   }
 
   .dropDownContainer {
@@ -227,6 +239,7 @@
 
       .right {
         width: 100%;
+        justify-content: center;
 
         li {
           padding: 4px 0;
@@ -236,6 +249,18 @@
 
     .dropDown {
       padding-left: 3rem;
+    }
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .navbar .main {
+    .right {
+      display: none;
+    }
+
+    .iconContainer {
+      display: flex;
     }
   }
 }

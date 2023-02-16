@@ -60,7 +60,7 @@ const CaseStudyCard = ({
             {description}
           </p>
           <div className={stl.btnContainer}>
-            <ReadMoreBtn btnText={btnText} />
+            <ReadMoreBtn link="/casestudy.html" btnText={btnText} />
           </div>
         </div>
       </motion.div>

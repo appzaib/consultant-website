@@ -68,7 +68,7 @@ const Intro = ({
             transition={{ delay: 0.2, type: "spring", stiffness: 50 }}
             onMouseOver={() => setShowArrow(true)}
             onMouseOut={() => setShowArrow(false)}
-            onClick={() => (location.href = "/contact")}
+            onClick={() => (location.href = "/contact.html")}
             className={stl.btn}
           >
             {btnText} {showArrow && <span>{icon}</span>}

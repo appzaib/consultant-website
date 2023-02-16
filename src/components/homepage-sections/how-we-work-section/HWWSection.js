@@ -91,7 +91,7 @@ const HWWSection = () => {
         }}
         className={stl.btnContainer}
       >
-        <ReadMoreBtn variant="secondary" />
+        <ReadMoreBtn link="/how-we-work.html" variant="secondary" />
       </motion.div>
     </div>
   );
