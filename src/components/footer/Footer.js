@@ -63,7 +63,7 @@ const Footer = ({ usefulLinks, showContactCard }) => {
             <MailIcon />
             support@company.com
           </span>
-          <span className={stl.company}>Business Consultation &copy; 2023</span>
+          <span className={stl.company}>Codeline Consulting &copy; 2023</span>
         </motion.div>
         <motion.div
           initial={{ y: 500, opacity: 0 }}

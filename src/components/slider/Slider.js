@@ -32,7 +32,9 @@ const Slider = ({
       ele.style.width = `${progress}%`;
       if (progress === 0) {
         setIsPrevDisabled(true);
+        setIsNextDisabled(false);
       } else if (progress === 100) {
+        setIsPrevDisabled(false);
         setIsNextDisabled(true);
       }
     }, 50);

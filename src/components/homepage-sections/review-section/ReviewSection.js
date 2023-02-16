@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+
 import Slider from "@components/slider";
+import reviews from "@components/data/review-data";
 
 import stl from "./ReviewSection.module.scss";
 
@@ -38,7 +40,7 @@ const ReviewSection = () => {
           continue to put their faith in us.
         </motion.p>
       </motion.div>
-      <Slider />
+      <Slider content={reviews} />
     </div>
   );
 };
