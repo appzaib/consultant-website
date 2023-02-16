@@ -40,7 +40,6 @@ const JobCard = ({
         <SaveIcon
           className={clsx(stl.icon, saved ? stl.fill : undefined)}
           onClick={() => {
-            console.log("Clicked...");
             setSaved(!saved);
           }}
         />
@@ -55,7 +54,12 @@ const JobCard = ({
         </div>
         <div className={stl.footer}>
           <div className={stl.postInfo}>Posted: {postInfo}</div>
-          <button className={stl.applyBtn}>Apply</button>
+          <button
+            onClick={() => (location.href = "#")}
+            className={stl.applyBtn}
+          >
+            Apply
+          </button>
         </div>
       </motion.div>
     </motion.div>

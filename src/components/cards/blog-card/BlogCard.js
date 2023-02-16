@@ -30,7 +30,7 @@ const BlogCard = ({
         initial={{ opacity: 0, y: 150 }}
         animate={{ opacity: animation ? 1 : 0, y: animation ? 0 : 150 }}
         transition={{ type: "spring", stiffness: 50 }}
-        onClick={() => console.log("Clicked...")}
+        onClick={() => (location.href = "#")}
         className={clsx(stl.card, big ? stl.big : undefined)}
       >
         <div className={stl.imgContainer}>

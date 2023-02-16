@@ -34,22 +34,18 @@ const Footer = ({ usefulLinks, showContactCard }) => {
         className={stl.footer}
       >
         <motion.div
-          initial={{ display: "none", x: -500, opacity: 0 }}
+          initial={{ x: -500, opacity: 0 }}
           animate={{
-            display: animation ? "flex" : "none",
             x: animation ? 0 : -500,
             opacity: animation ? 1 : 0,
           }}
           transition={{ type: "spring", stiffness: 50 }}
           className={stl.section1}
         >
-          <div onClick={() => console.log("Clicked...")} className={stl.logo}>
+          <div onClick={() => (location.href = "/")} className={stl.logo}>
             <Logo />
           </div>
-          <span
-            onClick={() => console.log("Clicked...")}
-            className={stl.location}
-          >
+          <span onClick={() => (location.href = "#")} className={stl.location}>
             <LocationIcon />
             <span className={stl.address}>
               <span>Akshya Nagar 1st Block 1st Cross</span>
@@ -60,16 +56,18 @@ const Footer = ({ usefulLinks, showContactCard }) => {
             <PhoneIcon />
             +1-202-555-0128
           </span>
-          <span onClick={() => console.log("Clicked...")} className={stl.email}>
+          <span
+            onClick={() => (location.href = "mailto:support@company.com")}
+            className={stl.email}
+          >
             <MailIcon />
             support@company.com
           </span>
           <span className={stl.company}>Business Consultation &copy; 2023</span>
         </motion.div>
         <motion.div
-          initial={{ display: "none", y: 500, opacity: 0 }}
+          initial={{ y: 500, opacity: 0 }}
           animate={{
-            display: animation ? "flex" : "none",
             y: animation ? 0 : 500,
             opacity: animation ? 1 : 0,
           }}
@@ -77,14 +75,11 @@ const Footer = ({ usefulLinks, showContactCard }) => {
         >
           {usefulLinks.map((item, i) => (
             <div key={i} className={stl.col}>
-              <span
-                onClick={() => console.log("Clicked...")}
-                className={stl.head}
-              >
+              <span onClick={() => (location.href = "#")} className={stl.head}>
                 {item.name}
               </span>
               {item.childs.map((item, i) => (
-                <span key={i} onClick={() => console.log("Clicked...")}>
+                <span key={i} onClick={() => (location.href = "#")}>
                   {item.childName}
                 </span>
               ))}
@@ -92,9 +87,8 @@ const Footer = ({ usefulLinks, showContactCard }) => {
           ))}
         </motion.div>
         <motion.div
-          initial={{ display: "none", x: 500, opacity: 0 }}
+          initial={{ x: 500, opacity: 0 }}
           animate={{
-            display: animation ? "flex" : "none",
             x: animation ? 0 : 500,
             opacity: animation ? 1 : 0,
           }}
@@ -109,28 +103,28 @@ const Footer = ({ usefulLinks, showContactCard }) => {
           </p>
           <div className={stl.social}>
             <button
-              onClick={() => console.log("Clicked...")}
+              onClick={() => (location.href = "#")}
               className={clsx(stl.socialBtn, stl.btn1)}
             >
               <FacebookIcon2 className={stl.iconPrimary} />
               <FacebookIcon className={stl.iconSecondary} />
             </button>
             <button
-              onClick={() => console.log("Clicked...")}
+              onClick={() => (location.href = "#")}
               className={clsx(stl.socialBtn, stl.btn2)}
             >
               <TwitterIcon2 className={stl.iconPrimary} />
               <TwitterIcon className={stl.iconSecondary} />
             </button>
             <button
-              onClick={() => console.log("Clicked...")}
+              onClick={() => (location.href = "#")}
               className={clsx(stl.socialBtn, stl.btn3)}
             >
               <LinkedInIcon2 className={stl.iconPrimary} />
               <LinkedInIcon className={stl.iconSecondary} />
             </button>
             <button
-              onClick={() => console.log("Clicked...")}
+              onClick={() => (location.href = "#")}
               className={clsx(stl.socialBtn, stl.btn4)}
             >
               <GithubIcon2 className={stl.iconPrimary} />

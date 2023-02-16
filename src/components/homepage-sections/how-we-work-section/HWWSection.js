@@ -31,9 +31,8 @@ const HWWSection = () => {
         className={stl.text}
       >
         <motion.h1
-          initial={{ display: "none", x: 1000, opacity: 0 }}
+          initial={{ x: 1000, opacity: 0 }}
           animate={{
-            display: textAnimation ? "block" : "none",
             x: textAnimation ? 0 : 1000,
             opacity: textAnimation ? 1 : 0,
           }}
@@ -43,9 +42,8 @@ const HWWSection = () => {
           Discover How We Deliver Your Products
         </motion.h1>
         <motion.p
-          initial={{ display: "none", x: 1000, opacity: 0 }}
+          initial={{ x: 1000, opacity: 0 }}
           animate={{
-            display: textAnimation ? "block" : "none",
             x: textAnimation ? 0 : 1000,
             opacity: textAnimation ? 1 : 0,
           }}
@@ -70,9 +68,8 @@ const HWWSection = () => {
       >
         {briefInfo.map((item, i) => (
           <motion.span
-            initial={{ display: "none", opacity: 0, y: 200 }}
+            initial={{ opacity: 0, y: 200 }}
             animate={{
-              display: briefInfoAnimation ? "flex" : "none",
               opacity: briefInfoAnimation ? 1 : 0,
               y: briefInfoAnimation ? 0 : 200,
             }}

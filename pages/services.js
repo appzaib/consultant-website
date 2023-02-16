@@ -1,10 +1,10 @@
 import { useState } from "react";
 
 import ProgressBar from "@components/progress-bar";
-import Homepage from "@components/home-page";
 import Layout from "@components/layout";
+import ServicesPage from "@components/services-page";
 
-const Home = () => {
+const Services = () => {
   const [progress, setProgress] = useState(0);
   setTimeout(() => {
     const main = document.getElementById("main");
@@ -25,11 +25,11 @@ const Home = () => {
   }, 50);
 
   return (
-    <main id="main">
+    <main style={{ scrollBehavior: "smooth" }} id="main">
       <ProgressBar progress={progress} />
-      <Layout children={<Homepage />} />
+      <Layout children={<ServicesPage />} />
     </main>
   );
 };
 
-export default Home;
+export default Services;

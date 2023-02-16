@@ -108,21 +108,21 @@ const Navbar = () => {
           <li
             id="careers"
             onMouseOver={() => handleHover("careers")}
-            onClick={() => console.log("Clicked...")}
+            onClick={() => (location.href = "/careers")}
             className={careers ? stl.rotateCar : stl.undoRotate}
           >
             Careers <ArrowDown />
           </li>
           <li
             onMouseOver={() => setDropDown(false)}
-            onClick={() => console.log("Clicked...")}
+            onClick={() => (location.href = "/casestudy")}
           >
             Case Studies
           </li>
           <li
             id="services"
             onMouseOver={() => handleHover("services")}
-            onClick={() => console.log("Clicked...")}
+            onClick={() => (location.href = "/services")}
             className={services ? stl.rotateSer : stl.undoRotate}
           >
             Services <ArrowDown />
@@ -130,14 +130,14 @@ const Navbar = () => {
           <li
             id="how_we_work"
             onMouseOver={() => handleHover("how_we_work")}
-            onClick={() => console.log("Clicked...")}
+            onClick={() => (location.href = "/how-we-work")}
             className={how_we_work ? stl.rotateHow : stl.undoRotate}
           >
             How We Work <ArrowDown />
           </li>
           <li
             onMouseOver={() => setDropDown(false)}
-            onClick={() => console.log("Clicked...")}
+            onClick={() => (location.href = "/blog")}
           >
             Blog
           </li>
@@ -160,7 +160,7 @@ const Navbar = () => {
         >
           {dropDownItems.map((list, i) => (
             <li
-              onClick={() => console.log("Clicked...")}
+              onClick={() => (location.href = "#")}
               key={i}
               className={stl.dropDownItem}
             >

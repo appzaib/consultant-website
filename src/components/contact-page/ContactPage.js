@@ -58,21 +58,21 @@ const ContactPage = () => {
           className={stl.contactOpt}
         >
           <button
-            onClick={() => console.log("Clicked...")}
+            onClick={() => (location.href = "mailto:support@company.com")}
             className={stl.emailBtn}
           >
             <EmailIcon />
             Write us an Email
           </button>
           <button
-            onClick={() => console.log("Clicked...")}
+            onClick={() => (location.href = "#")}
             className={stl.phoneBtn}
           >
             <PhoneIcon />
             Call us
           </button>
           <button
-            onClick={() => console.log("Clicked...")}
+            onClick={() => (location.href = "#")}
             className={stl.locationBtn}
           >
             <LocationIcon />
@@ -102,7 +102,7 @@ const ContactPage = () => {
                 y: animationSocialBtn ? 0 : 500,
               }}
               transition={{ type: "spring", stiffness: 50 }}
-              onClick={() => console.log("Clicked...")}
+              onClick={() => (location.href = "#")}
               className={stl.socialBtn}
             >
               <FacebookIcon />
@@ -114,7 +114,7 @@ const ContactPage = () => {
                 y: animationSocialBtn ? 0 : 500,
               }}
               transition={{ type: "spring", stiffness: 50 }}
-              onClick={() => console.log("Clicked...")}
+              onClick={() => (location.href = "#")}
               className={stl.socialBtn}
             >
               <GithubIcon />
@@ -126,7 +126,7 @@ const ContactPage = () => {
                 y: animationSocialBtn ? 0 : 500,
               }}
               transition={{ type: "spring", stiffness: 50 }}
-              onClick={() => console.log("Clicked...")}
+              onClick={() => (location.href = "#")}
               className={stl.socialBtn}
             >
               <LinkedInIcon />
@@ -138,7 +138,7 @@ const ContactPage = () => {
                 y: animationSocialBtn ? 0 : 500,
               }}
               transition={{ type: "spring", stiffness: 50 }}
-              onClick={() => console.log("Clicked...")}
+              onClick={() => (location.href = "#")}
               className={stl.socialBtn}
             >
               <TwitterIcon />
@@ -194,8 +194,7 @@ const ContactPage = () => {
             y: animationRight ? 0 : 500,
           }}
           transition={{ type: "spring", stiffness: 50 }}
-          onClick={() => console.log("Clicked...")}
-          type="submit"
+          onClick={() => (location.href = "#")}
           className={stl.submitBtn}
         >
           <SendIcon />
