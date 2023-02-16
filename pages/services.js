@@ -6,6 +6,7 @@ import ServicesPage from "@components/services-page";
 
 const Services = () => {
   const [progress, setProgress] = useState(0);
+
   setTimeout(() => {
     const main = document.getElementById("main");
 
@@ -27,7 +28,7 @@ const Services = () => {
   return (
     <main style={{ scrollBehavior: "smooth" }} id="main">
       <ProgressBar progress={progress} />
-      <Layout children={<ServicesPage />} />
+      <Layout child={<ServicesPage />} />
     </main>
   );
 };

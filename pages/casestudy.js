@@ -6,6 +6,7 @@ import CaseStudyPage from "@components/casestudy-page";
 
 const CaseStudy = () => {
   const [progress, setProgress] = useState(0);
+
   setTimeout(() => {
     const main = document.getElementById("main");
 
@@ -27,7 +28,7 @@ const CaseStudy = () => {
   return (
     <main style={{ scrollBehavior: "smooth" }} id="main">
       <ProgressBar progress={progress} />
-      <Layout children={<CaseStudyPage />} />
+      <Layout child={<CaseStudyPage />} />
     </main>
   );
 };

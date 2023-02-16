@@ -6,6 +6,7 @@ import ContactPage from "@components/contact-page";
 
 const Contact = () => {
   const [progress, setProgress] = useState(0);
+
   setTimeout(() => {
     const main = document.getElementById("main");
 
@@ -27,7 +28,7 @@ const Contact = () => {
   return (
     <main style={{ scrollBehavior: "smooth" }} id="main">
       <ProgressBar progress={progress} />
-      <Layout children={<ContactPage />} showContactCard={false} />
+      <Layout child={<ContactPage />} showContactCard={false} />
     </main>
   );
 };

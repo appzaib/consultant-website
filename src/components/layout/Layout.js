@@ -4,20 +4,20 @@ import Footer from "@components/footer";
 import Homepage from "@components/home-page";
 import Navbar from "@components/navbar";
 
-const Layout = ({ children, showContactCard }) => (
+const Layout = ({ child, showContactCard }) => (
   <>
     <Navbar />
-    {children}
+    {child}
     <Footer showContactCard={showContactCard} />
   </>
 );
 
 Layout.defaultProps = {
-  children: <Homepage />,
+  child: <Homepage />,
 };
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired,
+  child: PropTypes.node.isRequired,
   showContactCard: PropTypes.bool,
 };
 

@@ -6,6 +6,7 @@ import HowWeWorkPage from "@components/how-we-work-page";
 
 const HowWeWork = () => {
   const [progress, setProgress] = useState(0);
+
   setTimeout(() => {
     const main = document.getElementById("main");
 
@@ -27,7 +28,7 @@ const HowWeWork = () => {
   return (
     <main style={{ scrollBehavior: "smooth" }} id="main">
       <ProgressBar progress={progress} />
-      <Layout children={<HowWeWorkPage />} />
+      <Layout child={<HowWeWorkPage />} />
     </main>
   );
 };

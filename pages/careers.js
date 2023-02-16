@@ -6,6 +6,7 @@ import CareersPage from "@components/careers-page";
 
 const Careers = () => {
   const [progress, setProgress] = useState(0);
+
   setTimeout(() => {
     const main = document.getElementById("main");
 
@@ -27,7 +28,7 @@ const Careers = () => {
   return (
     <main style={{ scrollBehavior: "smooth" }} id="main">
       <ProgressBar progress={progress} />
-      <Layout children={<CareersPage />} />
+      <Layout child={<CareersPage />} />
     </main>
   );
 };

@@ -6,6 +6,7 @@ import BlogPage from "@components/blog-page";
 
 const Blog = () => {
   const [progress, setProgress] = useState(0);
+
   setTimeout(() => {
     const main = document.getElementById("main");
 
@@ -27,7 +28,7 @@ const Blog = () => {
   return (
     <main style={{ scrollBehavior: "smooth" }} id="main">
       <ProgressBar progress={progress} />
-      <Layout children={<BlogPage />} />
+      <Layout child={<BlogPage />} />
     </main>
   );
 };

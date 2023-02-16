@@ -1,11 +1,11 @@
 import { useState } from "react";
 
 import ProgressBar from "@components/progress-bar";
-import Homepage from "@components/home-page";
 import Layout from "@components/layout";
 
 const Home = () => {
   const [progress, setProgress] = useState(0);
+
   setTimeout(() => {
     const main = document.getElementById("main");
 
@@ -27,7 +27,7 @@ const Home = () => {
   return (
     <main id="main">
       <ProgressBar progress={progress} />
-      <Layout children={<Homepage />} />
+      <Layout />
     </main>
   );
 };
