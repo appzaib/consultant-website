@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 
-import CaseStudyCard from "@components/cards/case-study-card";
+import { description, caseStudies1 } from "@components/data/case-study-data";
 import ReadMoreBtn from "@components/read-more-btn";
 
 import stl from "./CaseStudySection.module.scss";
@@ -9,12 +9,6 @@ import stl from "./CaseStudySection.module.scss";
 const CaseStudySection = () => {
   const [textAnimation, setTextAnimation] = useState(false);
   const [btnAnimation, setBtnAnimation] = useState(false);
-
-  const caseStudyCardArray = [
-    <CaseStudyCard key={1} width="370px" />,
-    <CaseStudyCard key={2} transitionDelay={0.2} width="370px" />,
-    <CaseStudyCard key={3} transitionDelay={0.4} width="370px" />,
-  ];
 
   return (
     <div className={stl.caseStudySection}>
@@ -42,11 +36,11 @@ const CaseStudySection = () => {
           transition={{ type: "spring" }}
           className={stl.desc}
         >
-          Incididunt adipisicing magna voluptate ad non.
+          {description}
         </motion.p>
       </motion.div>
       <motion.div id="caseStudyCont" className={stl.cardContainer}>
-        {caseStudyCardArray.map((card) => card)}
+        {caseStudies1.map((card) => card)}
       </motion.div>
       <motion.div
         onViewportEnter={() => setBtnAnimation(true)}

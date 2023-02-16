@@ -27,8 +27,8 @@ const WeAreHiring = ({ heading, desc, customClass }) => {
 };
 
 WeAreHiring.defaultProps = {
-  heading: "Lorem Ipsum",
-  desc: "Consequat tempor duis ipsum id cupidatat nostrud duis esse. Est labore excepteur ea adipisicing voluptate fugiat irure. Eiusmod cillum elit magna cillum mollit non qui aliqua laboris elit aliqua excepteur reprehenderit. Officia enim duis laborum consequat qui veniam enim ipsum exercitation laborum. Nisi aliqua labore elit quis proident laborum aliquip tempor qui laborum est. Fugiat fugiat elit ullamco magna. Nisi ex consequat duis sit dolore esse aute.",
+  heading: "We Are Hiring",
+  desc: "We are excited to be expanding our team and are actively seeking talented and motivated individuals to join us in our mission to deliver exceptional web development services. We offer a dynamic and collaborative work environment that values innovation, creativity, and personal growth. If you're passionate about web development and want to work with a dedicated and enthusiastic team, we encourage you to apply and take the first step towards a rewarding career with us.",
 };
 
 WeAreHiring.propTypes = {

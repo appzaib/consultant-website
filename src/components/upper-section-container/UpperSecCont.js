@@ -1,21 +1,5 @@
-import PropTypes from "prop-types";
+import { upperSection } from "@components/data/careers-data";
 
-import UpperSection from "@components/careerspage-sections/upper-section";
-
-const UpperSecCont = () => (
-  <>
-    <UpperSection />
-    <UpperSection imgPosition="left" />
-    <UpperSection />
-  </>
-);
-
-UpperSecCont.defaultProps = {
-  num: 3,
-};
-
-UpperSecCont.propTypes = {
-  num: PropTypes.number,
-};
+const UpperSecCont = () => upperSection;
 
 export default UpperSecCont;

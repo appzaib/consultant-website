@@ -50,7 +50,6 @@ const ContactUsCard = ({
 
 ContactUsCard.defaultProps = {
   heading: "Start a Project With Us",
-  desc: "Sunt excepteur sit aliqua aliqua. Ut qui reprehenderit ipsum id sint esse et esse pariatur ex occaecat elit in. Amet cillum occaecat laborum dolor duis consectetur. Aliqua est irure ex reprehenderit sit enim enim nulla nostrud officia sunt eu anim culpa.",
   btnText: "Contact Us",
   icon: <PhoneIcon />,
 };

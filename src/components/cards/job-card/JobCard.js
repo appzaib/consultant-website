@@ -69,7 +69,7 @@ const JobCard = ({
 JobCard.defaultProps = {
   jobTitle: "Sr.Lorem Ipsum",
   jobSalary: "$1000k - $1500k",
-  labels: ["Lorem", "Lorem", "Lorem"],
+  labels: ["Remote"],
   postInfo: "2 Days ago",
 };
 

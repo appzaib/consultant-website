@@ -1,19 +1,12 @@
 import { motion } from "framer-motion";
 
-import BlogCard from "@components/cards/blog-card";
-
+import { categories, blogs } from "@components/data/blog-data";
 import PrevIcon from "@assets/arrow-prev-circle.svg";
 import NextIcon from "@assets/arrow-next-circle.svg";
 
 import stl from "./AllBlogs.module.scss";
 
 const AllBlogs = () => {
-  let blogs = [];
-  for (let i = 0; i < 30; i++) blogs.push(<BlogCard key={i} />);
-
-  let categories = [];
-  for (let i = 0; i < 10; i++) categories.push("Lorem Ipsum");
-
   const handlePrev = () => {
     const el = document.getElementById("container");
     const width = el.offsetWidth;

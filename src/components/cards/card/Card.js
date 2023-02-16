@@ -39,8 +39,8 @@ const Card = ({
         style={{ width: width, height: height, background: background }}
         className={clsx(stl.card, stl[variant], customClass)}
       >
-        {icon !== "undefined" && <div className={stl.icon}>{icon}</div>}
-        {typeof imgSrc !== "undefined" && (
+        {icon && <div className={stl.icon}>{icon}</div>}
+        {imgSrc && (
           <Image
             src={imgSrc}
             width={100}

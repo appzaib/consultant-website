@@ -11,7 +11,11 @@ import stl from "./CareersPage.module.scss";
 
 const CareersPage = () => (
   <div className={stl.careersPage}>
-    <Intro />
+    <Intro
+      heading="Join Our Team and Make a Difference"
+      desc=" Are you passionate about web development? Do you have the skills and drive to make a difference? We're always looking for talented individuals to join our team and help us build great things. Check out our current job openings and discover your next career opportunity with us."
+      btnText="See Open Positions"
+    />
     <UpperSecCont />
     <div className={stl.divider} />
     <WeAreHiring />
