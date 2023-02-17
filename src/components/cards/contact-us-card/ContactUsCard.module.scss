@@ -3,6 +3,7 @@
 
 .contCardContainer .contactCard {
   @extend .flexColCen;
+  min-height: 300px;
   height: auto;
   width: 70vw;
   background: dodgerblue;

@@ -1,5 +1,6 @@
 import { useState } from "react";
 
+import CusHead from "@components/head";
 import ProgressBar from "@components/progress-bar";
 import Layout from "@components/layout";
 import CareersPage from "@components/careers-page";
@@ -22,14 +23,17 @@ const Careers = () => {
   }, 50);
 
   return (
-    <main style={{ scrollBehavior: "smooth" }} id="main">
-      <ScrollToTop />
-      <ProgressBar progress={progress} />
-      <Layout
-        contactCardHeading="Want to Work with Us? - Contact Us"
-        child={<CareersPage />}
-      />
-    </main>
+    <>
+      <CusHead />
+      <main style={{ scrollBehavior: "smooth" }} id="main">
+        <ScrollToTop />
+        <ProgressBar progress={progress} />
+        <Layout
+          contactCardHeading="Want to Work with Us? - Contact Us"
+          child={<CareersPage />}
+        />
+      </main>
+    </>
   );
 };
 
