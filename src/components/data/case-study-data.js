@@ -1,4 +1,5 @@
 import CaseStudyCard from "@components/cards/case-study-card";
+import Card from "@components/cards/card";
 
 import ProjectImage from "@assets/project.png";
 import ProjectImage2 from "@assets/project-2.png";
