@@ -37,9 +37,12 @@ const Subscription = () => {
           className={stl.textContainer}
         >
           <div className={stl.title}>
-            Lorem nisi cupidatat non tempor laboris elit.
+            Join Our Mailing List for the Latest Updates and News
           </div>
-          <div className={stl.desc}>Ipsum anim velit nostrud et.</div>
+          <div className={stl.desc}>
+            Subscribe to our newsletter to stay up-to-date on the latest trends,
+            insights, and updates from our web development team.{" "}
+          </div>
           <input
             type="email"
             name="email"

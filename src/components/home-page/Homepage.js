@@ -10,7 +10,7 @@ import stl from "./Homepage.module.scss";
 const Homepage = () => {
   return (
     <div className={stl.home}>
-      <Intro />
+      <Intro btnText="Get in Touch" />
       <SkillsSection />
       <div className={stl.divider} />
       <ReviewSection />

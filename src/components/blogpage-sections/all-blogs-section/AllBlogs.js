@@ -1,19 +1,12 @@
 import { motion } from "framer-motion";
 
-import BlogCard from "@components/cards/blog-card";
-
+import { categories, blogs } from "@components/data/blog-data";
 import PrevIcon from "@assets/arrow-prev-circle.svg";
 import NextIcon from "@assets/arrow-next-circle.svg";
 
 import stl from "./AllBlogs.module.scss";
 
 const AllBlogs = () => {
-  let blogs = [];
-  for (let i = 0; i < 30; i++) blogs.push(<BlogCard key={i} />);
-
-  let categories = [];
-  for (let i = 0; i < 10; i++) categories.push("Lorem Ipsum");
-
   const handlePrev = () => {
     const el = document.getElementById("container");
     const width = el.offsetWidth;
@@ -28,6 +21,20 @@ const AllBlogs = () => {
 
   return (
     <div className={stl.allBlogs}>
+      <div className={stl.text}>
+        <h1 className={stl.heading}>All Blogs</h1>
+        <p className={stl.desc}>
+          Here you will find a wide range of articles and resources covering
+          various topics. Our team of expert writers is dedicated to providing
+          high-quality, informative, and engaging content on everything from
+          technology and business to health and wellness. Whether you're looking
+          for tips on how to improve your productivity, insights into the latest
+          industry trends, or simply some inspiration to help you achieve your
+          goals, you're sure to find something of interest in our All Blogs
+          section. So sit back, relax, and explore the wealth of knowledge that
+          we have to offer!
+        </p>
+      </div>
       <div className={stl.header}>
         <h1 className={stl.heading}>Categories</h1>
         <div className={stl.category}>
@@ -38,7 +45,7 @@ const AllBlogs = () => {
             {categories.map((item, i) => (
               <motion.span
                 key={i}
-                onClick={() => console.log("Clicked...")}
+                onClick={() => (location.href = "/blog.html")}
                 className={stl.label}
               >
                 {item}

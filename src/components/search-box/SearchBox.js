@@ -16,8 +16,6 @@ const SearchBox = ({ categoryList, customClass }) => {
   const [showDropDown, setShowDropdown] = useState(false);
   const [delay, setDelay] = useState(false);
 
-  useTypingAnimtion();
-
   const showDropdown = () => {
     setShowDropdown(true);
     setDelay(true);
@@ -52,6 +50,7 @@ const SearchBox = ({ categoryList, customClass }) => {
             type="text"
             name="search"
             id="search"
+            placeholder="Search for Skills or Tools"
             onChange={(e) => setSearchValue(e.target.value)}
             className={stl.input}
           />
@@ -105,7 +104,7 @@ const SearchBox = ({ categoryList, customClass }) => {
           whileHover={{ boxShadow: "0 0 20px 7px dodgerblue" }}
           whileTap={{ scale: 0.9 }}
           type="submit"
-          onClick={() => console.log("Clicked...")}
+          onClick={() => (location.href = "#")}
           className={stl.submitBtn}
         >
           Search <SearchIcon />
@@ -117,11 +116,11 @@ const SearchBox = ({ categoryList, customClass }) => {
 
 SearchBox.defaultProps = {
   categoryList: [
-    { name: "Lorem Ipsum1", transitionDelay: "" },
-    { name: "Lorem Ipsum2", transitionDelay: 0.1 },
-    { name: "Lorem Ipsum3", transitionDelay: 0.2 },
-    { name: "Lorem Ipsum4", transitionDelay: 0.3 },
-    { name: "Lorem Ipsum5", transitionDelay: 0.4 },
+    { name: "Web development", transitionDelay: "" },
+    { name: "Design", transitionDelay: 0.1 },
+    { name: "Finance", transitionDelay: 0.2 },
+    { name: "Business development", transitionDelay: 0.3 },
+    { name: "Quality assurance/testing", transitionDelay: 0.4 },
   ],
 };
 

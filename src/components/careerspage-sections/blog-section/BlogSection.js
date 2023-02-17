@@ -1,17 +1,12 @@
 import Slider from "@components/slider";
-import BlogCard from "@components/cards/blog-card";
+import { blogCards } from "@components/data/careers-data";
 
 import stl from "./BlogSection.module.scss";
 
 const BlogSection = () => {
-  let blogCards = [];
-  for (let i = 0; i < 15; i++) blogCards.push(<BlogCard key={i} />);
-
   return (
     <div className={stl.blogSection}>
-      <h1 className={stl.heading}>
-        Elit tempor aute id qui irure eiusmod mollit.
-      </h1>
+      <h1 className={stl.heading}>Company News and Updates</h1>
       <Slider height="70vh" content={blogCards} />
     </div>
   );

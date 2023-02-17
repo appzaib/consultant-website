@@ -19,7 +19,6 @@ const PrimaryCard = ({
   heading,
   description,
   list,
-  btnText,
   link,
   transitionDelay,
   customClass,
@@ -45,9 +44,8 @@ const PrimaryCard = ({
       className={clsx(stl.primaryCard, customClass)}
     >
       <motion.div
-        initial={{ display: "none", y: 250, opacity: 0 }}
+        initial={{ y: 250, opacity: 0 }}
         animate={{
-          display: animation ? "block" : "none",
           y: animation ? 0 : 250,
           rotateY: flip ? 180 : 0,
           opacity: animation ? 1 : 0,
@@ -94,7 +92,7 @@ const PrimaryCard = ({
             <li key={i}>{item}</li>
           ))}
         </ul>
-        <ReadMoreBtn />
+        <ReadMoreBtn link="/services.html" />
       </motion.div>
     </motion.div>
   );

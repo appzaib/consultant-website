@@ -11,6 +11,7 @@
 
     .desc {
       @extend .description;
+      max-width: 750px;
     }
   }
 

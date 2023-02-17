@@ -1,15 +1,12 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 
-import CaseStudyCard from "@components/cards/case-study-card";
+import { cases } from "@components/data/case-study-data";
 
 import stl from "./CaseStudySection.module.scss";
 
 const CaseStudySection = () => {
   const [animation, setAnimation] = useState(false);
-
-  let cases = [];
-  for (let i = 0; i < 20; i++) cases.push(<CaseStudyCard key={i} />);
 
   return (
     <div className={stl.caseStudySec}>
@@ -23,7 +20,7 @@ const CaseStudySection = () => {
           transition={{ type: "spring", stiffness: 50 }}
           className={stl.title}
         >
-          Lorem Ipsum
+          In-Depth Client Examples
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, x: 800 }}
@@ -31,11 +28,15 @@ const CaseStudySection = () => {
           transition={{ type: "spring", stiffness: 50 }}
           className={stl.desc}
         >
-          Ad nisi nulla ad occaecat fugiat eu consectetur ea minim labore
-          commodo. Eu consectetur magna nostrud adipisicing reprehenderit nisi
-          eu fugiat aute qui nulla. Id excepteur adipisicing ad incididunt nulla
-          sint sit labore do do sunt. Ex laborum anim quis consectetur dolore
-          culpa adipisicing et.
+          Our Case Study section provides detailed examples of our work with
+          clients from a variety of industries, showcasing our expertise and
+          ability to deliver results. Through these in-depth case studies, you
+          can see how we have helped businesses overcome challenges and achieve
+          success with tailored solutions and innovative strategies. Our team
+          works closely with each client to understand their unique needs and
+          goals, and we pride ourselves on delivering tangible outcomes that
+          drive growth and impact. Explore our featured case studies to see our
+          work in action.
         </motion.p>
       </motion.div>
       <div className={stl.container}>{cases.map((item) => item)}</div>

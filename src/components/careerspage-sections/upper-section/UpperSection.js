@@ -26,9 +26,8 @@ const UpperSection = ({
       {imgPosition === "left" ? (
         <div className={stl.section}>
           <motion.div
-            initial={{ display: "none", opacity: 0, x: -500 }}
+            initial={{ opacity: 0, x: -500 }}
             animate={{
-              display: animation ? "flex" : "none",
               opacity: animation ? 1 : 0,
               x: animation ? 0 : -500,
             }}
@@ -39,9 +38,8 @@ const UpperSection = ({
             <p className={stl.desc}>{desc}</p>
           </motion.div>
           <motion.div
-            initial={{ display: "none", opacity: 0, x: 500 }}
+            initial={{ opacity: 0, x: 500 }}
             animate={{
-              display: animation ? "block" : "none",
               opacity: animation ? 1 : 0,
               x: animation ? 0 : 500,
             }}
@@ -59,9 +57,8 @@ const UpperSection = ({
       ) : (
         <div className={stl.section}>
           <motion.div
-            initial={{ display: "none", opacity: 0, x: -500 }}
+            initial={{ opacity: 0, x: -500 }}
             animate={{
-              display: animation ? "block" : "none",
               opacity: animation ? 1 : 0,
               x: animation ? 0 : -500,
             }}
@@ -76,9 +73,8 @@ const UpperSection = ({
             />
           </motion.div>
           <motion.div
-            initial={{ display: "none", opacity: 0, x: 500 }}
+            initial={{ opacity: 0, x: 500 }}
             animate={{
-              display: animation ? "flex" : "none",
               opacity: animation ? 1 : 0,
               x: animation ? 0 : 500,
             }}

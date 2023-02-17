@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 
+import { title, description } from "@components/data/careers-data";
 import UpperSection from "@components/careerspage-sections/upper-section";
 import ReadMoreBtn from "@components/read-more-btn";
 
@@ -11,7 +12,7 @@ const CareersSection = () => {
 
   return (
     <div className={stl.careersSection}>
-      <UpperSection />
+      <UpperSection heading={title} desc={description} />
       <motion.div
         onViewportEnter={() => setAnimation(true)}
         initial={{ scale: 0, opacity: 0 }}
@@ -21,7 +22,7 @@ const CareersSection = () => {
         }}
         className={stl.btnContainer}
       >
-        <ReadMoreBtn variant="secondary" />
+        <ReadMoreBtn link="/careers.html" variant="secondary" />
       </motion.div>
     </div>
   );

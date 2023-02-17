@@ -1,20 +1,13 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 
-import PrimaryCard from "@components/cards/primary-card";
 import ReadMoreBtn from "@components/read-more-btn";
+import skillCardArray from "@components/data/skill-card-data";
 
 import stl from "./SkillsSection.module.scss";
 
 const SkillsSection = () => {
   const [animateSkillBtn, setAnimateSkillBtn] = useState(false);
-
-  const skillCardArray = [
-    <PrimaryCard key={1} />,
-    <PrimaryCard key={2} transitionDelay={0.1} />,
-    <PrimaryCard key={3} transitionDelay={0.2} />,
-    <PrimaryCard key={4} transitionDelay={0.3} />,
-  ];
 
   return (
     <motion.div id="skills" className={stl.skillsSection}>
@@ -32,7 +25,7 @@ const SkillsSection = () => {
         transition={{ duration: 0.5 }}
         className={stl.btnContainer}
       >
-        <ReadMoreBtn variant="secondary" />
+        <ReadMoreBtn link="/services.html" variant="secondary" />
       </motion.div>
     </motion.div>
   );

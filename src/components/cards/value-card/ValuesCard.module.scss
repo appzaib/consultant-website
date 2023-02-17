@@ -9,6 +9,10 @@
   height: 500px;
   border: 1px solid transparent;
 
+  .heading {
+    color: dodgerblue;
+  }
+
   .desc {
     @extend .description;
   }

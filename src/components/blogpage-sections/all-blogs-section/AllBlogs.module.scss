@@ -6,6 +6,20 @@
   @extend .flexColCen;
   gap: 7rem;
 
+  .text {
+    @extend .flexColCen;
+    gap: 1.5rem;
+    max-width: 800px;
+
+    .heading {
+      text-align: center;
+    }
+
+    .desc {
+      @extend .description;
+    }
+  }
+
   .header {
     padding-top: 1.5rem;
     width: 100%;

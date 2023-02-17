@@ -25,11 +25,7 @@ const ValuesCard = ({ width, height, icon, heading, desc, customClass }) => {
         {icon}
         <h1 className={stl.heading}>{heading}</h1>
         <p className={stl.desc}>{desc}</p>
-        <motion.button
-          onClick={() => console.log("Clicked...")}
-          whileHover={{ paddingLeft: "20px" }}
-          className={stl.btn}
-        >
+        <motion.button whileHover={{ paddingLeft: "20px" }} className={stl.btn}>
           <NextIcon />
         </motion.button>
       </motion.div>

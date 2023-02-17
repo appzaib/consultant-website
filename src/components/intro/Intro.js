@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Image from "next/image";
 import clsx from "clsx";
 import PropTypes from "prop-types";
 import { motion } from "framer-motion";
@@ -25,7 +24,7 @@ const Intro = ({
   return (
     <div
       style={{
-        background: `url(${BGImg.src}) , linear-gradient(
+        background: `url(${imgSrc}) , linear-gradient(
           -45deg,
           rgba(30, 143, 255, 0.5),
           rgba(5, 152, 98, 0.5)
@@ -39,8 +38,8 @@ const Intro = ({
     >
       <div className={stl.content}>
         <motion.h1
-          initial={{ display: "none", x: 1800, opacity: 0 }}
-          animate={{ display: "block", x: 0, opacity: 1 }}
+          initial={{ x: 1800, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
           transition={{
             delay: transitionDelayHeading,
             type: "spring",
@@ -51,8 +50,8 @@ const Intro = ({
           {heading}
         </motion.h1>
         <motion.div
-          initial={{ display: "none", x: 1800, opacity: 0 }}
-          animate={{ display: "block", x: 0, opacity: 1 }}
+          initial={{ x: 1800, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
           transition={{
             delay: transitionDelayDesc,
             type: "spring",
@@ -64,12 +63,12 @@ const Intro = ({
         </motion.div>
         <div className={stl.btnContainer}>
           <motion.button
-            initial={{ display: "none", y: 150, opacity: 0 }}
-            animate={{ display: "flex", y: 0, opacity: 1 }}
+            initial={{ y: 150, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.2, type: "spring", stiffness: 50 }}
             onMouseOver={() => setShowArrow(true)}
             onMouseOut={() => setShowArrow(false)}
-            onClick={() => console.log("Clicked...")}
+            onClick={() => (location.href = "/contact.html")}
             className={stl.btn}
           >
             {btnText} {showArrow && <span>{icon}</span>}

@@ -5,6 +5,11 @@ import { motion } from "framer-motion";
 import Logo from "@assets/logo.svg";
 import ArrowDown from "@assets/arrow-down.svg";
 import ArrowNext from "@assets/arrow-right.svg";
+import CareerIcon from "@assets/career.svg";
+import CaseStudyIcon from "@assets/case-study.svg";
+import ServiceIcon from "@assets/service.svg";
+import HowWeWorkIcon from "@assets/how-we-work.svg";
+import BlogIcon from "@assets/blog.svg";
 
 import stl from "./Navbar.module.scss";
 
@@ -12,6 +17,7 @@ const Navbar = () => {
   const [dropDownItems, setDropDownItems] = useState([]);
   const [dropDown, setDropDown] = useState(false);
   const [dropDownName, setDropDownName] = useState("");
+  const [showIcon, setShowIcon] = useState(false);
   const [dropDownMenu, setDropDownMenu] = useState({
     careers: false,
     services: false,
@@ -108,21 +114,21 @@ const Navbar = () => {
           <li
             id="careers"
             onMouseOver={() => handleHover("careers")}
-            onClick={() => console.log("Clicked...")}
+            onClick={() => (location.href = "/careers.html")}
             className={careers ? stl.rotateCar : stl.undoRotate}
           >
             Careers <ArrowDown />
           </li>
           <li
             onMouseOver={() => setDropDown(false)}
-            onClick={() => console.log("Clicked...")}
+            onClick={() => (location.href = "/casestudy.html")}
           >
             Case Studies
           </li>
           <li
             id="services"
             onMouseOver={() => handleHover("services")}
-            onClick={() => console.log("Clicked...")}
+            onClick={() => (location.href = "/services.html")}
             className={services ? stl.rotateSer : stl.undoRotate}
           >
             Services <ArrowDown />
@@ -130,18 +136,50 @@ const Navbar = () => {
           <li
             id="how_we_work"
             onMouseOver={() => handleHover("how_we_work")}
-            onClick={() => console.log("Clicked...")}
+            onClick={() => (location.href = "/how-we-work.html")}
             className={how_we_work ? stl.rotateHow : stl.undoRotate}
           >
             How We Work <ArrowDown />
           </li>
           <li
             onMouseOver={() => setDropDown(false)}
-            onClick={() => console.log("Clicked...")}
+            onClick={() => (location.href = "/blog.html")}
           >
             Blog
           </li>
         </ul>
+        <div className={stl.iconContainer}>
+          <span
+            onClick={() => (location.href = "/careers.html")}
+            className={stl.icon}
+          >
+            <CareerIcon />
+          </span>
+          <span
+            onClick={() => (location.href = "/casestudy.html")}
+            className={stl.icon}
+          >
+            <CaseStudyIcon />
+          </span>
+          <span
+            onClick={() => (location.href = "/services.html")}
+            className={stl.icon}
+          >
+            <ServiceIcon />
+          </span>
+          <span
+            onClick={() => (location.href = "/how-we-work.html")}
+            className={stl.icon}
+          >
+            <HowWeWorkIcon />
+          </span>
+          <span
+            onClick={() => (location.href = "/blog.html")}
+            className={stl.icon}
+          >
+            <BlogIcon />
+          </span>
+        </div>
       </div>
       <motion.div
         onMouseLeave={handleHoverOut}
@@ -160,7 +198,7 @@ const Navbar = () => {
         >
           {dropDownItems.map((list, i) => (
             <li
-              onClick={() => console.log("Clicked...")}
+              onClick={() => (location.href = "#")}
               key={i}
               className={stl.dropDownItem}
             >

@@ -1,6 +1,7 @@
 @import "@/styles/common";
 
 .navbar {
+  position: absolute;
   height: 90px;
   width: 100vw;
   box-shadow: 0 3px 8px 6px rgba(51, 51, 51, 0.497);
@@ -99,6 +100,18 @@
 
       .undoRotate svg {
         transform: rotate(0);
+      }
+    }
+
+    .iconContainer {
+      @extend .alignCen;
+      justify-content: space-evenly;
+      gap: 1rem;
+      width: 100%;
+      display: none;
+
+      .icon {
+        cursor: pointer;
       }
     }
   }
@@ -226,6 +239,7 @@
 
       .right {
         width: 100%;
+        justify-content: center;
 
         li {
           padding: 4px 0;
@@ -235,6 +249,18 @@
 
     .dropDown {
       padding-left: 3rem;
+    }
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .navbar .main {
+    .right {
+      display: none;
+    }
+
+    .iconContainer {
+      display: flex;
     }
   }
 }

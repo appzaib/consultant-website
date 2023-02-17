@@ -12,7 +12,7 @@ import stl from "./BlogCard.module.scss";
 const BlogCard = ({
   big,
   imgSrc,
-  tags,
+  tag,
   date,
   title,
   author,
@@ -24,13 +24,14 @@ const BlogCard = ({
   return (
     <motion.div
       onViewportEnter={() => setAnimation(true)}
+      onClick={() => (location.href = "/blog.html")}
       className={clsx(stl.container, customClass)}
     >
       <motion.div
         initial={{ opacity: 0, y: 150 }}
         animate={{ opacity: animation ? 1 : 0, y: animation ? 0 : 150 }}
         transition={{ type: "spring", stiffness: 50 }}
-        onClick={() => console.log("Clicked...")}
+        onClick={() => (location.href = "#")}
         className={clsx(stl.card, big ? stl.big : undefined)}
       >
         <div className={stl.imgContainer}>
@@ -43,11 +44,7 @@ const BlogCard = ({
         </div>
         <div className={stl.blogInfo}>
           <div className={stl.blogAbout}>
-            {tags.map((tag, i) => (
-              <span key={i} className={stl.tag}>
-                {tag}
-              </span>
-            ))}
+            <span className={stl.tag}>{tag}</span>
             <div className={stl.date}>{date}</div>
           </div>
           <h1 className={stl.blogTitle}>{title}</h1>
@@ -65,7 +62,7 @@ const BlogCard = ({
 
 BlogCard.defaultProps = {
   imgSrc: `${BlogImage.src}`,
-  tags: ["Ipsum"],
+  tag: "Web Development Tips",
   date: "01/01/10",
   title: "Qui duis Lorem nulla ullamco excepteur sit labore.",
   author: "John Doe",

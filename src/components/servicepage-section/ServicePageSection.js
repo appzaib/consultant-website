@@ -1,15 +1,12 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 
-import PrimaryCard from "@components/cards/primary-card";
+import services from "@components/data/services-data";
 
 import stl from "./ServicePageSection.module.scss";
 
 const ServicePageSection = () => {
   const [animation, setAnimation] = useState(false);
-
-  let services = [];
-  for (let i = 0; i < 10; i++) services.push(<PrimaryCard key={i} />);
 
   return (
     <div className={stl.servPageSec}>
@@ -23,7 +20,7 @@ const ServicePageSection = () => {
           transition={{ type: "spring", stiffness: 50 }}
           className={stl.title}
         >
-          Lorem Ipsum
+          Comprehensive Web Development Solutions for Your Business
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, x: 800 }}
@@ -31,11 +28,15 @@ const ServicePageSection = () => {
           transition={{ type: "spring", stiffness: 50 }}
           className={stl.desc}
         >
-          Ad nisi nulla ad occaecat fugiat eu consectetur ea minim labore
-          commodo. Eu consectetur magna nostrud adipisicing reprehenderit nisi
-          eu fugiat aute qui nulla. Id excepteur adipisicing ad incididunt nulla
-          sint sit labore do do sunt. Ex laborum anim quis consectetur dolore
-          culpa adipisicing et.
+          At Codeline-Consulting, we're committed to helping businesses achieve
+          their online goals through expert web development services. Whether
+          you need a custom web application, a new e-commerce platform, or a
+          mobile app, our team of skilled developers is here to help. We offer a
+          full range of services, from web design and development to web hosting
+          and ongoing maintenance, so you can trust us to handle all aspects of
+          your online presence. We work closely with you to understand your
+          unique business needs and create solutions that help you succeed.
+          Browse our services below and contact us to learn more.
         </motion.p>
       </motion.div>
       <div className={stl.container}>{services.map((service) => service)}</div>

@@ -4,8 +4,6 @@ import clsx from "clsx";
 import PropTypes from "prop-types";
 import { motion } from "framer-motion";
 
-import HeartIcon from "@assets/heart.svg";
-
 import stl from "./Card.module.scss";
 
 const Card = ({
@@ -39,8 +37,8 @@ const Card = ({
         style={{ width: width, height: height, background: background }}
         className={clsx(stl.card, stl[variant], customClass)}
       >
-        {icon !== "undefined" && <div className={stl.icon}>{icon}</div>}
-        {typeof imgSrc !== "undefined" && (
+        {icon && <div className={stl.icon}>{icon}</div>}
+        {imgSrc && (
           <Image
             src={imgSrc}
             width={100}
@@ -58,7 +56,6 @@ const Card = ({
 
 Card.defaultProps = {
   variant: "primary",
-  icon: <HeartIcon />,
   heading: "96%",
   description: "Happy Clients",
 };

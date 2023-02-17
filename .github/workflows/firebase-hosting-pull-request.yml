@@ -13,5 +13,5 @@ jobs:
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
-          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_CONSULTATION_WITH_US }}'
-          projectId: consultation-with-us
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_CODELINE_CONSULTING }}'
+          projectId: codeline-consulting

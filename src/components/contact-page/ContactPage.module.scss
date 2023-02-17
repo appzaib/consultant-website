@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Itim&display=swap");
+@import "styles/common";
+
+.contactPage {
+  display: flex;
+  padding-top: 100px;
+  min-height: 100vh;
+  height: 100%;
+  background: #fff;
+}
+
+@media screen and (max-width: 1000px) {
+  .contactPage {
+    flex-direction: column;
+    align-items: center;
+  }
+}

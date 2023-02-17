@@ -18,17 +18,18 @@ const ContactUsCard = ({
 }) => {
   const [animation, setAnimation] = useState(false);
 
+  console.log(heading);
+
   return (
     <motion.div
       onViewportEnter={() => setAnimation(true)}
       className={clsx(stl.contCardContainer, customClass)}
     >
       <motion.div
-        initial={{ display: "none", opacity: 0, y: -300 }}
+        initial={{ opacity: 0, y: 300 }}
         animate={{
-          display: animation ? "flex" : "none",
           opacity: animation ? 1 : 0,
-          y: animation ? 0 : -300,
+          y: animation ? 0 : 300,
         }}
         transition={{ type: "spring", stiffness: 50 }}
         style={{ width: width, height: height }}
@@ -37,7 +38,10 @@ const ContactUsCard = ({
         <h1 className={stl.heading}>{heading}</h1>
         {desc && <p className={stl.desc}>{desc}</p>}
         <div className={stl.btnContainer}>
-          <button onClick={() => console.log("Clicked...")} className={stl.btn}>
+          <button
+            onClick={() => (location.href = "/contact.html")}
+            className={stl.btn}
+          >
             {icon} {btnText}
           </button>
         </div>
@@ -48,7 +52,6 @@ const ContactUsCard = ({
 
 ContactUsCard.defaultProps = {
   heading: "Start a Project With Us",
-  desc: "Sunt excepteur sit aliqua aliqua. Ut qui reprehenderit ipsum id sint esse et esse pariatur ex occaecat elit in. Amet cillum occaecat laborum dolor duis consectetur. Aliqua est irure ex reprehenderit sit enim enim nulla nostrud officia sunt eu anim culpa.",
   btnText: "Contact Us",
   icon: <PhoneIcon />,
 };
