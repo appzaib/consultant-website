@@ -39,11 +39,16 @@
 }
 
 .secondary {
-  min-height: 500px;
+  min-height: 530px;
 
   .img {
-    width: 100%;
+    width: 30%;
     height: auto;
+  }
+
+  .heading {
+    color: dodgerblue;
+    text-align: center;
   }
 
   .desc {

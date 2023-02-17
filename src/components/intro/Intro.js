@@ -24,7 +24,7 @@ const Intro = ({
   return (
     <div
       style={{
-        background: `url(${BGImg.src}) , linear-gradient(
+        background: `url(${imgSrc}) , linear-gradient(
           -45deg,
           rgba(30, 143, 255, 0.5),
           rgba(5, 152, 98, 0.5)

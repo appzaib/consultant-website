@@ -5,6 +5,21 @@ import ValuesCard from "@components/cards/value-card";
 import BlogCard from "@components/cards/blog-card";
 import AwardCard from "@components/cards/award-card";
 
+import UpperSecImage from "@assets/careers-uppersec.jpg";
+import UpperSecImage2 from "@assets/careers-uppersec-2.jpg";
+import UpperSecImage3 from "@assets/careers-uppersec-3.jpg";
+import BenefitImage1 from "@assets/benefit-1.png";
+import BenefitImage2 from "@assets/benefit-2.png";
+import BenefitImage3 from "@assets/benefit-3.png";
+import BenefitImage4 from "@assets/benefit-4.png";
+import BenefitImage5 from "@assets/benefit-5.png";
+import BenefitImage6 from "@assets/benefit-6.png";
+import ValueIcon1 from "@assets/value-1.svg";
+import ValueIcon2 from "@assets/value-2.svg";
+import ValueIcon3 from "@assets/value-3.svg";
+import ValueIcon4 from "@assets/value-4.svg";
+import ValueIcon5 from "@assets/value-5.svg";
+import ValueIcon6 from "@assets/value-6.svg";
 import BestDesignImage from "@assets/best-design-award.png";
 import MostInnovativeImage from "@assets/most-innov-award.png";
 import BestContentImage from "@assets/best-strategy-award.png";
@@ -19,17 +34,20 @@ export const description =
 
 export const upperSection = [
   <UpperSection
+    imgSrc={`${UpperSecImage.src}`}
     heading="Explore Opportunities"
     desc="Join our team of passionate web developers and designers, and work on exciting projects that challenge and inspire you. We are always on the lookout for talented individuals who are committed to delivering top-notch web development solutions. Our work environment is creative, dynamic, and collaborative, with plenty of opportunities for growth and development. If you're interested in becoming a part of our team, check out our current job openings and send us your application today."
     key={1}
   />,
   <UpperSection
+    imgSrc={`${UpperSecImage2.src}`}
     heading="Application Process"
     desc="The application process for our company is designed to ensure that we identify the right talent for our team. We believe that the selection process is a two-way street, where we get to know you and your skills, and you get to know us and our company culture. The application process involves submitting an application form, followed by an interview and assessment, and finally an offer letter. We aim to make the process as transparent and efficient as possible, while keeping you informed at every step."
     key={2}
     imgPosition="left"
   />,
   <UpperSection
+    imgSrc={`${UpperSecImage3.src}`}
     heading="Our Team and Management"
     desc=" We take pride in the people who work with us and consider them to be the backbone of our organization. We have a highly experienced and diverse team of professionals who are passionate about what they do. Our team members come from various backgrounds, bringing their unique perspectives and skill sets to the table. We believe in nurturing talent and providing a positive work environment that encourages growth and development."
     key={3}
@@ -59,36 +77,42 @@ export const jobCards = [
 
 export const benefitCards = [
   <Card
+    imgSrc={`${BenefitImage1.src}`}
     variant="secondary"
     heading="Comprehensive benefits package"
     description="Our comprehensive benefits package includes health insurance, dental coverage, 401(k) retirement plan, and paid time off, among other benefits. We believe in taking care of our employees so they can take care of our clients."
     key={1}
   />,
   <Card
+    imgSrc={`${BenefitImage2.src}`}
     variant="secondary"
     heading="Flexible work arrangements"
     description="Flexible work arrangements have become an increasingly popular benefit for employees, offering them greater control over their work schedules and the ability to better balance their personal and professional lives. At the same time, employers who offer flexible work arrangements can benefit from increased productivity, reduced turnover, and lower overhead costs."
     key={2}
   />,
   <Card
+    imgSrc={`${BenefitImage3.src}`}
     variant="secondary"
     heading="Collaborative and inclusive work culture"
     description="Collaborative and inclusive culture is an essential benefit for any organization seeking to foster a positive and productive work environment. By embracing diversity and promoting teamwork, companies can enjoy a range of benefits, including better employee engagement, retention, and overall business success."
     key={3}
   />,
   <Card
+    imgSrc={`${BenefitImage4.src}`}
     variant="secondary"
     heading="Health and wellness programs"
     description="Health and wellness programs are becoming increasingly popular as employers recognize the importance of promoting employee well-being. These programs can include fitness classes, mental health resources, healthy living incentives, and other benefits that help employees maintain a healthy work-life balance."
     key={4}
   />,
   <Card
+    imgSrc={`${BenefitImage5.src}`}
     variant="secondary"
     heading="Competitive compensation"
     description="Competitive compensation is a key benefit for attracting and retaining top talent in today's competitive job market. By offering fair and attractive salaries, bonuses, and benefits packages, companies can ensure they attract the best candidates and keep them motivated and engaged."
     key={5}
   />,
   <Card
+    imgSrc={`${BenefitImage6.src}`}
     variant="secondary"
     heading="Professional development opportunities"
     description="Professional development opportunities are an important benefit for employees looking to grow and advance their careers. By providing training, mentorship, tuition assistance, and other opportunities for skill-building and career development, employers can help their employees reach their full potential and achieve their career goals while also improving overall company performance."
@@ -98,31 +122,37 @@ export const benefitCards = [
 
 export const valueCards = [
   <ValuesCard
+    icon={<ValueIcon1 />}
     heading="Innovation"
     desc="We are constantly pushing the boundaries of web development, and we are always exploring new and innovative solutions to meet our clients' needs."
     key={1}
   />,
   <ValuesCard
+    icon={<ValueIcon2 />}
     heading="Customer Focus"
     desc="Our clients are at the center of everything we do, and we strive to provide exceptional customer service and support to ensure their complete satisfaction."
     key={2}
   />,
   <ValuesCard
+    icon={<ValueIcon3 />}
     heading="Quality"
     desc="We take pride in delivering high-quality web development solutions that meet or exceed our clients' expectations."
     key={3}
   />,
   <ValuesCard
+    icon={<ValueIcon4 />}
     heading="Collaboration"
     desc="We work closely with our clients to understand their unique needs and goals, and we collaborate with them throughout the web development process to ensure the best possible outcomes."
     key={4}
   />,
   <ValuesCard
+    icon={<ValueIcon5 />}
     heading="Integrity"
     desc="We are committed to operating with the highest level of honesty, transparency, and ethical standards in all of our business dealings."
     key={5}
   />,
   <ValuesCard
+    icon={<ValueIcon6 />}
     heading="Continuous Improvement"
     desc="We are always looking for ways to improve our processes, technologies, and services to provide the best possible web development solutions for our clients."
     key={6}
