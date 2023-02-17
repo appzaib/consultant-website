@@ -55,6 +55,7 @@ const Card = ({
 };
 
 Card.defaultProps = {
+  imgAlt: "image",
   variant: "primary",
   heading: "96%",
   description: "Happy Clients",

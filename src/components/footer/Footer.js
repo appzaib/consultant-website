@@ -3,6 +3,9 @@ import clsx from "clsx";
 import PropTypes from "prop-types";
 import { motion } from "framer-motion";
 
+import ContactUsCard from "@components/cards/contact-us-card";
+import usefulLinks from "@components/data/footer-data";
+
 import Logo from "@assets/logo.svg";
 import LocationIcon from "@assets/location.svg";
 import PhoneIcon from "@assets/phone.svg";
@@ -15,11 +18,10 @@ import LinkedInIcon from "@assets/linkedIn-white.svg";
 import LinkedInIcon2 from "@assets/linkedIn-black.svg";
 import GithubIcon from "@assets/github-white.svg";
 import GithubIcon2 from "@assets/github-black.svg";
-import ContactUsCard from "@components/cards/contact-us-card";
 
 import stl from "./Footer.module.scss";
 
-const Footer = ({ usefulLinks, contactCardHeading, showContactCard }) => {
+const Footer = ({ contactCardHeading, showContactCard }) => {
   const [animation, setAnimation] = useState(false);
 
   return (
@@ -99,10 +101,13 @@ const Footer = ({ usefulLinks, contactCardHeading, showContactCard }) => {
         >
           <h2 className={stl.heading}>About us</h2>
           <p className={stl.desc}>
-            Ipsum ex nostrud in id sunt nostrud aute. Proident ipsum minim sint
-            eu dolore ullamco reprehenderit ullamco velit fugiat. Aliqua irure
-            velit nulla exercitation dolore proident consequat labore ad elit
-            dolore ad est.
+            Our team of experienced web developers is dedicated to helping
+            businesses grow by providing high-quality consultation services. We
+            offer a range of services including web design, development, and
+            maintenance, as well as e-commerce solutions and web hosting. Our
+            mission is to help businesses achieve their goals through customized
+            and innovative web development solutions. Thank you for visiting our
+            website and we look forward to helping your business succeed!"
           </p>
           <div className={stl.social}>
             <button
@@ -142,52 +147,10 @@ const Footer = ({ usefulLinks, contactCardHeading, showContactCard }) => {
 
 Footer.defaultProps = {
   showContactCard: true,
-  usefulLinks: [
-    {
-      name: "Lorem",
-      link: "",
-      childs: [
-        { childName: "Ipsum1.1", childLink: "" },
-        { childName: "Ipsum1.2", childLink: "" },
-        { childName: "Ipsum1.3", childLink: "" },
-        { childName: "Ipsum1.4", childLink: "" },
-        { childName: "Ipsum1.5", childLink: "" },
-        { childName: "Ipsum1.6", childLink: "" },
-        { childName: "Ipsum1.7", childLink: "" },
-      ],
-    },
-    {
-      name: "Lorem",
-      link: "",
-      childs: [
-        { childName: "Ipsum2.1", childLink: "" },
-        { childName: "Ipsum2.2", childLink: "" },
-        { childName: "Ipsum2.3", childLink: "" },
-        { childName: "Ipsum2.4", childLink: "" },
-        { childName: "Ipsum2.5", childLink: "" },
-        { childName: "Ipsum2.6", childLink: "" },
-        { childName: "Ipsum2.7", childLink: "" },
-      ],
-    },
-    {
-      name: "Lorem",
-      link: "",
-      childs: [
-        { childName: "Ipsum3.1", childLink: "" },
-        { childName: "Ipsum3.2", childLink: "" },
-        { childName: "Ipsum3.3", childLink: "" },
-        { childName: "Ipsum3.4", childLink: "" },
-        { childName: "Ipsum3.5", childLink: "" },
-        { childName: "Ipsum3.6", childLink: "" },
-        { childName: "Ipsum3.7", childLink: "" },
-      ],
-    },
-  ],
 };
 
 Footer.propTypes = {
   showContactCard: PropTypes.bool,
-  usefulLinks: PropTypes.array,
   contactCardHeading: PropTypes.string,
 };
 

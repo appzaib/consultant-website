@@ -3,6 +3,7 @@ import { useState } from "react";
 import ProgressBar from "@components/progress-bar";
 import Layout from "@components/layout";
 import ServicesPage from "@components/services-page";
+import ScrollToTop from "@components/scroll-to-top";
 
 const Services = () => {
   const [progress, setProgress] = useState(0);
@@ -22,6 +23,7 @@ const Services = () => {
 
   return (
     <main style={{ scrollBehavior: "smooth" }} id="main">
+      <ScrollToTop />
       <ProgressBar progress={progress} />
       <Layout
         contactCardHeading="Ready to take the next step in your career? Let's talk"

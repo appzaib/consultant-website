@@ -1,4 +1,4 @@
-import { upperSection } from "@components/data/careers-data";
+import { upperSection } from "@components/data/how-we-work-data";
 
 const UpperSecCont = () => <div>{upperSection.map((section) => section)}</div>;
 

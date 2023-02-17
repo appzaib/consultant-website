@@ -1,0 +1,21 @@
+@import "styles/common";
+
+.scrollTopBtn {
+  position: fixed;
+  @extend .flexCenter;
+  top: 87vh;
+  left: 10px;
+  min-width: 60px;
+  min-height: 60px;
+  border: none;
+  outline: none;
+  border-radius: 50%;
+  background: dodgerblue;
+  transition: all 0.3s;
+  z-index: 10;
+  cursor: pointer;
+
+  &:hover {
+    padding-bottom: 1rem;
+  }
+}
