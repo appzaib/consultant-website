@@ -114,21 +114,21 @@ const Navbar = () => {
           <li
             id="careers"
             onMouseOver={() => handleHover("careers")}
-            onClick={() => (location.href = "/careers.html")}
+            onClick={() => (location.href = "/career")}
             className={careers ? stl.rotateCar : stl.undoRotate}
           >
             Careers <ArrowDown />
           </li>
           <li
             onMouseOver={() => setDropDown(false)}
-            onClick={() => (location.href = "/casestudy.html")}
+            onClick={() => (location.href = "/casestudy")}
           >
             Case Studies
           </li>
           <li
             id="services"
             onMouseOver={() => handleHover("services")}
-            onClick={() => (location.href = "/services.html")}
+            onClick={() => (location.href = "/services")}
             className={services ? stl.rotateSer : stl.undoRotate}
           >
             Services <ArrowDown />
@@ -136,47 +136,44 @@ const Navbar = () => {
           <li
             id="how_we_work"
             onMouseOver={() => handleHover("how_we_work")}
-            onClick={() => (location.href = "/how-we-work.html")}
+            onClick={() => (location.href = "/how-we-work")}
             className={how_we_work ? stl.rotateHow : stl.undoRotate}
           >
             How We Work <ArrowDown />
           </li>
           <li
             onMouseOver={() => setDropDown(false)}
-            onClick={() => (location.href = "/blog.html")}
+            onClick={() => (location.href = "/blog")}
           >
             Blog
           </li>
         </ul>
         <div className={stl.iconContainer}>
           <span
-            onClick={() => (location.href = "/careers.html")}
+            onClick={() => (location.href = "/careers")}
             className={stl.icon}
           >
             <CareerIcon />
           </span>
           <span
-            onClick={() => (location.href = "/casestudy.html")}
+            onClick={() => (location.href = "/casestudy")}
             className={stl.icon}
           >
             <CaseStudyIcon />
           </span>
           <span
-            onClick={() => (location.href = "/services.html")}
+            onClick={() => (location.href = "/services")}
             className={stl.icon}
           >
             <ServiceIcon />
           </span>
           <span
-            onClick={() => (location.href = "/how-we-work.html")}
+            onClick={() => (location.href = "/how-we-work")}
             className={stl.icon}
           >
             <HowWeWorkIcon />
           </span>
-          <span
-            onClick={() => (location.href = "/blog.html")}
-            className={stl.icon}
-          >
+          <span onClick={() => (location.href = "/blog")} className={stl.icon}>
             <BlogIcon />
           </span>
         </div>

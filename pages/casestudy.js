@@ -1,8 +1,10 @@
 import { useState } from "react";
 
+import CusHead from "@components/head";
 import ProgressBar from "@components/progress-bar";
 import Layout from "@components/layout";
 import CaseStudyPage from "@components/casestudy-page";
+import ScrollToTop from "@components/scroll-to-top";
 
 const CaseStudy = () => {
   const [progress, setProgress] = useState(0);
@@ -21,13 +23,17 @@ const CaseStudy = () => {
   }, 50);
 
   return (
-    <main style={{ scrollBehavior: "smooth" }} id="main">
-      <ProgressBar progress={progress} />
-      <Layout
-        contactCardHeading="Let's Discuss How We Can Help You Achieve Similar Results"
-        child={<CaseStudyPage />}
-      />
-    </main>
+    <>
+      <CusHead />
+      <main style={{ scrollBehavior: "smooth" }} id="main">
+        <ScrollToTop />
+        <ProgressBar progress={progress} />
+        <Layout
+          contactCardHeading="Let's Discuss How We Can Help You Achieve Similar Results"
+          child={<CaseStudyPage />}
+        />
+      </main>
+    </>
   );
 };
 

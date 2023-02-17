@@ -24,7 +24,7 @@ const BlogCard = ({
   return (
     <motion.div
       onViewportEnter={() => setAnimation(true)}
-      onClick={() => (location.href = "/blog.html")}
+      onClick={() => (location.href = "/blog")}
       className={clsx(stl.container, customClass)}
     >
       <motion.div

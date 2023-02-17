@@ -92,7 +92,7 @@ const PrimaryCard = ({
             <li key={i}>{item}</li>
           ))}
         </ul>
-        <ReadMoreBtn link="/services.html" />
+        <ReadMoreBtn link="/services" />
       </motion.div>
     </motion.div>
   );

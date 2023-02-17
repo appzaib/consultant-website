@@ -51,7 +51,7 @@ const CaseStudySection = () => {
         }}
         className={stl.btnContainer}
       >
-        <ReadMoreBtn link="/casestudy.html" variant="secondary" />
+        <ReadMoreBtn link="/casestudy" variant="secondary" />
       </motion.div>
     </div>
   );

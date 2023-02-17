@@ -18,8 +18,6 @@ const ContactUsCard = ({
 }) => {
   const [animation, setAnimation] = useState(false);
 
-  console.log(heading);
-
   return (
     <motion.div
       onViewportEnter={() => setAnimation(true)}
@@ -39,7 +37,7 @@ const ContactUsCard = ({
         {desc && <p className={stl.desc}>{desc}</p>}
         <div className={stl.btnContainer}>
           <button
-            onClick={() => (location.href = "/contact.html")}
+            onClick={() => (location.href = "/contact")}
             className={stl.btn}
           >
             {icon} {btnText}

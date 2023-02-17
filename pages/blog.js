@@ -1,8 +1,10 @@
 import { useState } from "react";
 
+import CusHead from "@components/head";
 import ProgressBar from "@components/progress-bar";
 import Layout from "@components/layout";
 import BlogPage from "@components/blog-page";
+import ScrollToTop from "@components/scroll-to-top";
 
 const Blog = () => {
   const [progress, setProgress] = useState(0);
@@ -21,13 +23,17 @@ const Blog = () => {
   }, 50);
 
   return (
-    <main style={{ scrollBehavior: "smooth" }} id="main">
-      <ProgressBar progress={progress} />
-      <Layout
-        contactCardHeading="Contact Us for More Insights"
-        child={<BlogPage />}
-      />
-    </main>
+    <>
+      <CusHead />
+      <main style={{ scrollBehavior: "smooth" }} id="main">
+        <ScrollToTop />
+        <ProgressBar progress={progress} />
+        <Layout
+          contactCardHeading="Contact Us for More Insights"
+          child={<BlogPage />}
+        />
+      </main>
+    </>
   );
 };
 

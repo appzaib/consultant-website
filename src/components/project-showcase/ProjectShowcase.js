@@ -9,7 +9,7 @@ import ProjectImage from "@assets/project.png";
 
 import stl from "./ProjectShowcase.module.scss";
 
-const ProjectShowcase = ({ title, desc, imgSrc, imgAlt }) => {
+const ProjectShowcase = ({ title, desc, link, imgSrc, imgAlt }) => {
   const [animation, setAnimation] = useState(false);
 
   return (
@@ -28,7 +28,7 @@ const ProjectShowcase = ({ title, desc, imgSrc, imgAlt }) => {
           <p className={stl.projectDesc}>{desc}</p>
         </div>
         <div className={stl.btnContainer}>
-          <ReadMoreBtn link="#" variant="secondary" />
+          <ReadMoreBtn link={link} variant="secondary" />
         </div>
       </motion.div>
       <motion.div
