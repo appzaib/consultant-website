@@ -8,27 +8,25 @@ const Services = () => {
   const [progress, setProgress] = useState(0);
 
   setTimeout(() => {
-    const main = document.getElementById("main");
+    const body = document.body;
 
-    const scrollProgressBar = () => {
-      let scrollDistance = -main.getBoundingClientRect().top;
-      let progressPercentage =
-        (scrollDistance /
-          (main.getBoundingClientRect().height -
-            document.documentElement.clientHeight)) *
-        100;
+    body.addEventListener("scroll", () => {
+      const scrollPos = body.scrollTop;
+      const scrollHeight = body.scrollHeight - window.innerHeight;
+      const scrollProgress = (scrollPos / scrollHeight) * 100;
 
-      let val = Math.floor(progressPercentage);
-      setProgress(val);
-    };
-
-    window.addEventListener("scroll", scrollProgressBar);
+      const progress = Math.round(scrollProgress);
+      setProgress(progress);
+    });
   }, 50);
 
   return (
     <main style={{ scrollBehavior: "smooth" }} id="main">
       <ProgressBar progress={progress} />
-      <Layout child={<ServicesPage />} />
+      <Layout
+        contactCardHeading="Ready to take the next step in your career? Let's talk"
+        child={<ServicesPage />}
+      />
     </main>
   );
 };

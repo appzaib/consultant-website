@@ -8,7 +8,6 @@ import ReadMoreBtn from "@components/read-more-btn";
 import stl from "./CareersSection.module.scss";
 
 const CareersSection = () => {
-  console.log(title, description);
   const [animation, setAnimation] = useState(false);
 
   return (

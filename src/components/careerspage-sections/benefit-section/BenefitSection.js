@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 
-import { benefitCards } from "@components/data/case-study-data";
+import { benefitCards } from "@components/data/careers-data";
 
 import stl from "./BenefitSection.module.scss";
 

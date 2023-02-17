@@ -1,9 +1,8 @@
 import CaseStudyCard from "@components/cards/case-study-card";
-import Card from "@components/cards/card";
 
 import ProjectImage from "@assets/project.png";
-import ProjectImage2 from "@assets/project2.png";
-import ProjectImage3 from "@assets/project3.png";
+import ProjectImage2 from "@assets/project-2.png";
+import ProjectImage3 from "@assets/project-3.png";
 
 export const description =
   "Our Case Study Section features real-life examples of how we have helped our clients achieve their web development goals. We highlight the challenges our clients faced, the solutions we provided, and the results they achieved. These case studies provide valuable insights into our web development process and the expertise we bring to every project. We believe in transparency and accountability, and our case studies demonstrate how we have delivered successful web development solutions to our clients.";
@@ -29,41 +28,65 @@ export const caseStudies1 = [
   />,
 ];
 
-export const benefitCards = [
-  <Card
-    variant="secondary"
-    heading="Comprehensive benefits package"
-    description="Our comprehensive benefits package includes health insurance, dental coverage, 401(k) retirement plan, and paid time off, among other benefits. We believe in taking care of our employees so they can take care of our clients."
+export const cases = [
+  <CaseStudyCard
+    title="E-commerce"
+    description="We created a user-friendly online store for a client, complete with a custom shopping cart and secure payment gateway."
     key={1}
   />,
-  <Card
-    variant="secondary"
-    heading="Flexible work arrangements"
-    description="Our comprehensive benefits package includes health insurance, dental coverage, 401(k) retirement plan, and paid time off, among other benefits. We believe in taking care of our employees so they can take care of our clients."
+  <CaseStudyCard
+    title="Responsive Web Design"
+    description="Our team designed and developed a fully responsive website that looks great on all devices, helping our client reach a wider audience."
     key={2}
   />,
-  <Card
-    variant="secondary"
-    heading="Collaborative and inclusive work culture"
-    description="Our comprehensive benefits package includes health insurance, dental coverage, 401(k) retirement plan, and paid time off, among other benefits. We believe in taking care of our employees so they can take care of our clients."
+  <CaseStudyCard
+    title="Custom Web App Dev"
+    description="We built a powerful custom web application that streamlined our client's business operations and increased efficiency."
     key={3}
   />,
-  <Card
-    variant="secondary"
-    heading="Health and wellness programs"
-    description="Our comprehensive benefits package includes health insurance, dental coverage, 401(k) retirement plan, and paid time off, among other benefits. We believe in taking care of our employees so they can take care of our clients."
+  <CaseStudyCard
+    title="Website Maintenance"
+    description="Our team provides ongoing website maintenance and support to ensure our client's site is always up-to-date and running smoothly."
     key={4}
   />,
-  <Card
-    variant="secondary"
-    heading="Competitive compensation"
-    description="Our comprehensive benefits package includes health insurance, dental coverage, 401(k) retirement plan, and paid time off, among other benefits. We believe in taking care of our employees so they can take care of our clients."
+  <CaseStudyCard
+    title="CMS Implementation"
+    description="We implemented a content management system (CMS) for a client, giving them the ability to easily manage and update their website content."
     key={5}
   />,
-  <Card
-    variant="secondary"
-    heading="Professional development opportunities"
-    description="Our comprehensive benefits package includes health insurance, dental coverage, 401(k) retirement plan, and paid time off, among other benefits. We believe in taking care of our employees so they can take care of our clients."
+  <CaseStudyCard
+    title="Mobile App Development"
+    description="We designed and developed a mobile app for a client, allowing them to better engage with their audience and increase brand awareness."
     key={6}
+  />,
+  <CaseStudyCard
+    title="UI/UX Design"
+    description="Our team created an intuitive and visually appealing user interface (UI) and user experience (UX) for a client's website, improving user engagement and satisfaction."
+    key={7}
+  />,
+  <CaseStudyCard
+    title="Website Speed Optimization"
+    description="We optimized a client's website for speed, resulting in faster load times and a better user experience."
+    key={8}
+  />,
+  <CaseStudyCard
+    title="Landing Page Optimization"
+    description="Our team optimized a client's landing page to improve conversion rates and drive more leads and sales."
+    key={9}
+  />,
+  <CaseStudyCard
+    title="SEO"
+    description="We provided SEO services for a client, improving their website's visibility and search engine rankings."
+    key={10}
+  />,
+  <CaseStudyCard
+    title="Web Analytics"
+    description="Our team implemented web analytics and reporting for a client, providing valuable insights into their website's performance and user behavior."
+    key={11}
+  />,
+  <CaseStudyCard
+    title="Social Media Integration"
+    description="We integrated social media into a client's website, allowing them to easily share and promote their content on various social media platforms."
+    key={12}
   />,
 ];

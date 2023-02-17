@@ -9,54 +9,40 @@ import AgileDevIcon2 from "@assets/agile-dev-2.webp";
 
 const skillCardArray = [
   <PrimaryCard
-    description="We are an agile software company providing both back-end and front-end development. Our teams build web applications powered by bulletproof code, with stunning interfaces."
-    list={[
-      "Python & JavaScript Development",
-      "Django & DjangoCMS Development",
-      "Angular, React & Vue Development",
-      "Node.js & Elixir Development",
-    ]}
+    heading="Web Design and Development"
+    description="We specialize in creating custom websites that not only look great, but are tailored to meet the unique needs of your business. Our web development team will work with you to create a website that's not only visually appealing, but also user-friendly and optimized for search engines."
+    list={["JavaScript", "PHP", "MySQl", "Node.js", "React.js"]}
     key={1}
   />,
   <PrimaryCard
     imgSrc={MobileDevIcon.src}
     imgSrc2={MobileDevIcon2.src}
-    heading="Mobile Development"
-    description="Smartphones, tablets, wearables - follow your users where they are with carefully crafted mobile apps. Reach customers via Android, iOS, or cross-platform solutions."
-    list={[
-      "iOS App Development",
-      "Android App Development",
-      "Flutter Development",
-      "React Native Development",
-    ]}
+    heading="E-commerce Website Development"
+    description="We can help you set up an online store and enable you to sell your products or services directly through your website. Our team has experience with a variety of e-commerce platforms, and can create a solution that's right for your business."
+    list={["Magento", "WooCommerce", "Shopify", "ElasticSearch", "Redis"]}
     key={2}
     transitionDelay={0.1}
   />,
   <PrimaryCard
     imgSrc={DesignIcon.src}
     imgSrc2={DesignIcon2.src}
-    heading="Product Design"
-    description="Great code deserves an equally stunning visual representation, and this is what we deliver. Our Product Design team combines beautiful interfaces with captivating user experience."
-    list={[
-      "User Experience Design",
-      "Web & Mobile Interface Design",
-      "Google Design Sprint",
-      "Motion Design",
-    ]}
+    heading="Mobile App Development"
+    description="With more and more people accessing the web through mobile devices, having a mobile app can be a valuable asset for your business. We offer mobile app development services for both iOS and Android platforms."
+    list={["Java", "Swift", "React Native", "Kotlin", "Xamarin"]}
     key={3}
     transitionDelay={0.2}
   />,
   <PrimaryCard
     imgSrc={AgileDevIcon.src}
     imgSrc2={AgileDevIcon2.src}
-    heading="Agile Development"
-    description="At 10Clouds, we’re more than just Project Managers, we’re Product Delivery Managers. This means that we’re with you at every step of your product journey - from discovery, through to the development of a scalable and effective solution."
+    heading="Website Optimization"
+    description="A slow-loading website can be frustrating for users and hurt your search engine rankings. Our team can optimize your website's performance and ensure it loads quickly and smoothly for all users."
     list={[
-      "Product Discovery",
-      "Early Market Validation",
-      "Product Delivery",
-      "Product Maintenance",
-      "Product Hand-Off",
+      "CDN",
+      "Caching",
+      "Image Optimization",
+      "Gzip Compression",
+      "Minification",
     ]}
     key={4}
     transitionDelay={0.3}

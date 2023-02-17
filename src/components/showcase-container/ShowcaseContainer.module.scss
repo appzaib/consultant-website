@@ -3,4 +3,15 @@
 .projContainer {
   width: 100%;
   @extend .flexColCen;
+
+  .text {
+    @extend .flexColCen;
+    gap: 2rem;
+    max-width: 800px;
+    padding: 3rem;
+
+    .desc {
+      @extend .description;
+    }
+  }
 }

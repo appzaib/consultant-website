@@ -8,11 +8,15 @@ import stl from "./hwwPage.module.scss";
 
 const HowWeWorkPage = () => (
   <div className={stl.hwwPage}>
-    <Intro />
+    <Intro
+      heading="Our Process for Crafting Successful Web Solutions"
+      desc="A Consultation Model"
+      btnText="Schedule a Consultation"
+    />
     <UpperSecCont />
     <RecruitProcess heading="How We Work" />
     <ShowcaseContainer />
-    {/* <BlogSection /> */}
+    <BlogSection />
   </div>
 );
 

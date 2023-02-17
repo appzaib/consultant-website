@@ -19,14 +19,17 @@ import ContactUsCard from "@components/cards/contact-us-card";
 
 import stl from "./Footer.module.scss";
 
-const Footer = ({ usefulLinks, showContactCard }) => {
+const Footer = ({ usefulLinks, contactCardHeading, showContactCard }) => {
   const [animation, setAnimation] = useState(false);
 
   return (
     <div className={stl.footerContainer} id="footer">
       {showContactCard && (
         <div className={stl.section}>
-          <ContactUsCard customClass={stl.contCard} />
+          <ContactUsCard
+            heading={contactCardHeading}
+            customClass={stl.contCard}
+          />
         </div>
       )}
       <motion.div
@@ -185,6 +188,7 @@ Footer.defaultProps = {
 Footer.propTypes = {
   showContactCard: PropTypes.bool,
   usefulLinks: PropTypes.array,
+  contactCardHeading: PropTypes.string,
 };
 
 export default Footer;

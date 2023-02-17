@@ -41,7 +41,6 @@ const RecruitCard = ({
 };
 
 RecruitCard.defaultProps = {
-  step: "01",
   title: "Lorem Ipsum",
   desc: "Sunt laboris do excepteur commodo commodo exercitation adipisicing pariatur duis aliquip. Deserunt quis ea et Lorem proident cupidatat officia excepteur aliquip pariatur esse culpa exercitation ex. Cupidatat laboris incididunt nulla sint eiusmod mollit minim ut et officia.",
   initial: { x: -200, rotate: 25 },

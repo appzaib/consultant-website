@@ -18,6 +18,8 @@ const ContactUsCard = ({
 }) => {
   const [animation, setAnimation] = useState(false);
 
+  console.log(heading);
+
   return (
     <motion.div
       onViewportEnter={() => setAnimation(true)}

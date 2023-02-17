@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { useState } from "react";
+import PropTypes from "prop-types";
 import { motion } from "framer-motion";
 
 import ReadMoreBtn from "@components/read-more-btn";
@@ -8,7 +9,7 @@ import ProjectImage from "@assets/project.png";
 
 import stl from "./ProjectShowcase.module.scss";
 
-const ProjectShowcase = () => {
+const ProjectShowcase = ({ title, desc, imgSrc, imgAlt }) => {
   const [animation, setAnimation] = useState(false);
 
   return (
@@ -23,13 +24,8 @@ const ProjectShowcase = () => {
         className={stl.left}
       >
         <div className={stl.projectAbout}>
-          <h1 className={stl.projectName}>Lorem Ipsum</h1>
-          <p className={stl.projectDesc}>
-            Amet mollit quis sint dolore occaecat eu. Quis ea duis reprehenderit
-            ex ut magna voluptate tempor incididunt aliqua. Nisi magna pariatur
-            laboris duis sit laborum magna adipisicing cillum in. Proident
-            aliqua fugiat est elit.
-          </p>
+          <h1 className={stl.projectName}>{title}</h1>
+          <p className={stl.projectDesc}>{desc}</p>
         </div>
         <div className={stl.btnContainer}>
           <ReadMoreBtn link="#" variant="secondary" />
@@ -42,15 +38,29 @@ const ProjectShowcase = () => {
         className={stl.right}
       >
         <Image
-          src={`${ProjectImage.src}`}
+          src={imgSrc}
           width={100}
           height={100}
-          alt="project-iamge"
+          alt={imgAlt}
           className={stl.img}
         />
       </motion.div>
     </motion.div>
   );
+};
+
+ProjectShowcase.defaultProps = {
+  title: "Lorem Ipsum",
+  desc: "Est non cupidatat qui mollit nostrud sit in ut nostrud veniam occaecat et irure. Ullamco labore ullamco amet esse cupidatat do laborum nisi. Tempor commodo ipsum sit dolore quis velit qui mollit Lorem nisi cupidatat. Occaecat esse sint in aliqua officia esse. Ullamco velit et culpa fugiat nostrud anim. Consequat voluptate incididunt do cupidatat laboris ea laboris proident reprehenderit magna. Sit aute cillum deserunt consectetur esse irure velit pariatur deserunt amet tempor elit sit aliquip.",
+  imgSrc: ProjectImage.src,
+  imgAlt: "project-image",
+};
+
+ProjectShowcase.propTypes = {
+  title: PropTypes.string,
+  desc: PropTypes.string,
+  imgSrc: PropTypes.string,
+  imgAlt: PropTypes.string,
 };
 
 export default ProjectShowcase;

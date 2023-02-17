@@ -19,7 +19,6 @@ const PrimaryCard = ({
   heading,
   description,
   list,
-  btnText,
   link,
   transitionDelay,
   customClass,
