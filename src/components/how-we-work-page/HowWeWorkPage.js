@@ -20,7 +20,7 @@ const HowWeWorkPage = () => (
     <RecruitProcess heading="How We Work" />
     <ShowcaseContainer />
     <BlogSection />
-  </div>
+  </>
 );
 
 export default HowWeWorkPage;
