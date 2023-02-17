@@ -1,9 +1,6 @@
 import Image from "next/image";
 import { useState } from "react";
-<<<<<<< HEAD
 import PropTypes from "prop-types";
-=======
->>>>>>> 34d9061 (Add How-We-Work Page)
 import { motion } from "framer-motion";
 
 import ReadMoreBtn from "@components/read-more-btn";
@@ -52,7 +49,6 @@ const ProjectShowcase = ({ title, desc, imgSrc, imgAlt }) => {
   );
 };
 
-<<<<<<< HEAD
 ProjectShowcase.defaultProps = {
   title: "Lorem Ipsum",
   desc: "Est non cupidatat qui mollit nostrud sit in ut nostrud veniam occaecat et irure. Ullamco labore ullamco amet esse cupidatat do laborum nisi. Tempor commodo ipsum sit dolore quis velit qui mollit Lorem nisi cupidatat. Occaecat esse sint in aliqua officia esse. Ullamco velit et culpa fugiat nostrud anim. Consequat voluptate incididunt do cupidatat laboris ea laboris proident reprehenderit magna. Sit aute cillum deserunt consectetur esse irure velit pariatur deserunt amet tempor elit sit aliquip.",
@@ -67,6 +63,4 @@ ProjectShowcase.propTypes = {
   imgAlt: PropTypes.string,
 };
 
-=======
->>>>>>> 34d9061 (Add How-We-Work Page)
 export default ProjectShowcase;
