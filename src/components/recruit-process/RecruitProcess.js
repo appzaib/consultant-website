@@ -30,9 +30,7 @@ const RecruitProcess = ({ heading }) => {
           <div className={stl.item}>
             <RecruitCard
               title="Development and Testing"
-              desc="With the plan and design in place, we move on to development and testing. Using the latest technologies and development techniques, we'll build a website that's beautiful, functional, and user-friendly. Throughout the development process, we'll keep you informed and involved, so that you can provide feedback and ensure that the final product meets your expectations. We'll also conduct rigorous testing to ensure that your website is error-free and optimized for performance.
-
-              "
+              desc="With the plan and design in place, we move on to development and testing. Using the latest technologies and development techniques, we'll build a website that's beautiful, functional, and user-friendly. Throughout the development process, we'll keep you informed and involved, so that you can provide feedback and ensure that the final product meets your expectations. We'll also conduct rigorous testing to ensure that your website is error-free and optimized for performance."
               right="1.6%"
               background="radial-gradient(#76b2fe, #b69efe)"
             />
@@ -44,9 +42,7 @@ const RecruitProcess = ({ heading }) => {
           <div className={stl.item}>
             <RecruitCard
               title="Launch and Support"
-              desc="Once development and testing are complete, it's time to launch your new website! We'll work with you to ensure a smooth transition, and make sure that your website is up and running as quickly and seamlessly as possible. We'll also provide training and ongoing support, so that you can get the most out of your new website and make any necessary updates or changes.
-
-              "
+              desc="Once development and testing are complete, it's time to launch your new website! We'll work with you to ensure a smooth transition, and make sure that your website is up and running as quickly and seamlessly as possible. We'll also provide training and ongoing support, so that you can get the most out of your new website and make any necessary updates or changes."
               left="1.6%"
               initial={{ x: 200, rotate: -25 }}
               background="radial-gradient(#fbc1cc, #fa99b2)"
