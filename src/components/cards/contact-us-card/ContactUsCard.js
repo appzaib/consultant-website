@@ -31,7 +31,10 @@ const ContactUsCard = ({
           y: animation ? 0 : 300,
         }}
         transition={{ type: "spring", stiffness: 50 }}
-        style={{ width: width, height: height }}
+        style={{
+          width: width,
+          height: height,
+        }}
         className={stl.contactCard}
       >
         <h1 className={stl.heading}>{heading}</h1>

@@ -26,7 +26,8 @@ const JobCard = ({
     >
       <motion.div
         whileHover={{
-          background: "linear-gradient(-45deg, #7f7fd5, #86a8e7, #91eae4)",
+          background:
+            "linear-gradient(-45deg,rgb(127, 127, 213, 0.8), #86a8e7,rgb(145, 234, 228, 0.8) )",
         }}
         initial={{ opacity: 0, y: 400 }}
         animate={{
