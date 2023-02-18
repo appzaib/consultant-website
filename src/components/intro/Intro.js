@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { useState } from "react";
 import clsx from "clsx";
 import PropTypes from "prop-types";
@@ -62,17 +63,18 @@ const Intro = ({
           {desc}
         </motion.div>
         <div className={stl.btnContainer}>
-          <motion.button
-            initial={{ y: 150, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.2, type: "spring", stiffness: 50 }}
-            onMouseOver={() => setShowArrow(true)}
-            onMouseOut={() => setShowArrow(false)}
-            onClick={() => (location.href = "/contact")}
-            className={stl.btn}
-          >
-            {btnText} {showArrow && <span>{icon}</span>}
-          </motion.button>
+          <Link href="/contact">
+            <motion.button
+              initial={{ y: 150, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.2, type: "spring", stiffness: 50 }}
+              onMouseOver={() => setShowArrow(true)}
+              onMouseOut={() => setShowArrow(false)}
+              className={stl.btn}
+            >
+              {btnText} {showArrow && <span>{icon}</span>}
+            </motion.button>
+          </Link>
         </div>
       </div>
     </div>

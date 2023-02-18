@@ -89,7 +89,7 @@ export const projects = [
     imgSrc={`${ProjectImage3.src}`}
     title="Land it Right"
     desc="Our team at Codeline-Consulting recently delivered a customized product landing page project for a client in the e-commerce industry. The landing page we developed was designed to showcase the client's flagship product and highlight its features and benefits in a visually appealing and engaging way. We worked closely with the client to understand their brand and target audience, and developed a page that aligned with their overall marketing strategy. The end result is a landing page that effectively drives conversions and enhances the client's online presence, helping them to achieve their business goals."
-    link="#"
+    link=""
     key={3}
   />,
 ];

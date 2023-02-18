@@ -3,8 +3,6 @@ import clsx from "clsx";
 import PropTypes from "prop-types";
 import { motion } from "framer-motion";
 
-import useTypingAnimtion from "@hook/useTypingAnimation";
-
 import SearchIcon from "@assets/search.svg";
 
 import stl from "./SearchBox.module.scss";
@@ -104,7 +102,7 @@ const SearchBox = ({ categoryList, customClass }) => {
           whileHover={{ boxShadow: "0 0 20px 7px dodgerblue" }}
           whileTap={{ scale: 0.9 }}
           type="submit"
-          onClick={() => (location.href = "#")}
+          onClick={() => (location.href = "")}
           className={stl.submitBtn}
         >
           Search <SearchIcon />

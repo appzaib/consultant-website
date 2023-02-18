@@ -55,12 +55,12 @@ const LeftSection = () => {
           <EmailIcon />
           Write us an Email
         </button>
-        <button onClick={() => (location.href = "#")} className={stl.phoneBtn}>
+        <button onClick={() => (location.href = "")} className={stl.phoneBtn}>
           <PhoneIcon />
           Call us
         </button>
         <button
-          onClick={() => (location.href = "#")}
+          onClick={() => (location.href = "")}
           className={stl.locationBtn}
         >
           <LocationIcon />
@@ -90,7 +90,7 @@ const LeftSection = () => {
               y: animationSocialBtn ? 0 : 500,
             }}
             transition={{ type: "spring", stiffness: 50 }}
-            onClick={() => (location.href = "#")}
+            onClick={() => (location.href = "")}
             className={stl.socialBtn}
           >
             <FacebookIcon />
@@ -102,7 +102,7 @@ const LeftSection = () => {
               y: animationSocialBtn ? 0 : 500,
             }}
             transition={{ type: "spring", stiffness: 50 }}
-            onClick={() => (location.href = "#")}
+            onClick={() => (location.href = "")}
             className={stl.socialBtn}
           >
             <GithubIcon />
@@ -114,7 +114,7 @@ const LeftSection = () => {
               y: animationSocialBtn ? 0 : 500,
             }}
             transition={{ type: "spring", stiffness: 50 }}
-            onClick={() => (location.href = "#")}
+            onClick={() => (location.href = "")}
             className={stl.socialBtn}
           >
             <LinkedInIcon />
@@ -126,7 +126,7 @@ const LeftSection = () => {
               y: animationSocialBtn ? 0 : 500,
             }}
             transition={{ type: "spring", stiffness: 50 }}
-            onClick={() => (location.href = "#")}
+            onClick={() => (location.href = "")}
             className={stl.socialBtn}
           >
             <TwitterIcon />

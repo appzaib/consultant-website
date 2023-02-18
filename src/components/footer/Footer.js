@@ -50,7 +50,7 @@ const Footer = ({ contactCardHeading, showContactCard }) => {
           <div onClick={() => (location.href = "/")} className={stl.logo}>
             <Logo />
           </div>
-          <span onClick={() => (location.href = "#")} className={stl.location}>
+          <span onClick={() => (location.href = "")} className={stl.location}>
             <LocationIcon />
             <span className={stl.address}>
               <span>Akshya Nagar 1st Block 1st Cross</span>
@@ -80,11 +80,11 @@ const Footer = ({ contactCardHeading, showContactCard }) => {
         >
           {usefulLinks.map((item, i) => (
             <div key={i} className={stl.col}>
-              <span onClick={() => (location.href = "#")} className={stl.head}>
+              <span onClick={() => (location.href = "")} className={stl.head}>
                 {item.name}
               </span>
               {item.childs.map((item, i) => (
-                <span key={i} onClick={() => (location.href = "#")}>
+                <span key={i} onClick={() => (location.href = "")}>
                   {item.childName}
                 </span>
               ))}
@@ -111,28 +111,28 @@ const Footer = ({ contactCardHeading, showContactCard }) => {
           </p>
           <div className={stl.social}>
             <button
-              onClick={() => (location.href = "#")}
+              onClick={() => (location.href = "")}
               className={clsx(stl.socialBtn, stl.btn1)}
             >
               <FacebookIcon2 className={stl.iconPrimary} />
               <FacebookIcon className={stl.iconSecondary} />
             </button>
             <button
-              onClick={() => (location.href = "#")}
+              onClick={() => (location.href = "")}
               className={clsx(stl.socialBtn, stl.btn2)}
             >
               <TwitterIcon2 className={stl.iconPrimary} />
               <TwitterIcon className={stl.iconSecondary} />
             </button>
             <button
-              onClick={() => (location.href = "#")}
+              onClick={() => (location.href = "")}
               className={clsx(stl.socialBtn, stl.btn3)}
             >
               <LinkedInIcon2 className={stl.iconPrimary} />
               <LinkedInIcon className={stl.iconSecondary} />
             </button>
             <button
-              onClick={() => (location.href = "#")}
+              onClick={() => (location.href = "")}
               className={clsx(stl.socialBtn, stl.btn4)}
             >
               <GithubIcon2 className={stl.iconPrimary} />

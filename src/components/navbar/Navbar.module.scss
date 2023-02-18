@@ -31,7 +31,7 @@
       gap: 1.5rem;
       font-size: 1.5rem;
 
-      li {
+      div {
         position: relative;
         box-sizing: border-box;
         height: 60px;
@@ -41,7 +41,6 @@
         transition: all 0.3s;
         @extend .flexCenter;
         gap: 8px;
-        cursor: pointer;
 
         &:after,
         &:before {

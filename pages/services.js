@@ -9,7 +9,7 @@ import ScrollToTop from "@components/scroll-to-top";
 const Services = () => {
   const [progress, setProgress] = useState(0);
 
-  setTimeout(() => {
+  if (typeof window !== "undefined") {
     const body = document.body;
 
     body.addEventListener("scroll", () => {
@@ -20,7 +20,7 @@ const Services = () => {
       const progress = Math.round(scrollProgress);
       setProgress(progress);
     });
-  }, 50);
+  }
 
   return (
     <>

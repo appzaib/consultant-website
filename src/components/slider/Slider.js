@@ -26,19 +26,17 @@ const Slider = ({
   const [isNextDisabled, setIsNextDisabled] = useState(false);
   const [animation, setAnimation] = useState(false);
 
-  if (typeof window !== "undefined") {
-    setTimeout(() => {
-      const ele = document.getElementById("active");
-      ele.style.width = `${progress}%`;
-      if (progress === 0) {
-        setIsPrevDisabled(true);
-        setIsNextDisabled(false);
-      } else if (progress === 100) {
-        setIsPrevDisabled(false);
-        setIsNextDisabled(true);
-      }
-    }, 50);
-  }
+  setTimeout(() => {
+    const ele = document.querySelector("#active");
+    ele.style.width = `${progress}%`;
+    if (progress === 0) {
+      setIsPrevDisabled(true);
+      setIsNextDisabled(false);
+    } else if (progress === 100) {
+      setIsPrevDisabled(false);
+      setIsNextDisabled(true);
+    }
+  }, 100);
 
   const handlePrev = () => {
     setEnableScroll(true);

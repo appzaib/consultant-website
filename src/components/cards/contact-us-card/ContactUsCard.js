@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { useState } from "react";
 import clsx from "clsx";
 import PropTypes from "prop-types";
@@ -36,12 +37,11 @@ const ContactUsCard = ({
         <h1 className={stl.heading}>{heading}</h1>
         {desc && <p className={stl.desc}>{desc}</p>}
         <div className={stl.btnContainer}>
-          <button
-            onClick={() => (location.href = "/contact")}
-            className={stl.btn}
-          >
-            {icon} {btnText}
-          </button>
+          <Link href="/contact">
+            <button className={stl.btn}>
+              {icon} {btnText}
+            </button>
+          </Link>
         </div>
       </motion.div>
     </motion.div>
