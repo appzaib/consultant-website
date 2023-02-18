@@ -25,11 +25,7 @@
     height: 610px;
     width: 370px;
     padding: 10px 0;
-    background: linear-gradient(
-      -45deg,
-      rgba(30, 144, 255, 1),
-      rgba(255, 0, 255, 0.5) 70%
-    );
+    background: linear-gradient(-45deg, #7f7fd5, #86a8e7, #91eae4);
     border-radius: 24px;
     backface-visibility: hidden;
     transform-style: preserve-3d;
@@ -75,11 +71,7 @@
   .cardBack {
     @extend .flexColCen;
     justify-content: space-between;
-    background: linear-gradient(
-      -45deg,
-      rgba(255, 0, 255, 0.5),
-      rgba(30, 144, 255, 1) 60%
-    );
+    background: linear-gradient(-45deg, #91eae4, #86a8e7, #7f7fd5);
     backdrop-filter: blur(1rem);
     transform: rotateY(-180deg);
     z-index: 1;
