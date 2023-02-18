@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Link from "next/link";
 import clsx from "clsx";
 import { motion } from "framer-motion";
 
@@ -69,10 +70,10 @@ const Navbar = () => {
     ];
 
     const careers = [
-      { name: "We are Hiring", href: "/careers/we-are-hiring" },
+      { name: "We are Hiring", href: "/career/we-are-hiring" },
       {
         name: "Candidate Referral Program",
-        href: "/careers/candidate-referral",
+        href: "/career/candidate-referral",
       },
     ];
 
@@ -110,72 +111,67 @@ const Navbar = () => {
         >
           <Logo />
         </div>
-        <ul id="mainList" className={stl.right}>
-          <li
-            id="careers"
-            onMouseOver={() => handleHover("careers")}
-            onClick={() => (location.href = "/career")}
-            className={careers ? stl.rotateCar : stl.undoRotate}
-          >
-            Careers <ArrowDown />
-          </li>
-          <li
-            onMouseOver={() => setDropDown(false)}
-            onClick={() => (location.href = "/casestudy")}
-          >
-            Case Studies
-          </li>
-          <li
-            id="services"
-            onMouseOver={() => handleHover("services")}
-            onClick={() => (location.href = "/services")}
-            className={services ? stl.rotateSer : stl.undoRotate}
-          >
-            Services <ArrowDown />
-          </li>
-          <li
-            id="how_we_work"
-            onMouseOver={() => handleHover("how_we_work")}
-            onClick={() => (location.href = "/how-we-work")}
-            className={how_we_work ? stl.rotateHow : stl.undoRotate}
-          >
-            How We Work <ArrowDown />
-          </li>
-          <li
-            onMouseOver={() => setDropDown(false)}
-            onClick={() => (location.href = "/blog")}
-          >
-            Blog
-          </li>
-        </ul>
+        <div id="mainList" className={stl.right}>
+          <Link href="/career">
+            <div
+              id="careers"
+              onMouseOver={() => handleHover("careers")}
+              className={careers ? stl.rotateCar : stl.undoRotate}
+            >
+              Careers <ArrowDown />
+            </div>
+          </Link>
+          <Link href="/casestudy">
+            <div onMouseOver={() => setDropDown(false)}>Case Studies</div>
+          </Link>
+          <Link href="/services">
+            <div
+              id="services"
+              onMouseOver={() => handleHover("services")}
+              className={services ? stl.rotateSer : stl.undoRotate}
+            >
+              Services <ArrowDown />
+            </div>
+          </Link>
+          <Link href="/how-we-work">
+            <div
+              id="how_we_work"
+              onMouseOver={() => handleHover("how_we_work")}
+              className={how_we_work ? stl.rotateHow : stl.undoRotate}
+            >
+              How We Work <ArrowDown />
+            </div>
+          </Link>
+          <Link href="/blog">
+            <div onMouseOver={() => setDropDown(false)}>Blog</div>
+          </Link>
+        </div>
         <div className={stl.iconContainer}>
-          <span
-            onClick={() => (location.href = "/careers")}
-            className={stl.icon}
-          >
-            <CareerIcon />
-          </span>
-          <span
-            onClick={() => (location.href = "/casestudy")}
-            className={stl.icon}
-          >
-            <CaseStudyIcon />
-          </span>
-          <span
-            onClick={() => (location.href = "/services")}
-            className={stl.icon}
-          >
-            <ServiceIcon />
-          </span>
-          <span
-            onClick={() => (location.href = "/how-we-work")}
-            className={stl.icon}
-          >
-            <HowWeWorkIcon />
-          </span>
-          <span onClick={() => (location.href = "/blog")} className={stl.icon}>
-            <BlogIcon />
-          </span>
+          <Link href="/career">
+            <span className={stl.icon}>
+              <CareerIcon />
+            </span>
+          </Link>
+          <Link href="/casestudy">
+            <span className={stl.icon}>
+              <CaseStudyIcon />
+            </span>
+          </Link>
+          <Link href="/services">
+            <span className={stl.icon}>
+              <ServiceIcon />
+            </span>
+          </Link>
+          <Link href="/how-we-work">
+            <span className={stl.icon}>
+              <HowWeWorkIcon />
+            </span>
+          </Link>
+          <Link href="/blog">
+            <span className={stl.icon}>
+              <BlogIcon />
+            </span>
+          </Link>
         </div>
       </div>
       <motion.div
@@ -194,13 +190,13 @@ const Navbar = () => {
           )}
         >
           {dropDownItems.map((list, i) => (
-            <li
-              onClick={() => (location.href = "#")}
+            <div
+              onClick={() => (location.href = "")}
               key={i}
               className={stl.dropDownItem}
             >
               {list.name} <ArrowNext />
-            </li>
+            </div>
           ))}
         </ul>
       </motion.div>

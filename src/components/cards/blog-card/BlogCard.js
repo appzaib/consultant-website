@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { useState } from "react";
 import clsx from "clsx";
 import PropTypes from "prop-types";
@@ -24,38 +25,38 @@ const BlogCard = ({
   return (
     <motion.div
       onViewportEnter={() => setAnimation(true)}
-      onClick={() => (location.href = "/blog")}
       className={clsx(stl.container, customClass)}
     >
-      <motion.div
-        initial={{ opacity: 0, y: 150 }}
-        animate={{ opacity: animation ? 1 : 0, y: animation ? 0 : 150 }}
-        transition={{ type: "spring", stiffness: 50 }}
-        onClick={() => (location.href = "#")}
-        className={clsx(stl.card, big ? stl.big : undefined)}
-      >
-        <div className={stl.imgContainer}>
-          <div
-            style={{
-              backgroundImage: `url(${imgSrc})`,
-            }}
-            className={stl.blogImg}
-          ></div>
-        </div>
-        <div className={stl.blogInfo}>
-          <div className={stl.blogAbout}>
-            <span className={stl.tag}>{tag}</span>
-            <div className={stl.date}>{date}</div>
+      <Link href="/blog">
+        <motion.div
+          initial={{ opacity: 0, y: 150 }}
+          animate={{ opacity: animation ? 1 : 0, y: animation ? 0 : 150 }}
+          transition={{ type: "spring", stiffness: 50 }}
+          className={clsx(stl.card, big ? stl.big : undefined)}
+        >
+          <div className={stl.imgContainer}>
+            <div
+              style={{
+                backgroundImage: `url(${imgSrc})`,
+              }}
+              className={stl.blogImg}
+            ></div>
           </div>
-          <h1 className={stl.blogTitle}>{title}</h1>
-          <div className={stl.blogAuthor}>by {author}</div>
-        </div>
-        <div className={stl.iconContainer}>
-          <span className={stl.icon}>
-            <NextIcon />
-          </span>
-        </div>
-      </motion.div>
+          <div className={stl.blogInfo}>
+            <div className={stl.blogAbout}>
+              <span className={stl.tag}>{tag}</span>
+              <div className={stl.date}>{date}</div>
+            </div>
+            <h1 className={stl.blogTitle}>{title}</h1>
+            <div className={stl.blogAuthor}>by {author}</div>
+          </div>
+          <div className={stl.iconContainer}>
+            <span className={stl.icon}>
+              <NextIcon />
+            </span>
+          </div>
+        </motion.div>
+      </Link>
     </motion.div>
   );
 };

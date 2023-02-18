@@ -45,7 +45,7 @@ const AllBlogs = () => {
             {categories.map((item, i) => (
               <motion.span
                 key={i}
-                onClick={() => (location.href = "/blog")}
+                onClick={() => (location.href = "")}
                 className={stl.label}
               >
                 {item}

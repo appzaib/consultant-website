@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import CusHead from "@components/head";
+import CustomHead from "@components/head";
 import ProgressBar from "@components/progress-bar";
 import Layout from "@components/layout";
 import HowWeWorkPage from "@components/how-we-work-page";
@@ -9,7 +9,7 @@ import ScrollToTop from "@components/scroll-to-top";
 const HowWeWork = () => {
   const [progress, setProgress] = useState(0);
 
-  setTimeout(() => {
+  if (typeof window !== "undefined") {
     const body = document.body;
 
     body.addEventListener("scroll", () => {
@@ -20,11 +20,11 @@ const HowWeWork = () => {
       const progress = Math.round(scrollProgress);
       setProgress(progress);
     });
-  }, 50);
+  }
 
   return (
     <>
-      <CusHead />
+      <CustomHead title="Codeline Consulting|How We Work" />
       <main style={{ scrollBehavior: "smooth" }} id="main">
         <ScrollToTop />
         <ProgressBar progress={progress} />

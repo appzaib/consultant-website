@@ -29,7 +29,7 @@ const ReviewCard = ({
         animate={{ opacity: animation ? 1 : 0, y: animation ? 0 : 300 }}
         whileHover={{ scale: 1.05 }}
         transition={{ type: "spring" }}
-        onClick={() => (location.href = "#")}
+        onClick={() => (location.href = "")}
         id="card"
         className={clsx(stl.reviewCard, customClass)}
       >

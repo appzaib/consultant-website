@@ -64,7 +64,7 @@ const RightSection = () => {
           y: animationRight ? 0 : 500,
         }}
         transition={{ type: "spring", stiffness: 50 }}
-        onClick={() => (location.href = "#")}
+        onClick={() => (location.href = "")}
         className={stl.submitBtn}
       >
         <SendIcon />

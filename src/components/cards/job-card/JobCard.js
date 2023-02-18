@@ -54,10 +54,7 @@ const JobCard = ({
         </div>
         <div className={stl.footer}>
           <div className={stl.postInfo}>Posted: {postInfo}</div>
-          <button
-            onClick={() => (location.href = "#")}
-            className={stl.applyBtn}
-          >
+          <button onClick={() => (location.href = "")} className={stl.applyBtn}>
             Apply
           </button>
         </div>
