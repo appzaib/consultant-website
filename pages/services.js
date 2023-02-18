@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import CusHead from "@components/head";
+import CustomHead from "@components/head";
 import ProgressBar from "@components/progress-bar";
 import Layout from "@components/layout";
 import ServicesPage from "@components/services-page";
@@ -24,7 +24,7 @@ const Services = () => {
 
   return (
     <>
-      <CusHead />
+      <CustomHead title="Codeline Consulting|Services" />
       <main style={{ scrollBehavior: "smooth" }} id="main">
         <ScrollToTop />
         <ProgressBar progress={progress} />

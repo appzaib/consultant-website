@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import CusHead from "@components/head";
+import CustomHead from "@components/head";
 import ProgressBar from "@components/progress-bar";
 import Layout from "@components/layout";
 import ScrollToTop from "@components/scroll-to-top";
@@ -23,7 +23,7 @@ const Home = () => {
 
   return (
     <>
-      <CusHead />
+      <CustomHead />
       <main id="main" style={{ scrollBehavior: "smooth" }}>
         <ScrollToTop />
         <ProgressBar progress={progress} />
