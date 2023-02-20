@@ -11,6 +11,10 @@
     color: #fff;
     @extend .flexColCen;
 
+    .heading {
+      margin-top: 100px;
+    }
+
     .heading,
     .desc {
       width: 50%;
@@ -93,15 +97,20 @@
 }
 
 @media screen and (max-width: 650px) {
-  .intro .content {
-    .heading {
-      width: 90%;
-      font-size: 3rem;
-    }
+  .intro {
+    height: 100%;
+    .content {
+      padding: 2rem 0;
 
-    .desc {
-      width: 90%;
-      font-size: 2rem;
+      .heading {
+        width: 90%;
+        font-size: 3rem;
+      }
+
+      .desc {
+        width: 90%;
+        font-size: 2rem;
+      }
     }
   }
 }

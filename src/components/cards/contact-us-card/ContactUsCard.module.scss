@@ -3,11 +3,13 @@
 
 .contCardContainer .contactCard {
   @extend .flexColCen;
+  justify-content: space-evenly;
   min-height: 300px;
   height: auto;
   width: 70vw;
-  background: dodgerblue;
+  background: linear-gradient(-45deg, #7f7fd5, #86a8e7, #91eae4);
   padding: 2rem 0;
+  margin-bottom: 1rem;
   border-radius: 1rem;
   box-shadow: 0 10px 20px 2px #333;
   transition: width 0.3s;

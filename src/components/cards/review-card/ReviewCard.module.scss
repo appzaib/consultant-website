@@ -9,6 +9,7 @@
   border-radius: 20px;
   background: #fff;
   box-shadow: 0 0 10px 3px #3333;
+  transition: scale 0.2s ease-in;
   cursor: pointer;
 
   @media (hover: hover) {
