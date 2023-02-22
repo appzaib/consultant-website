@@ -17,7 +17,7 @@
     }
 
     .desc {
-      width: 500px;
+      max-width: 500px;
       @extend .description;
     }
   }
@@ -42,9 +42,10 @@
 
     .text {
       padding: 1rem 0;
+      width: 80%;
 
       .desc {
-        width: 95%;
+        width: 90%;
       }
     }
   }

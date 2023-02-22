@@ -39,3 +39,9 @@
     gap: 7rem 1rem;
   }
 }
+
+@media screen and (max-width: 500px) {
+  .servPageSec {
+    padding: 4rem 10px 6rem;
+  }
+}

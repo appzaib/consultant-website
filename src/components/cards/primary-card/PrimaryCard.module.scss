@@ -1,6 +1,7 @@
 @import "@/styles/common";
 
 .primaryCard {
+  @extend .flexCenter;
   height: 610px;
   width: 370px;
   perspective: 1000px;
@@ -98,5 +99,12 @@
         }
       }
     }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .primaryCard .cardBack,
+  .cardFront {
+    width: 95%;
   }
 }

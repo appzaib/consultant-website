@@ -13,6 +13,7 @@
   .left {
     @extend .flexColCen;
     justify-content: space-between;
+    gap: 2rem;
     padding: 3rem 0;
 
     .projectAbout {
@@ -53,7 +54,7 @@
       width: 40%;
 
       .projectAbout {
-        width: 90%;
+        width: 100%;
       }
     }
 
@@ -72,8 +73,7 @@
 
     .left,
     .right {
-      width: 90%;
-      height: 500px;
+      width: 95%;
     }
   }
 }

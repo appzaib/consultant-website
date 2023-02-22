@@ -1,6 +1,7 @@
 @import "styles/common";
 
 .benefitSection {
+  width: 100%;
   padding: 3rem 3rem 5rem 3rem;
 
   .heading {
@@ -28,5 +29,11 @@
   .benefitSection .cardContainer {
     padding: 3rem 1rem;
     gap: 3rem 1rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .benefitSection {
+    justify-content: center;
   }
 }
