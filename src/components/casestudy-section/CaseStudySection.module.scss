@@ -24,13 +24,19 @@
     @extend .flexCenter;
     flex-wrap: wrap;
     gap: 7rem 5rem;
-    padding: 4rem 3rem 7rem 3rem;
+    padding: 4rem 1rem 7rem;
   }
 }
 
 @media screen and (max-width: 1100px) {
   .caseStudySec .container {
     gap: 7rem 3rem;
-    padding: 4rem 10px 7rem 10px;
+    padding: 4rem 10px 7rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .caseStudySec {
+    padding: 4rem 10px 7rem;
   }
 }

@@ -55,3 +55,9 @@
     text-align: center;
   }
 }
+
+@media screen and (max-width: 500px) {
+  .cardContainer .card {
+    width: 100%;
+  }
+}

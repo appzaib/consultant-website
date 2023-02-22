@@ -132,7 +132,13 @@
 }
 
 @media screen and (max-width: 650px) {
-  .blogPage .big {
+  .container .card .big {
     width: 550px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .container .card {
+    width: 100%;
   }
 }

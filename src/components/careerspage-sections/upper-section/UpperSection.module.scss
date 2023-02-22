@@ -70,9 +70,14 @@
   .careersSecCont .section {
     padding: 4rem 10px;
 
+    .text,
+    .imgContainer {
+      width: 100%;
+    }
+
     .text {
-      .imgContainer {
-        width: 100%;
+      .desc {
+        padding: 1rem 0;
       }
     }
   }

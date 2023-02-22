@@ -63,3 +63,9 @@
     }
   }
 }
+
+@media screen and (max-width: 500px) {
+  .caseCardContainer .caseStudyCard {
+    width: 100%;
+  }
+}

@@ -11,7 +11,7 @@
     @extend .flexColCen;
     flex-wrap: wrap;
     width: 80%;
-    height: 90vh;
+    min-height: 90vh;
     gap: 3rem 5rem;
     padding: 4.5rem 3rem 3.5rem 8rem;
     border-radius: 250px 0 250px 0;

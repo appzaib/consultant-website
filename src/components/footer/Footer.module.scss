@@ -61,9 +61,9 @@
       @extend .flexRow;
       justify-content: space-evenly;
       gap: 3rem;
-      padding: 1rem 10px;
+      padding: 1rem 0;
       color: #fff;
-      width: 35%;
+      width: 45%;
       user-select: none;
 
       .col {
@@ -315,7 +315,7 @@
     }
 
     .section3 {
-      width: 50%;
+      width: 60%;
     }
   }
 }
@@ -339,7 +339,17 @@
     .section1,
     .section2,
     .section3 {
-      width: 90%;
+      width: 95%;
+    }
+
+    .section {
+      gap: 1rem;
+    }
+
+    .section2 {
+      gap: 2rem;
+      flex-wrap: wrap;
+      justify-content: start;
     }
   }
 }
