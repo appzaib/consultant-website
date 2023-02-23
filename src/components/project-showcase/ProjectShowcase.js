@@ -3,9 +3,8 @@ import { useState } from "react";
 import PropTypes from "prop-types";
 import { motion } from "framer-motion";
 
-import ReadMoreBtn from "@components/read-more-btn";
-
 import ProjectImage from "@assets/project.png";
+import ReadMoreBtn from "@components/read-more-btn";
 
 import stl from "./ProjectShowcase.module.scss";
 

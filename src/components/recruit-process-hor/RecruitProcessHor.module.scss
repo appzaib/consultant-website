@@ -1,0 +1,82 @@
+@import "styles/common";
+
+.recruitProcessCont {
+  padding: 3rem;
+  font-size: 1.5rem;
+  @extend .flexColCen;
+
+  .heading {
+    text-align: center;
+  }
+
+  .process {
+    height: 100%;
+    width: 110%;
+    @extend .flexColCen;
+    overflow: scroll;
+    align-items: flex-start;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .right,
+    .left {
+      @extend .flexCenter;
+      gap: 0 40rem;
+
+      .item {
+        position: relative;
+        margin: 0;
+        width: 500px;
+        height: 500px;
+        @extend .flexCenter;
+
+        .dot {
+          width: 70px;
+          height: 70px;
+          background: #059862;
+          border-radius: 50%;
+          @extend .flexCenter;
+          font-size: 2.2rem;
+          font-family: "Ultra", serif;
+          letter-spacing: 2px;
+          color: #fff;
+        }
+      }
+    }
+
+    .right {
+      margin-left: 5rem;
+      height: 100%;
+
+      .item {
+        align-items: flex-end;
+
+        .dot {
+          margin: 0;
+          margin-bottom: -2.65rem;
+        }
+      }
+    }
+
+    .left {
+      margin-left: 41rem;
+
+      .item {
+        align-items: flex-start;
+        .dot {
+          margin: 0;
+          margin-top: -2.7rem;
+        }
+      }
+    }
+
+    .lineHorizontal {
+      border-radius: 10px;
+      background: dodgerblue;
+      width: 3000px;
+      height: 10px;
+    }
+  }
+}

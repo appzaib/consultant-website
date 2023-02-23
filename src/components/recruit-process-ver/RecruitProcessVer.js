@@ -2,9 +2,9 @@ import PropTypes from "prop-types";
 
 import RecruitCard from "@components/cards/recruit-card";
 
-import stl from "./RecruitProcess.module.scss";
+import stl from "./RecruitProcessVer.module.scss";
 
-const RecruitProcess = ({ heading }) => {
+const RecruitProcessHor = ({ heading }) => {
   return (
     <div className={stl.recruitProcessCont}>
       <h1 className={stl.heading}>{heading}</h1>
@@ -60,18 +60,17 @@ const RecruitProcess = ({ heading }) => {
             <div className={stl.dot}>04</div>
           </div>
         </div>
-        <div className={stl.lineHorizontal}></div>
       </div>
     </div>
   );
 };
 
-RecruitProcess.defaultProps = {
-  heading: "Recruit Process",
+RecruitProcessHor.defaultProps = {
+  heading: "How We Work",
 };
 
-RecruitProcess.propTypes = {
+RecruitProcessHor.propTypes = {
   heading: PropTypes.string,
 };
 
-export default RecruitProcess;
+export default RecruitProcessHor;
