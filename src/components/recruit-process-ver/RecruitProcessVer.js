@@ -15,6 +15,7 @@ const RecruitProcessHor = ({ heading }) => {
               title="Consultation and Discovery"
               desc="The first step in our web development process is consultation and discovery. We'll work with you to understand your business, your audience, and your goals, and develop a clear understanding of what you need from your website. Through in-depth discussions and careful analysis, we'll gain a deep understanding of your unique challenges and opportunities, and develop a clear roadmap for success."
               right="1.6%"
+              initial={{ x: -200, rotate: 25 }}
             />
             <span className={stl.dot}>01</span>
           </div>
@@ -23,6 +24,7 @@ const RecruitProcessHor = ({ heading }) => {
               title="Planning and Design"
               desc="Once we understand your needs and goals, we move on to planning and design. We'll work closely with you to create a comprehensive plan for your website, taking into account everything from design and user experience to functionality and search engine optimization. We'll craft a customized web solution that's perfectly tailored to your unique needs, and present a design that aligns with your brand and goals."
               right="1.6%"
+              initial={{ x: -200, rotate: 25 }}
               background="radial-gradient(#f588d8, #c0a3e5)"
             />
             <div className={stl.dot}>03</div>
@@ -32,6 +34,7 @@ const RecruitProcessHor = ({ heading }) => {
               title="Development and Testing"
               desc="With the plan and design in place, we move on to development and testing. Using the latest technologies and development techniques, we'll build a website that's beautiful, functional, and user-friendly. Throughout the development process, we'll keep you informed and involved, so that you can provide feedback and ensure that the final product meets your expectations. We'll also conduct rigorous testing to ensure that your website is error-free and optimized for performance."
               right="1.6%"
+              initial={{ x: -200, rotate: 25 }}
               background="radial-gradient(#76b2fe, #b69efe)"
             />
             <div className={stl.dot}>05</div>
