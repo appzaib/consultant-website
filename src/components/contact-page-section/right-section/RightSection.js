@@ -11,9 +11,12 @@ const RightSection = () => {
   const [email, setEmail] = useState("");
   const [msg, setMsg] = useState("");
 
-  console.log(name, "name");
-  console.log(email, "email");
-  console.log(msg, "msg");
+  const handleSubmit = () => {
+    console.log({ Name: name, Email: email, Message: msg });
+    setName("");
+    setEmail("");
+    setMsg("");
+  };
 
   return (
     <motion.div
@@ -29,6 +32,7 @@ const RightSection = () => {
         transition={{ type: "spring", stiffness: 50 }}
         type="text"
         name="name"
+        value={name}
         placeholder="Your Name"
         onChange={(e) => setName(e.target.value)}
         className={stl.input}
@@ -42,6 +46,7 @@ const RightSection = () => {
         transition={{ type: "spring", stiffness: 50 }}
         type="email"
         name="email"
+        value={email}
         placeholder="Your Email"
         onChange={(e) => setEmail(e.target.value)}
         className={stl.input}
@@ -54,6 +59,7 @@ const RightSection = () => {
         }}
         transition={{ type: "spring", stiffness: 50 }}
         placeholder="Tell us about your project and how we can help you achieve your goals..."
+        value={msg}
         onChange={(e) => setMsg(e.target.value)}
         className={stl.msg}
       ></motion.textarea>
@@ -64,7 +70,7 @@ const RightSection = () => {
           y: animationRight ? 0 : 500,
         }}
         transition={{ type: "spring", stiffness: 50 }}
-        onClick={() => (location.href = "")}
+        onClick={handleSubmit}
         className={stl.submitBtn}
       >
         <SendIcon />
